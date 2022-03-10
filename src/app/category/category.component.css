@@ -1,0 +1,19 @@
+select:focus {
+  border: 1px solid #000;
+}
+
+.action-btn i {
+  font-size: 18px;
+  padding-right: 20px;
+}
+.bx-chevron-right {
+  font-size: 10px;
+}
+
+button {
+  margin-left: 20px;
+}
+
+label {
+  margin-top: 10px;
+}

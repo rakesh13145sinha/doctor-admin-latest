@@ -1,0 +1,242 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">Case Details</h4>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-right">
+                    <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li><a routerLink="/admin/post/cases">Cases</a></li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+
+                    <li class="breadcrumb-item"> Case Details</li>
+                </ol>
+            </div>
+        </div>
+        </div>
+</div>
+
+<div class="user-profile py-4">
+
+
+
+    <div class="container">
+
+
+
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Case Details</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table">
+                <tr>
+                    <th width="30%">Case Id</th>
+                    <td width="2%">:</td>
+                    <td>{{case.id}}</td>
+                  </tr>
+                <tr>
+                  <th width="40%">Case Title</th>
+                  <td width="2%">:</td>
+                  <td>{{case.com_title}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Posted By</th>
+                    <td width="2%">:</td>
+                    <td>{{case.complaint_id}}</td>
+                  </tr>
+
+                <tr>
+                    <th width="30%">Total Views</th>
+                    <td width="2%">:</td>
+                    <td>... <i class="bx bx-show"></i> </td>
+                </tr>
+
+                <tr>
+                    <th width="30%">Liked</th>
+                    <td width="2%">:</td>
+                    <td>{{case.likes}} <i class="bx bx-like"></i> </td>
+                </tr>
+                <tr>
+                    <th width="30%">Comments</th>
+                    <td width="2%">:</td>
+                    <td>{{case.comment}} <i class="bx bx-comment"></i> </td>
+                </tr>
+                <tr>
+                    <th width="30%">Shared</th>
+                    <td width="2%">:</td>
+                    <td>... <i class="bx bx-share-alt"></i> </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Case Details
+              </h3>
+            </div>
+            <div class="card-body pt-0">
+             <div class="table">
+                <tr>
+                    <th width="30%">Case Title</th>
+                    <td width="2%">:</td>
+                    <td> {{case.com_title}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Chief Complaint</th>
+                    <td width="2%">:</td>
+                    <td> {{case.chief_complaint}}</td>
+                </tr>
+
+             </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Patient History
+
+              </h3>
+            </div>
+            <div class="card-body pt-0">
+             <div class="table">
+                <tr>
+                    <th width="30%">Present Illiness</th>
+                    <td width="2%">:</td>
+                    <td>{{case.present_illness}} </td>
+                </tr>
+                <tr>
+                    <th width="30%">Past Illiness</th>
+                    <td width="2%">:</td>
+                    <td>{{case.past_illness}} </td>
+                </tr>
+                <tr>
+                    <th width="30%">Drugs</th>
+                    <td width="2%">:</td>
+                    <td>{{case.drugs}} </td>
+                </tr>
+                <tr>
+                    <th width="30%">Personal </th>
+                    <td width="2%">:</td>
+                    <td> {{case.personal}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Family</th>
+                    <td width="2%">:</td>
+                    <td>{{case.family}} </td>
+                </tr>
+
+             </div>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Patient Examination
+
+
+              </h3>
+            </div>
+            <div class="card-body pt-0">
+             <div class="table">
+
+                <tr>
+                    <th width="30%">Physical Examination</th>
+                    <td width="2%">:</td>
+                    <td>{{case.physical_exam}} </td>
+                </tr>
+                <tr>
+                    <th width="30%">System Examination </th>
+                    <td width="2%">:</td>
+                    <td> {{case.system_exam}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Local Examination</th>
+                    <td width="2%">:</td>
+                    <td>{{case.local_exam}} </td>
+                </tr>
+
+             </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Investigation
+
+              </h3>
+            </div>
+            <div class="card-body pt-0">
+             <div class="table">
+
+                <tr>
+                    <th width="30%">Vital</th>
+                    <td width="2%">:</td>
+                    <td>{{case.vitus}} </td>
+                </tr>
+                <tr>
+                    <th width="30%">Lab Finding </th>
+                    <td width="2%">:</td>
+                    <td> {{case.lab_finding}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Imaging</th>
+                    <td width="2%">:</td>
+                    <td>{{case.imaging}} </td>
+                </tr>
+
+             </div>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Probable Diagnosis
+
+
+              </h3>
+            </div>
+            <div class="card-body pt-0">
+             <div class="table">
+
+                <tr>
+                    <th width="30%">diagnosis</th>
+                    <td width="2%">:</td>
+                    <td>{{case.diagnosis}} </td>
+                </tr>
+
+
+             </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row" >
+        <div class="image-container"  >
+
+          <img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+

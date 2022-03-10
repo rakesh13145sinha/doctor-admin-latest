@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">Deleted Jobs</h4>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-right">
+                    <li><a routerLink="/admin/home">Dashboard</a></li>
+
+
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li class="breadcrumb-item">Deleted Jobs</li>
+                </ol>
+            </div>
+
+        </div>
+
+        </div>
+</div>
+
+
+    <div class="row">
+
+
+
+        <div class="col-xl-12">
+
+
+            <div class="card m-b-30 m-t-30">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title mb-4">{{deletedjobs.length}} Deleted Jobs</h4>
+                    <div class="table-responsive ">
+                        <table class="table table-hover advanced-web-table">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Id No.</th>
+                                  <th scope="col">JobId.</th>
+                                    <th scope="col">Hospital Name</th>
+
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Hospital Type</th>
+
+
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Details</th>
+                                    <th scope="col">Recover</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let job of deletedjobs  | paginate : { id: 'foo',
+                                itemsPerPage: pageSize,
+                                currentPage: currentPage,
+                                  totalItems: deletedjobs.length};let i=index">
+                              <td class="dtr-control">{{(currentPage - 1) * pageSize + i + 1}}</td>
+                                    <td>{{job.id}}</td>
+                                    <td>{{job.hosptial_name}}</td>
+                                    <td>{{job.Speciality}}</td>
+                                    <td>{{job.designation}}</td>
+                                    <td>{{job.hospital_type}}</td>
+                                    <td>{{job.location}}</td>
+                                    <td>Hyderabad</td>
+                                    <td>
+                                        <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn"><i class="bx bx-show"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="" class="action-btn "><i class="bx bx-recycle"></i></a>
+
+                                    </td>
+
+
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+                        <pagination-controls  id="foo" (pageChange)="currentPage = $event"></pagination-controls>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <nav aria-label="Page navigation example">
+
+              <div class="my-2 text-right">
+                <!-- <pagination-controls></pagination-controls> -->
+            </div>
+
+              </nav>
+
+        </div>
+
+    </div>

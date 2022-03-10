@@ -1,0 +1,14 @@
+.bx {
+  line-height: 1;
+  font-size: 18px;
+}
+
+.bx-menu {
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .bx-menu {
+    display: none;
+  }
+}

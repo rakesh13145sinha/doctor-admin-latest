@@ -1,0 +1,47 @@
+<div id="wrapper">
+  <!-- Top Bar Start -->
+  <div class="topbar">
+      <!-- LOGO -->
+      <div class="topbar-left">
+          <a href="#" class="logo">
+              <span class="logo-light">
+                      Doctor Works
+                  </span>
+          </a>
+          <i class='bx bx-menu open-left'></i>
+      </div>
+      <nav class="navbar-custom">
+
+          <ul class="navbar-right list-inline float-right mb-0">
+
+              <li class="dropdown notification-list list-inline-item">
+                  <div class="dropdown notification-list nav-pro-img">
+                      <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                          <img src="assets/images/user-4.jpg" alt="user" class="rounded-circle">
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                          <!-- item-->
+                          <a class="dropdown-item" href="#">{{adminusername}}<i class=""></i></a>
+                          <a class="dropdown-item d-block" routerLink="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
+                          <div class="dropdown-divider"></div>
+                          <a  (click)="Loggout()"   class="dropdown-item text-danger"><i class='bx bx-power-off text-danger'></i> Logout</a>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          <ul class="list-inline menu-left mb-0">
+              <li class="float-left">
+
+              </li>
+              <li class="d-none d-md-inline-block">
+                  <form role="search" class="app-search">
+                      <div class="form-group mb-0">
+                          <input type="text"  class="table-filter form-control"  data-table="advanced-web-table" placeholder="Search..">
+                          <button><i class="bx bx-search"></i></button>
+                      </div>
+                  </form>
+              </li>
+          </ul>
+      </nav>
+  </div>
+

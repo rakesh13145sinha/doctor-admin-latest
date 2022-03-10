@@ -1,0 +1,54 @@
+.bx-chevron-right {
+  font-size: 10px;
+}
+
+.user-profile .card {
+  border-radius: 10px;
+}
+
+.user-profile .card .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+
+.user-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.user-profile .table th,
+.user-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
+}
+
+.image-container img {
+  padding: 20px;
+  width: 250px;
+  height: 300px;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.badge {
+  margin: 20px;
+  margin-left: 0;
+}

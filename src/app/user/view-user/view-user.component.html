@@ -1,0 +1,260 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">User Details</h4>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-right">
+                    <li><a routerLink="/dashboard">Dashboard</a></li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li><a routerLink="/user/users">Users</a></li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+
+                    <li class="breadcrumb-item">
+                       User Details</li>
+                </ol>
+            </div>
+        </div>
+        </div>
+</div>
+
+<div class="user-profile py-4">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="card">
+                <div class=" bg-transparent text-center">
+                    <img class="profile_img" src="/assets/images/user-1.png">
+                    <h3>{{user.profile_name}}</h3>
+                  </div>
+
+                  </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                          <th width="40%">User ID</th>
+                          <td width="2%">:</td>
+                          <td>{{user.id}}</td>
+                        </tr>
+                        <tr>
+                            <th width="40%">Username</th>
+                            <td width="2%">:</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <th width="40%">Applied Jobs</th>
+                            <td width="2%">:</td>
+                            <td>{{user.appliedjobs}}</td>
+                        </tr>
+                        <tr>
+                            <th width="40%">Cases</th>
+                            <td width="2%">:</td>
+                            <td>{{user.case}}</td>
+                          </tr>
+                          <tr>
+                            <th width="40%">News</th>
+                            <td width="2%">:</td>
+                            <td>{{user.news}}</td>
+                          </tr>
+                          <tr>
+                            <th width="40%">Articles</th>
+                            <td width="2%">:</td>
+                            <td>{{user.artical}}</td>
+                          </tr>
+                          <tr>
+                            <th width="40%">Polls</th>
+                            <td width="2%">:</td>
+                            <td>{{user.poll}}</td>
+                          </tr>
+
+                          <tr>
+                            <th width="40%"> Created Date </th>
+                            <td width="2%">:</td>
+                            <td>user.created_date | date: 'd MMMM y'  </td>
+                          </tr>
+
+
+                        </table>
+
+
+
+                      </div>
+                      </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+
+
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Name</th>
+                  <td width="2%">:</td>
+                  <td>{{user.profile_name}}</td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Gender</th>
+                  <td width="2%">:</td>
+                  <td>{{user.gender}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Email</th>
+                  <td width="2%">:</td>
+                  <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Date of Birth</th>
+                  <td width="2%">:</td>
+                  <td>{{user.dateofbirth}}</td>
+                </tr>
+
+                <tr>
+                    <th width="30%">Current Location</th>
+                    <td width="2%">:</td>
+                    <td>user.location</td>
+                </tr>
+
+                <tr>
+                    <th width="30%">Qualification</th>
+                    <td width="2%">:</td>
+                    <td>user.occupation</td>
+                </tr>
+                <tr>
+                    <th width="30%">Speciality</th>
+                    <td width="2%">:</td>
+                    <td>user.speciality</td>
+                </tr>
+
+
+
+
+              </table>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Professional Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Working as</th>
+                  <td width="2%">:</td>
+                  <td>user.working_as</td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Graduation</th>
+                  <td width="2%">:</td>
+                  <td>user.graduation</td>
+                </tr>
+                <tr>
+                  <th width="30%">Post Graduation</th>
+                  <td width="2%">:</td>
+                  <td>user.post_graduation</td>
+                </tr>
+                <tr>
+                  <th width="30%">Instituation</th>
+                  <td width="2%">:</td>
+                  <td>user.instituation</td>
+                </tr>
+
+
+
+
+
+              </table>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Experience</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Hospital</th>
+                  <td width="2%">:</td>
+                  <td>user.hospital</td>
+                </tr>
+                <tr>
+                    <th width="40%">Designation</th>
+                    <td width="2%">:</td>
+                    <td>{{user.designation}}</td>
+                  </tr>
+                  <tr>
+                    <th width="40%">Department</th>
+                    <td width="2%">:</td>
+                    <td>user.department</td>
+                  </tr>
+                  <tr>
+                    <th width="40%">City</th>
+                    <td width="2%">:</td>
+                    <td>user.city</td>
+                  </tr>
+                  <tr>
+                    <th width="40%">From</th>
+                    <td width="2%">:</td>
+                    <td>user.from</td>
+                  </tr>
+                  <tr>
+                    <th width="40%">To</th>
+                    <td width="2%">:</td>
+                    <td>user.to</td>
+                  </tr>
+
+              </table>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0">About Me</h3>
+            </div>
+            <div class="card-body pt-0">
+                <p>user.Few_Words_MySelf</p>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0">Skills</h3>
+            </div>
+            <div class="card-body pt-0">
+               <div class="badge badge-success">Skill 1</div>
+               <div class="badge badge-success">Skill 2</div>
+               <div class="badge badge-success">Skill 3</div>
+               <div class="badge badge-success">Skill 4</div>
+               <div class="badge badge-success">Skill 5</div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+

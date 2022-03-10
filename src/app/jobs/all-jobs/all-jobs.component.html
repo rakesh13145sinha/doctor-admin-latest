@@ -1,0 +1,262 @@
+<div class="container-fluid">
+    <div class="page-title-box">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <h4 class="page-title">All Jobs</h4>
+
+            </div>
+
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-right">
+                    <li><a routerLink="admin/home">Dashboard</a></li>
+
+
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li class="breadcrumb-item">All Jobs</li>
+                </ol>
+
+            </div>
+
+        </div>
+
+
+        </div>
+</div>
+
+<div class="col-xl-12">
+    <a routerLink="/admin/jobs/add-job" class="btn btn-primary">Add Job</a>
+</div>
+
+
+
+  <div class="row mt-4">
+    <div class="col-sm-2">
+        <div class="content">
+            <h6 class="text-primary">Filter Data</h6>
+            <div>
+              <input type="checkbox" id="speciality"   class="questions">
+              <label for="speciality" class="question">
+                  Specialities <i class="bx bx-down-arrow-alt"></i>
+              </label>
+              <div class="answers">
+                  <label>Select Specialities</label>
+                  <select class="form-control">
+                    <option value="" >Option 1</option>
+                    <option value="" >Option 2</option>
+
+                </select>
+            </div>
+
+            <div>
+              <input type="checkbox" id="question2" class="questions">
+
+              <label for="question2" class="question">
+                Designation <i class="bx bx-down-arrow-alt"></i>
+              </label>
+              <div class="answers">
+                <label>Select Designation</label>
+                  <select class="form-control">
+                    <option value="" >Option 1</option>
+                    <option value="" >Option 2</option>
+
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <input type="checkbox" id="question3" name="q" class="questions">
+
+              <label for="question3" class="question">
+
+                Qualifiaction
+                <i class="bx bx-down-arrow-alt"></i>
+              </label>
+              <div class="answers">
+                <label>Select Qualifiaction</label>
+                <select class="form-control">
+                  <option value="" >Option 1</option>
+                  <option value="" >Option 2</option>
+
+              </select>
+              </div>
+            </div>
+            <div>
+                <input type="checkbox" id="question4" name="q" class="questions">
+
+                <label for="question4" class="question">
+                    Location
+                    <i class="bx bx-down-arrow-alt"></i>
+                </label>
+                <div class="answers">
+                  <label>Select State</label>
+                  <select class="form-control">
+                    <option value="" >Option 1</option>
+                    <option value="" >Option 2</option>
+
+                </select>
+                <label>Select City</label>
+                <select class="form-control">
+                  <option value="" >Option 1</option>
+                  <option value="" >Option 2</option>
+
+              </select>
+                </div>
+              </div>
+            </div>
+      </div>
+      </div>
+
+      <div class="col-sm-10 mt-2">
+
+        <div class="row">
+
+
+
+         
+
+            <div class="col-xl-12">
+
+                <div class="card m-b-30 m-t-30">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">{{jobs.length}} Jobs found</h4>
+                        <div class="table-responsive ">
+                            <table class="table table-hover advanced-web-table">
+                                <thead>
+                                    <tr>
+                                      <th scope="col">Job ID</th>
+                                        <th scope="col">Speciality</th>
+
+                                        <th scope="col">Designation</th>
+
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Hospital Name</th>
+                                        <th scope="col">Hospital Type</th>
+
+
+
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let job of jobs | paginate : { id: 'foo',
+                                    itemsPerPage: pageSize,
+                                    currentPage: currentPage,
+                                    totalItems: jobs.length};let i=index">
+
+                                        <td>{{job.id}}</td>
+                                        <td>{{job.Speciality}}</td>
+                                        <td>{{job.designation}}</td>
+                                        <td>{{job.location}}</td>
+                                        <td>{{job.hosptial_name}}</td>
+                                        <td>{{job.hospital_type}}</td>
+
+
+                                        <td *ngIf="job.job_status==true ;else elsBlock"><span class="badge badge-success">Active</span></td>
+                                        <ng-template #elsBlock>
+                                          <td><span class="badge badge-danger">InActive</span></td>
+                                        </ng-template>
+                                        <td style="display: flex;">
+
+                                            <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn" >
+                                                <i class='bx bx-show'></i>
+                                               </a>
+                                           <a  routerLink="/jobs/edit-job" class="action-btn" >
+                                            <i class='bx bx-edit'></i>
+                                           </a>
+
+
+
+                                           <a  class="action-btn" data-toggle="modal" data-target="#deleteModal">
+                                            <i class='bx bx-trash text-danger'></i>
+                                           </a>
+
+
+                                            <div>
+
+
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <nav aria-label="Page navigation example">
+
+                  <div class="my-2 text-right">
+                    <pagination-controls  id="foo" (pageChange)="currentPage = $event"></pagination-controls>
+                </div>
+
+                  </nav>
+
+            </div>
+
+        </div>
+      </div>
+
+       <!-- Edit Model-->
+       <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <form>
+            <div class="modal-body">
+            <label>Category Title</label>
+            <input type="text" class="form-control">
+            <label>Description</label>
+            <textarea name="" id="" cols="30" rows="2" class="form-control">
+
+            </textarea>
+            <label>Status</label>
+            <select class="form-control">
+                <option value="" >Active</option>
+                <option value="" >Inactive</option>
+
+            </select>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>
+     <!--Edit Model Over-->
+
+
+
+     <!--DELETE MODEL-->
+     <div id="deleteModal" class="modal fade">
+      <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+              <div class="modal-header flex-column">
+                  <div class="icon-box">
+                      <i class="bx bx-trash"></i>
+                  </div>
+                  <h4 class="modal-title w-100">Are you sure?</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <p>Do you really want to delete these records? This process cannot be undone.</p>
+              </div>
+              <div class="modal-footer justify-content-center">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
