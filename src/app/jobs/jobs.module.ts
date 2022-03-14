@@ -9,8 +9,8 @@ import { AddJobComponent } from './add-job/add-job.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
 import { ViewJobComponent } from './view-job/view-job.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AllJobsComponent,
@@ -24,7 +24,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     JobsRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class JobsModule { }
