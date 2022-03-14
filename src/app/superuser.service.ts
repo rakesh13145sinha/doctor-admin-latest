@@ -110,6 +110,12 @@ ShowAllJobs():Observable<any>{
   return this.http.get<any>(this.url+"admin/category/jobs/",{"headers":this.headers})
 }
 
+
+//CREATE JOBS
+CreateJobs(id:any,data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/category/jobs/"+"?category_id="+id,data,{"headers":this.headers})
+}
+
 ///SINGLE JOB DETAILS
 Jobdetails(id:any):Observable<any>{
   return this.http.get<any>(this.url+"admin/category/jobs/"+"?job_id="+id,{"headers":this.headers})
@@ -169,5 +175,35 @@ NewPage(id:any):Observable<any>{
   return this.http.get<any>(this.url+"admin/page/post"+"?page_id="+id,{"headers":this.headers})
 }
 
+
+
+///SHOW DEPARTMENT
+Department():Observable<any>{
+  return this.http.get<any>(this.url+"user/profession/hospital/department",{"headers":this.headers})
+}
+
+//SHOW HOSPITAL TYPE
+HospitalType():Observable<any>{
+  return this.http.get<any>(this.url+"user/profession/hospital/type",{"headers":this.headers})
+}
+//DESIGNATION
+Designation():Observable<any>{
+  return this.http.get<any>(this.url+"job/designations/",{"headers":this.headers})
+
+}
+// SHOW ALL STATE
+
+State():Observable<any>{
+  return this.http.get<any>(this.url+"job/search/state",{"headers":this.headers})
+
+}
+//CITIES
+Cities():Observable<any>{
+  return this.http.get<any>(this.url+"job/search/state/location",{"headers":this.headers})
+
+}
+Qualification():Observable<any>{
+  return this.http.get<any>(this.url+"user/profession/info",{"headers":this.headers})
+}
 
 }
