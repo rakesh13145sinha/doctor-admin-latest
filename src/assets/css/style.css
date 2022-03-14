@@ -2733,7 +2733,7 @@ pre[class*="language-"] {
 .table > tbody > tr > td,
 .table > tfoot > tr > td,
 .table > thead > tr > td {
-  padding: 20px 20px;
+  padding: 15px 20px;
 }
 
 .table td,
