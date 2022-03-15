@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { SuperuserService } from 'src/app/superuser.service';
+import {FormControl} from '@angular/forms';
+
 @Component({
   selector: 'app-edit-job',
   templateUrl: './edit-job.component.html',
   styleUrls: ['./edit-job.component.css']
 })
 export class EditJobComponent implements OnInit {
+  qualification = new FormControl();
+
+  qualificationList: string[] = [ ];
   id:any;
   job_detail:any;
   image!:File

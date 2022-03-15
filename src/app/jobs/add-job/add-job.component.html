@@ -35,7 +35,7 @@
             
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select name="" class="form-control" formControlName="hospitaltype">
+                <select  class="form-control" formControlName="hospitaltype">
                     <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
                     
                 </select>
@@ -54,7 +54,7 @@
 
             <div class="col-md-4">
                 <label for="">Category / Blong To</label>
-                <select name="" class="form-control" formControlName="category">
+                <select  class="form-control" formControlName="category">
                     <option value="{{category.id}}" *ngFor="let category of categories">{{category.title}}</option>
                     
                 </select>
@@ -64,14 +64,14 @@
 
             <div class="col-md-4">
                 <label for="">Speciality/Department</label>
-                <select name="" class="form-control" formControlName="depatment">
+                <select  class="form-control" formControlName="depatment">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
             </div>
            
             <div class="col-md-4">
                 <label for="">Designation</label>
-                <select name="" class="form-control" formControlName="designation">
+                <select  class="form-control" formControlName="designation">
                     
                     <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
                 </select>
@@ -94,7 +94,7 @@
                 <input type="text" formControlName="city" class="form-control" *ngIf="cities.length==0;else elseBlock" placeholder="city">
                     
                 <ng-template #elseBlock>
-                    <select name="" class="form-control" formControlName="city">
+                    <select  class="form-control" formControlName="city">
                         <option value="{{city.name}}" *ngFor="let city of cities">{{city.name}}</option>
                        
                     </select>
@@ -171,7 +171,7 @@
                 <label for="">Gender</label>
                 
                 
-                <select name="" class="form-control" formControlName="gender">
+                <select  class="form-control" formControlName="gender">
                     <option value="Male">MALE</option>
                     <option value="Female">FEMALE</option>
                     <option value="Male/Female">MALE/FEMALE</option>
@@ -187,7 +187,7 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Job Type</label>
-                <select name="" class="form-control" formControlName="jobtype">
+                <select  class="form-control" formControlName="jobtype">
                     <option value="Part Time">Part Time</option>
                     <option value="Full Time">Full Time</option>
                    
@@ -196,7 +196,7 @@
            
             <div class="col-md-4">
                 <label for="">Accomodation</label>
-                <select name="" class="form-control" formControlName="accomodation">
+                <select  class="form-control" formControlName="accomodation">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     

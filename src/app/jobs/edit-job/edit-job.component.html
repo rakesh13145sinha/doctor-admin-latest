@@ -29,104 +29,183 @@
         <div class="row">
             <div class="col-md-4">
             <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" value="{{job_detail.hosptial_name}}">
+            <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
             </div>
           
+            
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select name="" class="form-control">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
+                <select  class="form-control" formControlName="hospitaltype">
+                    <option></option>
+                    
                 </select>
             </div>
+            
             <div class="col-md-4">
-                <label for="">Consultent Designation / Position</label>
-                <select name="" class="form-control">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
+                <label for="formFileMultiple" class="form-label">Hospital Photo</label>
+                <input class="form-control" type="file" multiple>
+                          
+            </div>
+
+        
+        </div>
+        
+        <div class="row">
+
+            <div class="col-md-4">
+                <label for="">Category / Blong To</label>
+                <select  class="form-control" formControlName="category">
+                    <option></option>
+                    
                 </select>
             </div>
+
+
+
+            <div class="col-md-4">
+                <label>Speciality/Department</label>
+                <select  class="form-control" formControlName="depatment">
+                    <option></option>
+                </select>
+            </div>
+           
+            <div class="col-md-4">
+                <label for="">Designation</label>
+                <select  class="form-control" formControlName="designation">
+                    
+                    <option></option>
+                </select>
+            </div>
+            
+           
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label for="">Department</label>
-                <select name="" class="form-control">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
+                <label for="">State</label>
+                <select  class="form-control" formControlName="state">
+                    <option></option>
+                    
                 </select>
+                
             </div>
            
             <div class="col-md-4">
-            <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-            <input class="form-control" type="file" multiple>
-                      
+                <label for="city">City</label>
+                <input type="text" formControlName="city" class="form-control"  placeholder="city">
+                    
+                <ng-template #elseBlock>
+                    <select  class="form-control" formControlName="city">
+                        <option></option>
+                       
+                    </select>
+                </ng-template>
+               
             </div>
-            <div class="col-md-4">
-                <label for="">District</label>
-                <input type="text"  class="form-control">
-                </div>
            
+
+            <div class="col-md-4">
+                <label for="">Active/Inactive</label>
+                <select  class="form-control" formControlName="status">
+                    <option value="true" >Active</option>
+                    <option value="false" >InActive</option>
+                    
+                </select>
+                
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-            <label for="city">City</label>
-            <input type="text" class="form-control">
-            </div>
-            <div class="col-md-4">
-            <label for="">State</label>
-            <input type="text" class="form-control">
-            </div>
-           
-        </div>
+       
         <h6>Basic Details</h6>
 
         <div class="row">
             <div class="col-md-4">
             <label for="">Roles and Responsibilities</label>
-            <input type="text"  class="form-control">
+            <input type="text"  class="form-control" formControlName="discription" placeholder="About jobs">
 
             
 
             </div>
             <div class="col-md-4">
             <label for="">Working Days </label>
-            <input type="text"  class="form-control">
+            <input type="text"  class="form-control" formControlName="days" placeholder="Working days">
 
             </div>
 
             <div class="col-md-4">
             <label for="">Working Hours</label>
-            <input type="text"  class="form-control">
+            <input type="text"  class="form-control" formControlName="hours" placeholder="Duration of Work in one day">
 
             </div>
 
 
         </div>
+        <h6>Details</h6>
+        
+        <div class="row">
+            
+            
+
+            <div class="col-md-4">
+                <label for="">Qualification</label><br/>
+                <mat-form-field appearance="fill" >
+                    <mat-select [formControl]="qualification" multiple  >
+                      <mat-select-trigger >
+                        {{qualification.value ? qualification.value[0] : ''}}
+                        <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
+                          (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option [value]="qualification"></mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+            </div>
+
+           
+            <div class="col-md-4">
+                <label for="">Experince</label>
+                
+                <input type="text"  class="form-control" formControlName="experince" placeholder="Experince">
+                
+            </div>
+            <div class="col-md-4">
+                <label for="">Gender</label>
+                
+                
+                <select  class="form-control" formControlName="gender">
+                    <option value="Male">MALE</option>
+                    <option value="Female">FEMALE</option>
+                    <option value="Male/Female">MALE/FEMALE</option>
+
+                   
+                </select>
+            </div>
+          
+        </div>
+
+
+
         <div class="row">
             <div class="col-md-4">
                 <label for="">Job Type</label>
-                <select name="" class="form-control">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
+                <select  class="form-control" formControlName="jobtype">
+                    <option value="Part Time">Part Time</option>
+                    <option value="Full Time">Full Time</option>
+                   
                 </select>
             </div>
            
             <div class="col-md-4">
                 <label for="">Accomodation</label>
-                <select name="" class="form-control">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
+                <select  class="form-control" formControlName="accomodation">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    
                 </select>
             </div>
 
             <div class="col-md-4">
             <label for="">Salary</label>
-            <input type="text"  class="form-control">
+            <input type="text"  class="form-control" formControlName="salary">
 
             </div>
 
@@ -135,13 +214,15 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Salary Duration</label>
-                <input type="text"  class="form-control">
-    
+                <select class="form-control" formControlName="duration">
+                    <option value="Monthly">Monthly</option>
+                    <option value="Anual">Yearly</option>
+                   
+                </select>
             </div>
                 <div class="col-md-4">
                     <label for="">Vacancy</label>
-                    <input type="text"  class="form-control">
-        
+                    <input type="number"  class="form-control" formControlName="vacancy">
                  </div>
         
     
@@ -150,27 +231,27 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Total Beds</label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" formControlName="totalbed" placeholder="Total Bed in Hospital">
             </div>
             <div class="col-md-4">
                 <label for="">ICU </label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
             </div>
             <div class="col-md-4">
                 <label for="">NICUC </label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
             </div>
-            <div class="col-md-4" >
+            <div class="col-md-4">
                 <label for="">PICU </label>
-                <input type="text"  class="form-control" name="">
+                <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
             </div>
             <div class="col-md-4">
                 <label for=""> HR Contact</label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" formControlName="hrcontact" placeholder="Enter 10 digit mobile number of HR">
             </div>
             <div class="col-md-4">
                 <label for="">Social Contact </label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" formControlName="socialcontact" placeholder="Share linkdn profile link">
             </div>
         </div>
 
@@ -181,7 +262,7 @@
 
         
         <div class="submit_form">
-            <button class="btn btn-primary">Submit</button>
+            <input type="submit" class="btn btn-primary" value="Submit"/>
         </div>
 
       </form>
