@@ -6,11 +6,11 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
-                    <li><a routerLink="/dashboard">Dashboard</a></li>
+                    <li><a routerLink="/admin/home">Dashboard</a></li>
 
                     
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li><a routerLink="/jobs/all-jobs">All Jobs</a></li>
+                    <li><a routerLink="/admin/jobs/all-jobs">All Jobs</a></li>
                     <li><i class='bx bx-chevron-right'></i></li>
 
 
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-4">
             <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control">
+            <input type="text"  class="form-control" value="{{job_detail.hosptial_name}}">
             </div>
           
             <div class="col-md-4">
@@ -41,7 +41,7 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="">Designation</label>
+                <label for="">Consultent Designation / Position</label>
                 <select name="" class="form-control">
                     <option value="">Option 1</option>
                     <option value="">Option 2</option>
@@ -160,9 +160,9 @@
                 <label for="">NICUC </label>
                 <input type="text"  class="form-control">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" >
                 <label for="">PICU </label>
-                <input type="text"  class="form-control">
+                <input type="text"  class="form-control" name="">
             </div>
             <div class="col-md-4">
                 <label for=""> HR Contact</label>

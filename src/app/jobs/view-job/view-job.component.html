@@ -3,6 +3,7 @@
         <div class="row align-items-center">
             <div class="col-sm-6">
                 <h4 class="page-title">Job Details</h4>
+                <h2 class="page-title" routerLink="/admin/jobs/edit-job/{{job.id}}">Edit</h2>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
@@ -168,7 +169,7 @@
                   <tr>
                     <th width="40%">Experience</th>
                     <td width="2%">:</td>
-                    <td>{{job.experience}}</td>
+                    <td>{{job.experince}}</td>
                   </tr>
                   <tr>
                     <th width="40%">Status</th>
@@ -210,40 +211,49 @@
                     <td width="2%">:</td>
                     <td>{{job.picu}}</td>
                   </tr>
-                  <hr>
 
-                  <tr>
-                    <th width="40%">Date of Post</th>
-                    <td width="2%">:</td>
-                    <td>{{job.post_date}}</td>
-                  </tr>
-                 
+                
               </table>
             </div>
 
 
-            <div class="card shadow-sm">
-              <div class="card-header bg-transparent border-0">
-                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
-              </div>
-              <div class="card-body pt-0">
-                <tr>
-                  <th width="40%">HR Contact</th>
-                  <td width="2%">:</td>
-                  <td>{{job.hr_contact}}</td>
-                </tr>
-                <tr>
-                  <th width="40%">Social Contact</th>
-                  <td width="2%">:</td>
-                  <td>{{job.social_contact}}</td>
-                </tr>
+            
 
-              </div>
-
+        </div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
+          </div>
+          <div class="card-body pt-0">
+            <tr>
+              <th width="40%">HR Contact</th>
+              <td width="2%">:</td>
+              <td>{{job.hr_contact}}</td>
+            </tr>
+            <tr>
+              <th width="40%">Social Contact</th>
+              <td width="2%">:</td>
+              <td>{{job.social_contact}}</td>
+            </tr>
 
           </div>
 
+
+      </div>
+      <div class="card shadow-sm">
+        <div class="card-body">
+        <tr>
+          <th width="40%">Date of Post</th>
+          <td width="2%">:</td>
+          <td>{{job.post_date}}</td>
+        </tr>
+        <!--<tr>
+          <th width="40%">Category</th>
+          <td width="2%">:</td>
+          <td>{{job.category}}</td>
+        </tr>-->
         </div>
+      </div>
 
 
 

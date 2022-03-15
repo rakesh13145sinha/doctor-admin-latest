@@ -2,12 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { SuperuserService } from 'src/app/superuser.service';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-add-job',
   templateUrl: './add-job.component.html',
   styleUrls: ['./add-job.component.css']
 })
 export class AddJobComponent implements OnInit {
+
+  qualification = new FormControl();
+
+  qualificationList: string[] = [ ];
+
+  
+  qua =new Set();
   jobform:any;
   departments:any[]=[];
   hospitaltypes:any[]=[]
@@ -107,7 +115,7 @@ states(){
   this.admin.State().subscribe(
     (r)=>{
       this.allstate=r
-      console.log(r)
+      // console.log(r)
 
     }
   )
@@ -118,7 +126,7 @@ city(){
   this.admin.Cities().subscribe(
     (r)=>{
       this.statecities=r
-      console.log(this.statecities)
+      // console.log(this.statecities)
     }
   )
 }
@@ -127,7 +135,7 @@ city(){
 education(){
   this.admin.Qualification().subscribe(
     (r)=>{
-      this.edu=r.hightest_qualification
+      this.qualificationList=r.hightest_qualification
       
     }
   )
@@ -143,10 +151,25 @@ chooice(event:any){
   // alert(event.target.value)
   var c = this.statecities.filter((r)=>r.name===event.target.value) 
   this.cities=c[0].city
-  console.log(this.cities)
+  // console.log(this.cities)
   
 }
-
+selected(data:any){
+  
+  console.log(data)
+ 
+  if (this.qua.has(data) )
+    {
+        this.qua.delete(data)
+        console.log(this.qua)
+        console.log(Array.from(this.qua).join(','))
+    }
+  else{
+    this.qua.add(data)
+    console.log(this.qua)
+    console.log(Array.from(this.qua).join(','))
+  }
+}
 
 AddJobs(){
   console.log(this.jobform.value.hospitalname)
@@ -161,7 +184,7 @@ AddJobs(){
   console.log(this.jobform.value.days)
   console.log(this.jobform.value.hours)
   console.log(this.jobform.value.jobtype),
-  console.log(this.jobform.value.qualification)
+  console.log(Array.from(this.qua).join(','))
   console.log(this.jobform.value.accomodation)
   console.log(this.jobform.value.salary)
   console.log(this.jobform.value.duration)
@@ -186,7 +209,7 @@ AddJobs(){
   formData.append("monthly_or_anual",this.jobform.value.duration)
   formData.append("vacancy",this.jobform.value.vacancy)
   formData.append("working_hours",this.jobform.value.hours)
-  formData.append("qualification",this.jobform.value.qualification)
+  formData.append("qualification",Array.from(this.qua).join(','))
   formData.append("working_day",this.jobform.value.days)
   formData.append("discription",this.jobform.value.discription)
   formData.append("accommodation",this.jobform.value.accomodation)

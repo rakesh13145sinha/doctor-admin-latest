@@ -11,6 +11,8 @@ import { ViewJobComponent } from './view-job/view-job.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AllJobsComponent,
@@ -26,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     JobsRoutingModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class JobsModule { }
