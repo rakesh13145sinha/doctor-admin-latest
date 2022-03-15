@@ -205,6 +205,7 @@ AddJobs(){
     (r)=>{
       console.log(r)
       this.toastr.success("Job Posted successfull")
+      this.jobform.reset()
     
     }
   )

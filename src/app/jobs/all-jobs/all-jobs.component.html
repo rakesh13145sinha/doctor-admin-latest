@@ -40,9 +40,9 @@
               </label>
               <div class="answers">
                   <label>Select Specialities</label>
-                  <select class="form-control">
-                    <option value="" >Option 1</option>
-                    <option value="" >Option 2</option>
+                  <select class="form-control" name="spec" (click)="depart($event)">
+                    <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
+                    
 
                 </select>
             </div>
@@ -168,7 +168,7 @@
 
 
 
-                                           <a  class="action-btn" data-toggle="modal" data-target="#deleteModal">
+                                           <a  class="action-btn" data-toggle="modal" (click)="delete(job.id)" data-target="#deleteModal">
                                             <i class='bx bx-trash text-danger'></i>
                                            </a>
 
@@ -254,9 +254,38 @@
               </div>
               <div class="modal-footer justify-content-center">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-danger">Delete</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" (click)="confirmation()" data-target="#resionModal" >Delete</button>
               </div>
           </div>
       </div>
   </div>
   </div>
+
+
+   <!--RESIONOF DELETE JOB -->
+   <div class="modal fade" id="resionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Jog</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="deletejobform" (ngSubmit)="deletejob()">
+        <div class="modal-body">
+          <label>Put resion why you are deleting this.job</label>
+          <input type="text" class="form-control" formControlName="resion">
+          
+         
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <input type="submit"   class="btn btn-primary" value="Delete job"/>
+        </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!--DELETE JOB RESION Over-->
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { ToastrService } from 'ngx-toastr';
 import { SuperuserService } from 'src/app/superuser.service';
 
@@ -26,8 +27,19 @@ export class DeletedJobsComponent implements OnInit {
     this.admin.DeletedJobs().subscribe(
     (r)=>{
       this.deletedjobs=r
-      console.log(r)
+      
     })
+  }
+
+  recoverjob(id:any){
+    console.log(id)
+    this.admin.Recoverjobs(id).subscribe(
+      (r)=>{
+        this.toastr.success("Job retrive successfull")
+        this.deletejob()
+      }
+    )
+
   }
 
 }

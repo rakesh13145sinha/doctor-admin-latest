@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"applied-jobs",component:AppliedJobsComponent},
   {path:"deleted-jobs",component:DeletedJobsComponent},
   {path:"add-job",component:AddJobComponent},
-  {path:"edit-job",component:EditJobComponent},
+  {path:"edit-job/:id",component:EditJobComponent},
   {path:"view-job/:id",component:ViewJobComponent},
 
 

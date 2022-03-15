@@ -124,12 +124,26 @@ Jobdetails(id:any):Observable<any>{
 AppliedJob():Observable<any>{
   return this.http.get<any>(this.url+"admin/category/jobs/applied",{"headers":this.headers})
 }
+
+///HIDE THE JOB
+//CREATE JOBS
+HideJob(id:any,data:any):Observable<any>{
+  return this.http.patch<any>(this.url+"admin/category/jobs/"+"?job_id="+id,data,{"headers":this.headers})
+}
+
 //GET DELETED JOBS
 DeletedJobs():Observable<any>{
   return this.http.get<any>(this.url+"admin/category/deleted/jobs",{"headers":this.headers})
 }
+Recoverjobs(id:any,):Observable<any>{
+  return this.http.get<any>(this.url+"admin/category/deleted/jobs"+"?job_id="+id,{"headers":this.headers})
+}
 
+///DEPARTMENT JOBS
+Departmentjobs(dep:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/dropdownlist/speciality_department"+"?department="+dep,{"headers":this.headers})
 
+}
 /////ALL CASE DETAILS
 GetAllCase():Observable<any>{
   return this.http.get<any>(this.url+"admin/case",{"headers":this.headers})
@@ -205,5 +219,6 @@ Cities():Observable<any>{
 Qualification():Observable<any>{
   return this.http.get<any>(this.url+"user/profession/info",{"headers":this.headers})
 }
+
 
 }
