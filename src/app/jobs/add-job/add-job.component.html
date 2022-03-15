@@ -63,7 +63,7 @@
 
 
             <div class="col-md-4">
-                <label for="">Department</label>
+                <label for="">Speciality/Department</label>
                 <select name="" class="form-control" formControlName="depatment">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
@@ -101,11 +101,7 @@
                 </ng-template>
                
             </div>
-            <div class="col-md-4">
-                <label for="">Qualification</label>
-                
-                
-            </div>
+           
 
             <div class="col-md-4">
                 <label for="">Active/Inactive</label>
@@ -114,6 +110,23 @@
                     <option value="false" >InActive</option>
                     
                 </select>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Qualification</label><br/>
+                <mat-form-field appearance="fill" >
+                    <mat-select [formControl]="qualification" multiple >
+                      <mat-select-trigger>
+                        {{qualification.value ? qualification.value[0] : ''}}
+                        <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
+                          (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let qualification of qualificationList" [value]="qualification">{{qualification}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 
             </div>
         </div>
@@ -141,7 +154,7 @@
 
 
         </div>
-        <h6>DETAILS</h6>
+        <h6>Details</h6>
         
         <div class="row">
             <div class="col-md-4">

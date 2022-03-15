@@ -2,12 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { SuperuserService } from 'src/app/superuser.service';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-add-job',
   templateUrl: './add-job.component.html',
   styleUrls: ['./add-job.component.css']
 })
 export class AddJobComponent implements OnInit {
+
+  qualification = new FormControl();
+
+  qualificationList: string[] = ['option 1', 'option 2', 'option 3', 'option 4', 'option 5', ];
+  
+
   jobform:any;
   departments:any[]=[];
   hospitaltypes:any[]=[]
