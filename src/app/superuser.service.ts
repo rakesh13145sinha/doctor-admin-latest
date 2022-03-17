@@ -116,6 +116,12 @@ CreateJobs(id:any,data:any):Observable<any>{
   return this.http.post<any>(this.url+"admin/category/jobs/"+"?category_id="+id,data,{"headers":this.headers})
 }
 
+//UPDATE JOB
+
+Updatedetails(id:any,data:any):Observable<any>{
+  return this.http.put<any>(this.url+"admin/category/jobs/"+"?job_id="+id,data,{"headers":this.headers})
+}
+
 ///SINGLE JOB DETAILS
 Jobdetails(id:any):Observable<any>{
   return this.http.get<any>(this.url+"admin/category/jobs/"+"?job_id="+id,{"headers":this.headers})

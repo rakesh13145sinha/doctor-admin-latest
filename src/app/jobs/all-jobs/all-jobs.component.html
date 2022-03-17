@@ -55,9 +55,9 @@
               </label>
               <div class="answers">
                 <label>Select Designation</label>
-                  <select class="form-control">
-                    <option value="" >Option 1</option>
-                    <option value="" >Option 2</option>
+                  <select class="form-control" name="designation" (click)="postion($event)">
+                    <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
+                   
 
                 </select>
               </div>
@@ -74,8 +74,8 @@
               <div class="answers">
                 <label>Select Qualifiaction</label>
                 <select class="form-control">
-                  <option value="" >Option 1</option>
-                  <option value="" >Option 2</option>
+                  <option value="" *ngFor="let qualification of qualificationList">{{qualification}}</option>
+                  
 
               </select>
               </div>
@@ -89,15 +89,13 @@
                 </label>
                 <div class="answers">
                   <label>Select State</label>
-                  <select class="form-control">
-                    <option value="" >Option 1</option>
-                    <option value="" >Option 2</option>
+                  <select class="form-control" (click)="statechooice($event)">
+                    <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
 
                 </select>
                 <label>Select City</label>
-                <select class="form-control">
-                  <option value="" >Option 1</option>
-                  <option value="" >Option 2</option>
+                <select class="form-control" (click)="chooicecity($event)">
+                  <option value="{{city.name}}" *ngFor="let city of statecities">{{city.name}}</option>
 
               </select>
                 </div>

@@ -24,26 +24,28 @@
 
 <div class="container card" >
     
-    <form>
+   
+    <form #EditJob (ngSubmit)="onSubmit(EditJob)">
         <h6>Hospital Details</h6>
         <div class="row">
             <div class="col-md-4">
             <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
+            <input type="text"  class="form-control" name="hospitalname" [(ngModel)]="job.hosptial_name" placeholder="Hospital Name" required>
             </div>
+          
           
             
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select  class="form-control" formControlName="hospitaltype">
-                    <option></option>
+                <select  class="form-control" name="hospitaltype" [(ngModel)]="job.hospital_type">
+                    <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
                     
                 </select>
             </div>
             
             <div class="col-md-4">
                 <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-                <input class="form-control" type="file" multiple>
+                <input class="form-control" type="file" multiple  name="photo"  (change)="imageupload($event)">
                           
             </div>
 
@@ -54,8 +56,8 @@
 
             <div class="col-md-4">
                 <label for="">Category / Blong To</label>
-                <select  class="form-control" formControlName="category">
-                    <option></option>
+                <select  class="form-control"  name="title" >
+                    <option value="{{category.id}}" *ngFor="let category of categories" >{{category.title}}</option>
                     
                 </select>
             </div>
@@ -63,17 +65,17 @@
 
 
             <div class="col-md-4">
-                <label>Speciality/Department</label>
-                <select  class="form-control" formControlName="depatment">
-                    <option></option>
+                <label for="">Speciality/Department</label>
+                <select  class="form-control" name="Speciality" [(ngModel)]="job.Speciality" (click)="department($event)" >
+                    <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
             </div>
            
             <div class="col-md-4">
                 <label for="">Designation</label>
-                <select  class="form-control" formControlName="designation">
+                <select  class="form-control" name="designation" [(ngModel)]="job.designation">
                     
-                    <option></option>
+                    <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
                 </select>
             </div>
             
@@ -82,8 +84,8 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">State</label>
-                <select  class="form-control" formControlName="state">
-                    <option></option>
+                <select  class="form-control"  (click)="chooice($event)" name="state" [(ngModel)]="job.state">
+                    <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
                     
                 </select>
                 
@@ -91,11 +93,11 @@
            
             <div class="col-md-4">
                 <label for="city">City</label>
-                <input type="text" formControlName="city" class="form-control"  placeholder="city">
+                <input type="text"  name="city" [(ngModel)]="job.location" class="form-control" *ngIf="cities.length==0;else elseBlock" placeholder="city">
                     
                 <ng-template #elseBlock>
-                    <select  class="form-control" formControlName="city">
-                        <option></option>
+                    <select  class="form-control" >
+                        <option value="{{city.name}}" *ngFor="let city of cities">{{city.name}}</option>
                        
                     </select>
                 </ng-template>
@@ -105,7 +107,7 @@
 
             <div class="col-md-4">
                 <label for="">Active/Inactive</label>
-                <select  class="form-control" formControlName="status">
+                <select  class="form-control"  name="status" [(ngModel)]="job.job_status">
                     <option value="true" >Active</option>
                     <option value="false" >InActive</option>
                     
@@ -119,20 +121,20 @@
         <div class="row">
             <div class="col-md-4">
             <label for="">Roles and Responsibilities</label>
-            <input type="text"  class="form-control" formControlName="discription" placeholder="About jobs">
+            <input type="text"  class="form-control" name="role" [(ngModel)]="job.discription"  placeholder="About jobs">
 
             
 
             </div>
             <div class="col-md-4">
             <label for="">Working Days </label>
-            <input type="text"  class="form-control" formControlName="days" placeholder="Working days">
+            <input type="text"  class="form-control"  name="workingdays" [(ngModel)]="job.working_day" placeholder="Working days">
 
             </div>
 
             <div class="col-md-4">
             <label for="">Working Hours</label>
-            <input type="text"  class="form-control" formControlName="hours" placeholder="Duration of Work in one day">
+            <input type="text"  class="form-control"  name="workinghour" [(ngModel)]="job.working_hours" placeholder="Duration of Work in one day">
 
             </div>
 
@@ -154,7 +156,7 @@
                           (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
                         </span>
                       </mat-select-trigger>
-                      <mat-option [value]="qualification"></mat-option>
+                      <mat-option *ngFor="let qualification of qualificationList" [value]="qualification" (click)="selected(qualification)">{{qualification}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                 
@@ -164,14 +166,14 @@
             <div class="col-md-4">
                 <label for="">Experince</label>
                 
-                <input type="text"  class="form-control" formControlName="experince" placeholder="Experince">
+                <input type="text"  name="exp" [(ngModel)]="job.experince" class="form-control"  placeholder="Experince">
                 
             </div>
             <div class="col-md-4">
                 <label for="">Gender</label>
                 
                 
-                <select  class="form-control" formControlName="gender">
+                <select  class="form-control" name="gender" [(ngModel)]="job.gender" >
                     <option value="Male">MALE</option>
                     <option value="Female">FEMALE</option>
                     <option value="Male/Female">MALE/FEMALE</option>
@@ -187,16 +189,16 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Job Type</label>
-                <select  class="form-control" formControlName="jobtype">
+                <select  class="form-control" name="jobtype"[(ngModel)]="job.job_type">
                     <option value="Part Time">Part Time</option>
                     <option value="Full Time">Full Time</option>
                    
-                </select>
+                </select> 
             </div>
            
             <div class="col-md-4">
                 <label for="">Accomodation</label>
-                <select  class="form-control" formControlName="accomodation">
+                <select  class="form-control" name="accomodation" [(ngModel)]="job.accommodation">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     
@@ -205,7 +207,7 @@
 
             <div class="col-md-4">
             <label for="">Salary</label>
-            <input type="text"  class="form-control" formControlName="salary">
+            <input type="text"  class="form-control" name="salary"[(ngModel)]="job.salary">
 
             </div>
 
@@ -214,15 +216,15 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Salary Duration</label>
-                <select class="form-control" formControlName="duration">
+                <select class="form-control" name="duration"[(ngModel)]="job.monthly_or_anual">
                     <option value="Monthly">Monthly</option>
                     <option value="Anual">Yearly</option>
-                   
+                    
                 </select>
             </div>
                 <div class="col-md-4">
                     <label for="">Vacancy</label>
-                    <input type="number"  class="form-control" formControlName="vacancy">
+                    <input type="number"  class="form-control"  name="vacancy" [(ngModel)]="job.vacancy">
                  </div>
         
     
@@ -231,39 +233,34 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Total Beds</label>
-                <input type="text"  class="form-control" formControlName="totalbed" placeholder="Total Bed in Hospital">
+                <input type="text"  class="form-control"  name="totalbed" [(ngModel)]="job.total_bed" placeholder="Total Bed in Hospital">
             </div>
             <div class="col-md-4">
                 <label for="">ICU </label>
-                <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
+                <input type="text"  class="form-control" name="icu" [(ngModel)]="job.icu" placeholder="Number of ICU">
             </div>
             <div class="col-md-4">
                 <label for="">NICUC </label>
-                <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
+                <input type="text"  class="form-control" name="nicuc" [(ngModel)]="job.nicuc" placeholder="Number of NICUC">
             </div>
             <div class="col-md-4">
                 <label for="">PICU </label>
-                <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
+                <input type="text"  class="form-control" name="picu" [(ngModel)]="job.picu" placeholder="Number of PICU">
             </div>
             <div class="col-md-4">
                 <label for=""> HR Contact</label>
-                <input type="text"  class="form-control" formControlName="hrcontact" placeholder="Enter 10 digit mobile number of HR">
+                <input type="text"  class="form-control"name="hrcontact" [(ngModel)]="job.hr_contact" name="hrcontact" placeholder="Enter 10 digit mobile number of HR">
             </div>
             <div class="col-md-4">
                 <label for="">Social Contact </label>
-                <input type="text"  class="form-control" formControlName="socialcontact" placeholder="Share linkdn profile link">
+                <input type="text"  class="form-control" name="social_contact"  [(ngModel)]="job.social_contact" placeholder="Share linkdn profile link">
             </div>
         </div>
 
        
-       
-
-        
-
-        
         <div class="submit_form">
-            <input type="submit" class="btn btn-primary" value="Submit"/>
+            <input type="submit" name="submit" class="btn btn-primary" value="Submit"/>
         </div>
 
-      </form>
+    </form>
 </div>

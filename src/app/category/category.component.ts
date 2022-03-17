@@ -85,6 +85,7 @@ export class CategoryComponent implements OnInit {
   }
   //UPDATE CATEGORY
   CategoryUpdate(){
+    
 
   }
 

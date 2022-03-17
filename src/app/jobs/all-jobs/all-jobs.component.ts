@@ -15,7 +15,11 @@ export class AllJobsComponent implements OnInit {
   jobid:any;
   deletejobform:any;
   departments:any[]=[];
-  
+  designations:any[]=[];
+  allstate:any[]=[];
+  qualificationList:any[]=[];
+  statecities:any[]=[];
+  cities:any[]=[];
   constructor(private admin:SuperuserService,
               private toastr:ToastrService,
               private router:Router,
@@ -32,6 +36,10 @@ export class AllJobsComponent implements OnInit {
   ngOnInit(): void {
     this.ShowAllJobs()
     this.speciality()
+    this.designation()
+    this.states()
+    this.education()
+    
   }
 
    //DEPARTMENT
@@ -44,6 +52,58 @@ export class AllJobsComponent implements OnInit {
 
     )
   }
+
+//Designations
+designation(){
+  this.admin.Designation().subscribe(
+    (r)=>{
+      this.designations=r
+     //  console.log(r)
+    }
+  )
+}
+
+//STATE
+states(){
+  this.admin.State().subscribe(
+    (r)=>{
+      this.allstate=r
+      // console.log(r)
+
+    }
+  )
+}
+
+
+// //CITIES
+// city(){
+//   this.admin.Cities().subscribe(
+//     (r)=>{
+//       this.statecities=r
+//       // console.log(this.statecities)
+//     }
+//   )
+// }
+//Qualification
+education(){
+  this.admin.Qualification().subscribe(
+    (r)=>{
+      this.qualificationList=r.hightest_qualification
+      
+    }
+  )
+}
+
+
+
+chooicecity(event:any){
+
+   // alert(event.target.value)
+var c = this.statecities.filter((r)=>r.name===event.target.value) 
+this.cities=c[0].city
+// console.log(this.cities)
+
+}
   ShowAllJobs(){
     this.admin.ShowAllJobs().subscribe(
       (r)=>{
@@ -76,7 +136,7 @@ export class AllJobsComponent implements OnInit {
       }
     )
   }
-
+  ///DEPATMENT 
   depart(event:any){
     console.log(event.target.value)
     this.admin.Departmentjobs(event.target.value).subscribe(
@@ -86,4 +146,14 @@ export class AllJobsComponent implements OnInit {
       }
     )
   }
+///DESIGNATION
+postion(event:any){
+
+}
+statechooice(event:any){
+
+}
+
+
+
 }
