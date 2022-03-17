@@ -13,6 +13,7 @@ import { AddCaseComponent } from './cases/add-case/add-case.component';
 import { EditCaseComponent } from './cases/edit-case/edit-case.component';
 import { ViewCaseComponent } from './cases/view-case/view-case.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PgNeetComponent } from './pg-neet/pg-neet.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
    AddArticleComponent,
    AddCaseComponent,
    EditCaseComponent,
-   ViewCaseComponent
+   ViewCaseComponent,
+   PgNeetComponent
 
   ],
   imports: [
