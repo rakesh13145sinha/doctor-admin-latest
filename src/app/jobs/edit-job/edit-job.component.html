@@ -150,15 +150,18 @@
                 <label for="">Qualification</label><br/>
                 <mat-form-field appearance="fill" >
                     <mat-select [formControl]="qualification" multiple  >
-                      <mat-select-trigger >
-                        {{qualification.value ? qualification.value[0] : ''}}
-                        <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
-                          (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
-                        </span>
-                      </mat-select-trigger>
-                      <mat-option *ngFor="let qualification of qualificationList" [value]="qualification" (click)="selected(qualification)">{{qualification}}</mat-option>
+                        
+                        <mat-select-trigger >
+                            {{qualification.value ? qualification.value[0] : ''}}
+                            <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
+                            (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
+                            </span>
+                        </mat-select-trigger>
+                        
+                        <mat-option *ngFor="let qualification of qualificationList" [value]="qualification" (click)="selected(qualification)">{{qualification}}</mat-option>
+                    
                     </mat-select>
-                  </mat-form-field>
+                </mat-form-field>
                 
             </div>
 

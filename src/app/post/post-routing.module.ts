@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddArticleComponent } from './articles/add-article/add-article.component';
 import { EditArticleComponent } from './articles/edit-article/edit-article.component';
 import { PgNeetComponent } from './pg-neet/pg-neet.component';
-
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 const routes: Routes = [
   {path:"articles",component:ArticlesComponent},
   {path:"polls",component:PollsComponent},
@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:"add-case",component:AddCaseComponent},
   {path:"edit-case",component:EditCaseComponent},
   {path:"view-case/:id",component:ViewCaseComponent},
-  {path:"pg-neet",component:PgNeetComponent}
+  {path:"pg-neet",component:PgNeetComponent},
+  {path:'edit/question/:id',component:EditQuestionComponent}
 
 
 

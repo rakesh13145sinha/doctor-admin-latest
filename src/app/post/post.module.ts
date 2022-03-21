@@ -4,7 +4,8 @@ import { PollsComponent } from './polls/polls.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PostRoutingModule } from './post-routing.module';
 import { CasesComponent } from './cases/cases.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -14,6 +15,7 @@ import { EditCaseComponent } from './cases/edit-case/edit-case.component';
 import { ViewCaseComponent } from './cases/view-case/view-case.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PgNeetComponent } from './pg-neet/pg-neet.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 
 @NgModule({
@@ -27,13 +29,16 @@ import { PgNeetComponent } from './pg-neet/pg-neet.component';
    AddCaseComponent,
    EditCaseComponent,
    ViewCaseComponent,
-   PgNeetComponent
+   PgNeetComponent,
+   EditQuestionComponent
 
   ],
   imports: [
     CommonModule,
     PostRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PostModule { }

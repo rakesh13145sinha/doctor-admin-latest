@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -225,6 +227,23 @@ Cities():Observable<any>{
 Qualification():Observable<any>{
   return this.http.get<any>(this.url+"user/profession/info",{"headers":this.headers})
 }
-
-
+///NEET-PG SS-NEET
+Exam(data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/create/question",data,{"headers":this.headers})
+}
+ExamGET():Observable<any>{
+  return this.http.get<any>(this.url+"admin/create/question",{"headers":this.headers})
+}
+ExamSingleGET(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/create/question"+"?id="+id,{"headers":this.headers})
+}
+ExamcourseGET(exam:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/create/question"+"?exam="+exam,{"headers":this.headers})
+}
+ExamUpdate(id:any,exam:any):Observable<any>{
+  return this.http.put<any>(this.url+"admin/create/question"+"?id="+id,exam,{"headers":this.headers})
+}
+Examdelete(id:any):Observable<any>{
+  return this.http.delete<any>(this.url+"admin/create/question"+"?id="+id,{"headers":this.headers})
+}
 }
