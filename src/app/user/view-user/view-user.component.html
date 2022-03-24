@@ -6,9 +6,9 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
-                    <li><a routerLink="/dashboard">Dashboard</a></li>
+                    <li><a routerLink="/admin/home">Dashboard</a></li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li><a routerLink="/user/users">Users</a></li>
+                    <li><a routerLink="/admin/profile/users">Users</a></li>
                     <li><i class='bx bx-chevron-right'></i></li>
 
                     <li class="breadcrumb-item">
@@ -27,7 +27,10 @@
             <div class="col-lg-4">
                 <div class="card">
                 <div class=" bg-transparent text-center">
-                    <img class="profile_img" src="/assets/images/user-1.png">
+                    <img class="profile_img" src="/assets/images/user-1.png" *ngIf="user.profileImage==null;else elseImage">
+                    <ng-template #elseImage>
+                      <img class="profile_img" src="{{image_url}}{{user.profileImage}}" >
+                    </ng-template>
                     <h3>{{user.profile_name}}</h3>
                   </div>
 
@@ -52,31 +55,20 @@
                             <td width="2%">:</td>
                             <td>{{user.appliedjobs}}</td>
                         </tr>
+                       
                         <tr>
-                            <th width="40%">Cases</th>
-                            <td width="2%">:</td>
-                            <td>{{user.case}}</td>
-                          </tr>
-                          <tr>
-                            <th width="40%">News</th>
-                            <td width="2%">:</td>
-                            <td>{{user.news}}</td>
-                          </tr>
-                          <tr>
-                            <th width="40%">Articles</th>
-                            <td width="2%">:</td>
-                            <td>{{user.artical}}</td>
-                          </tr>
-                          <tr>
-                            <th width="40%">Polls</th>
-                            <td width="2%">:</td>
-                            <td>{{user.poll}}</td>
-                          </tr>
+                          <th width="40%">Profile Status</th>
+                          <td width="2%">:</td>
+                          <td *ngIf="user.profile === null; else elseBlock">InActive/skip otp login</td>
+                          <ng-template #elseBlock>Active</ng-template>
+                      </tr>
+                       
+
 
                           <tr>
                             <th width="40%"> Created Date </th>
                             <td width="2%">:</td>
-                            <td>user.created_date | date: 'd MMMM y'  </td>
+                            <td>{{user.created_date | slice :0:10}}</td>
                           </tr>
 
 
@@ -114,6 +106,11 @@
                   <th width="30%">Gender</th>
                   <td width="2%">:</td>
                   <td>{{user.gender}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Phone Number</th>
+                  <td width="2%">:</td>
+                  <td>{{user.phone_number}}</td>
                 </tr>
                 <tr>
                   <th width="30%">Email</th>
@@ -245,6 +242,164 @@
 
             </div>
           </div>
+        </div>
+
+
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Name</th>
+                  <td width="2%">:</td>
+                  <td>{{user.profile_name}}</td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Gender</th>
+                  <td width="2%">:</td>
+                  <td>{{user.gender}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Phone Number</th>
+                  <td width="2%">:</td>
+                  <td>{{user.phone_number}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Email</th>
+                  <td width="2%">:</td>
+                  <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Date of Birth</th>
+                  <td width="2%">:</td>
+                  <td>{{user.dateofbirth}}</td>
+                </tr>
+
+                <tr>
+                    <th width="30%">Current Location</th>
+                    <td width="2%">:</td>
+                    <td>{{user.current_job_location}}</td>
+                </tr>
+
+                <tr>
+                    <th width="30%">Qualification</th>
+                    <td width="2%">:</td>
+                    <td>{{user.hightest_qualification}}</td>
+                </tr>
+                <tr>
+                    <th width="30%">Speciality</th>
+                    <td width="2%">:</td>
+                    <td>{{user.speciality}}</td>
+                </tr>
+
+
+
+
+              </table>
+            </div>
+          </div>
+          
+          
+          
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Professional Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Working as</th>
+                  <td width="2%">:</td>
+                  <td>user.working_as</td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Graduation</th>
+                  <td width="2%">:</td>
+                  <td>user.graduation</td>
+                </tr>
+                <tr>
+                  <th width="30%">Post Graduation</th>
+                  <td width="2%">:</td>
+                  <td>user.post_graduation</td>
+                </tr>
+                <tr>
+                  <th width="30%">Instituation</th>
+                  <td width="2%">:</td>
+                  <td>user.instituation</td>
+                </tr>
+
+
+
+
+
+              </table>
+            </div>
+          </div>
+
+
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>UserData</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="40%">Like</th>
+                  <td width="2%">:</td>
+                  <td>{{user.likes}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Following</th>
+                  <td width="2%">:</td>
+                  <td>{{user.following}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Follow</th>
+                  <td width="2%">:</td>
+                  <td>{{user.follow}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Bookmarks</th>
+                  <td width="2%">:</td>
+                  <td>{{user.savejobs}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Cases</th>
+                  <td width="2%">:</td>
+                  <td>{{user.case}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">News</th>
+                  <td width="2%">:</td>
+                  <td>{{user.news}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Articles</th>
+                  <td width="2%">:</td>
+                  <td>{{user.artical}}</td>
+                </tr>
+                <tr>
+                  <th width="40%">Polls</th>
+                  <td width="2%">:</td>
+                  <td>{{user.poll}}</td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+         
+          
         </div>
 
 

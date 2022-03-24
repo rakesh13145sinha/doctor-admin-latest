@@ -3,6 +3,7 @@ import { SuperuserService } from 'src/app/superuser.service';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl} from '@angular/forms';
+import { delay } from 'rxjs';
 @Component({
   selector: 'app-add-job',
   templateUrl: './add-job.component.html',
@@ -26,6 +27,7 @@ export class AddJobComponent implements OnInit {
   statecities:any[]=[];
   cities:any[]=[];
   edu:any[]=[];
+  CatName:any;
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
     this.jobform=fb.group({
@@ -61,7 +63,7 @@ export class AddJobComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.speciality()
+    
     this.hospitaltype()
     this.designation()
     this.allcategories()
@@ -70,15 +72,41 @@ export class AddJobComponent implements OnInit {
     this.education()
   }
 
+  
+
   //DEPARTMENT
-  speciality(){
-    this.admin.Department().subscribe(
+  speciality(data:any){
+    this.admin.CategoryReletedDepatment(data).subscribe(
       (r)=>{
-        this.departments=r
-        // console.log(r)
+        var array:any[]=[]
+        if (r.message){
+          this.departments=array
+          
+        }
+        else{
+
+          this.departments=r
+          console.log(r)
+
+        }
+        
       }
 
     )
+  }
+
+
+  categoryName(event:any){
+    console.log(event.target.value)
+    this.admin.categroyGEt(event.target.value).subscribe(
+      (c)=>{
+        this.CatName=c.title
+        this.speciality(c.title)
+       
+        console.log(c.title)
+      }
+    )
+    
   }
 //HOSPITAL TYPE
   hospitaltype(){

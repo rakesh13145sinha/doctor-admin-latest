@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from 'src/app/category/category.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { EditCategoryComponent } from 'src/app/edit-category/edit-category.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -19,7 +19,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    CategoryComponent
+    CategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     CommonModule,

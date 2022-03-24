@@ -54,8 +54,8 @@
 
             <div class="col-md-4">
                 <label for="">Category / Blong To</label>
-                <select  class="form-control" formControlName="category">
-                    <option value="{{category.id}}" *ngFor="let category of categories">{{category.title}}</option>
+                <select  class="form-control" formControlName="category" (click)="categoryName($event)">
+                    <option value="{{category.id}}"  *ngFor="let category of categories" >{{category.title}}</option>
                     
                 </select>
             </div>
@@ -67,6 +67,12 @@
                 <select  class="form-control" formControlName="depatment">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
+               <!-- <ng-template #elseDep>
+                    <select  class="form-control">
+                        <option>Update Soon</option>
+                    </select>
+
+                </ng-template>-->
             </div>
            
             <div class="col-md-4">

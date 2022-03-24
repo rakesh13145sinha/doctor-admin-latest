@@ -94,6 +94,15 @@ export class SuperuserService {
     return this.http.get<any>(this.url+"admin/category/post",{"headers":this.headers})
   }
 
+  //CATEGORY GET BY ID
+  categroyGEt(id:any):Observable<any>{
+    return this.http.get<any>(this.url+"admin/category/post?category_id="+id,{"headers":this.headers})
+  }
+  
+  //UPDATE CATEGORY
+  Updatecategory(id:any,data:any):Observable<any>{
+    return this.http.put<any>(this.url+"admin/category/post?category_id="+id,data,{"headers":this.headers})
+  }
   //POST CATEGORY
   PostCategory(data:any):Observable<any>{
     return this.http.post<any>(this.url+"admin/category/post",data,{"headers":this.headers})
@@ -203,6 +212,10 @@ NewPage(id:any):Observable<any>{
 Department():Observable<any>{
   return this.http.get<any>(this.url+"user/profession/hospital/department",{"headers":this.headers})
 }
+CategoryReletedDepatment(name:any):Observable<any>{
+  return this.http.get<any>(this.url+"job/category/name?category="+name,{"headers":this.headers})
+}
+
 
 //SHOW HOSPITAL TYPE
 HospitalType():Observable<any>{

@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
   users:any[]=[]
   pageSize:any=5;
   currentPage:any=1;
+  image_url=this.admin.imageurl
 
   constructor(private admin:SuperuserService,private toastr:ToastrService) { }
 
@@ -21,6 +22,7 @@ export class UsersComponent implements OnInit {
     this.admin.AllUser().subscribe(
       res=>{
         this.users=res
+        console.log("user")
         console.log(res)
       }
     )

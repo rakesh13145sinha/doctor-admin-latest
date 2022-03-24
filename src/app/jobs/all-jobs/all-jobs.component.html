@@ -36,10 +36,10 @@
             <div>
               <input type="checkbox" id="speciality"   class="questions">
               <label for="speciality" class="question">
-                  Specialities <i class="bx bx-down-arrow-alt"></i>
+                  Category <i class="bx bx-down-arrow-alt"></i>
               </label>
               <div class="answers">
-                  <label>Select Specialities</label>
+                  <label>Select Category</label>
                   <select class="form-control" name="spec" (click)="depart($event)">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                     

@@ -11,6 +11,7 @@ import { SuperuserService } from 'src/app/superuser.service';
 export class ViewUserComponent implements OnInit {
   user:any;
   id:any;
+  image_url=this.admin.imageurl
   constructor(private router:Router,
               private admin:SuperuserService,
               private toastr:ToastrService,

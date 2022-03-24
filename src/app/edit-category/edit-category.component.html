@@ -1,0 +1,52 @@
+<!-- Edit Model-->
+
+    <form #EditCategory (ngSubmit)="Updatecategory(EditCategory)">
+        <div class="modal-body">
+        <label>Category Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="category.title">
+        <label>Category image</label>
+        <img src="{{image_url}}{{category.image}}" height="150px" width="150px" >
+        <input type="file" class="form-control" (change)="uploadimage($event)" name="image">
+        <label>Description</label>
+        <textarea  cols="30" rows="2" name="about"  [(ngModel)]="category.about"  class="form-control" >
+
+        </textarea>
+        <label>Status</label>
+        <select class="form-control" name="status" [(ngModel)]="category.category_status">
+            <option  value="true" >Active</option>
+            <option value="false" >Inactive</option>
+
+        </select>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Close</button>
+        <input type="submit"  class="btn btn-primary" value="Update Category"/>
+        </div>
+    </form>
+
+
+
+    <!--<form >
+        <div class="modal-body">
+        <label>Category Title</label>
+        <input type="text" class="form-control" name="title" [(ngModle)]="{{category.title}}">
+        <label>Category image</label>
+        <input type="file" class="form-control" (change)="uploadimage($event)" name="image">
+        <label>Description</label>
+        <textarea  cols="30" rows="2" name="about" [(ngModle)]="{{category.about}}"  class="form-control" >
+
+        </textarea>
+        <label>Status</label>
+        <select class="form-control" name="status" [(ngModle)]="{{category.category_status}}">
+            <option  value="true" >Active</option>
+            <option value="false" >Inactive</option>
+
+        </select>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Close</button>
+        <input type="submit"  class="btn btn-primary" value="Update Category"/>
+        </div>
+    </form>-->
+    
+ <!--Edit Model Over-->

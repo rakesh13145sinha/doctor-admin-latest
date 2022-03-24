@@ -18,6 +18,9 @@ export class CategoryComponent implements OnInit {
   pageSize:any=5;
   currentPage:any=1;
 
+
+
+
   // image_url=this.admin.imageurl
 
   constructor(private admin:SuperuserService,
@@ -74,21 +77,6 @@ export class CategoryComponent implements OnInit {
     )
 
   }
-
-
-  //WHICH CATEGORY WANT TO UPDATE
-  editcategory(id:any){
-    console.log(id)
-    this.singlecategory=this.category.filter((x)=>x.id==id)
-    console.log(this.singlecategory)
-
-  }
-  //UPDATE CATEGORY
-  CategoryUpdate(){
-    
-
-  }
-
 
 
   //WHICH CATEGORY WANT TO DELETE

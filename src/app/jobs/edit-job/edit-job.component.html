@@ -148,6 +148,42 @@
 
             <div class="col-md-4">
                 <label for="">Qualification</label><br/>
+               <!-- <mat-form-field appearance="fill" >
+                    <mat-select [formControl]="qualification" multiple  >
+                        
+                        <mat-select-trigger >
+                            {{qualification.value ? qualification.value[0] : ''}}
+                            <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
+                            (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
+                            </span>
+                        </mat-select-trigger>
+                        
+                        <mat-option *ngFor="let qualification of qualificationList" [value]="qualification" (click)="selected(qualification)">{{qualification}}</mat-option>
+                    
+                    </mat-select>
+                </mat-form-field>-->
+
+                <mat-select *ngIf="qualification" multiple>
+                    <mat-select-trigger >
+                        {{qualification.value ? qualification.value[0] : ''}}
+                        <span *ngIf="qualification.value?.length > 1" class="example-additional-selection">
+                        (+{{qualification.value.length - 1}} {{qualification.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                    </mat-select-trigger>
+                    
+                    <mat-option *ngFor="let qualification of qualificationList" [value]="qualification" (click)="selected(qualification)">{{qualification}}</mat-option>
+                
+
+                    
+                  </mat-select>
+                
+            </div>
+
+
+
+            <!--
+             <div class="col-md-4">
+                <label for="">Qualification</label><br/>
                 <mat-form-field appearance="fill" >
                     <mat-select [formControl]="qualification" multiple  >
                         
@@ -164,6 +200,13 @@
                 </mat-form-field>
                 
             </div>
+            
+            
+            
+            
+            -->
+
+
 
            
             <div class="col-md-4">

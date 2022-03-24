@@ -46,27 +46,36 @@
                                               currentPage: currentPage,
                                               totalItems: users.length};let i=index">
                                    
-                                    <td>{{user.userid}}</td>
+                                    <td>{{user.userdetail}}</td>
                                     <td>{{user.profile_name}}</td>
 
                                     <td>{{user.phone_number}}</td>
-                                    <td>....</td>
+                                    <td>{{user.appliedjobs}}</td>
 
-                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td *ngIf="user.status==false; else elseBlock"><span class="badge badge-danger">skip login</span></td>
+                                    <ng-template #elseBlock><td><span class="badge badge-success">Active</span></td></ng-template>
                                     <td>
-                                        <div>
+                                        <div *ngIf="user.image==null;else elseImage ">
                                             <img src="/assets/images/user-1.png" alt="" class="thumb-md rounded-circle mr-2">
                                         </div>
+                                        <ng-template #elseImage>
+
+                                            <div >
+                                                <img src="{{image_url}}{{user.image}}" alt="" class="thumb-md rounded-circle mr-2">
+                                            </div>
+
+                                        </ng-template>
+
                                     </td>
                                     <td>
-                                       <a routerLink="/admin/profile/view-user/{{user.userid}}" class="action-btn">
+                                       <a routerLink="/admin/profile/view-user/{{user.userdetail}}" class="action-btn">
                                         <i class='bx bx-show'></i>
                                        </a>
 
                                        <a routerLink="" class="action-btn">
                                         <i class='bx bx-edit'></i>
                                        </a>
-                                       <a (click)="Delete(user.userid)" class="action-btn">
+                                       <a routerLink="#" (click)="Delete(user.userdetail)" class="action-btn">
                                         <i class='bx bx-block text-danger'></i>
                                        </a>
                                         <div>
