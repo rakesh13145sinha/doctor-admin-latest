@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-sm-6">
                 <h4 class="page-title">Job Details</h4>
-                <a class="page-title" routerLink="/admin/jobs/edit-job/{{job.id}}">Edit</a>
+                <a class=" btn btn-primary" routerLink="/admin/jobs/edit-job/{{job.id}}">Edit</a>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
@@ -31,7 +31,7 @@
 
       <div class="row">
 
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           <div class="card shadow-sm">
             <div class="card-header bg-transparent border-0">
               <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Hospital Details</h3>
@@ -109,157 +109,181 @@
               </table>
             </div>
           </div>
-          <div class="card shadow-sm">
-            <div class="card-header bg-transparent border-0">
-              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Job Description
-              </h3>
-            </div>
-            <div class="card-body pt-0">
-              <table class="table table-bordered">
-                <tr>
-                  <th width="30%">Gender</th>
-                  <td width="2%">:</td>
-                  <td>{{job.gender}}</td>
-                </tr>
+          
+         
+          </div>
+          <div class="col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-header bg-transparent border-0">
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Job Description
+                </h3>
+              </div>
+              <div class="card-body pt-0">
+                <table class="table table-bordered">
+                  <tr>
+                    <th width="30%">Gender</th>
+                    <td width="2%">:</td>
+                    <td>{{job.gender}}</td>
+                  </tr>
+  
+                  <tr>
+                    <th width="30%">Working Days</th>
+                    <td width="2%">:</td>
+                    <td>{{job.working_day}}</td>
+                  </tr>
+  
+                  <tr>
+                    <th width="30%">Working Hours</th>
+                    <td width="2%">:</td>
+                    <td>{{job.working_hours}}</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Job Type</th>
+                    <td width="2%">:</td>
+                    <td>{{job.job_type}}</td>
+                  </tr>
+                  <tr>
+                      <th width="30%">Accomodation</th>
+                      <td width="2%">:</td>
+                      <td>{{job.accommodation}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Salary</th>
+                      <td width="2%">:</td>
+                      <td>{{job.salary}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Salary Duration</th>
+                      <td width="2%">:</td>
+                      <td>{{job.monthly_or_anual}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Vacancy</th>
+                      <td width="2%">:</td>
+                      <td>{{job.vacancy}}</td>
+                    </tr>
+                    <tr>
+                      <th width="40%">Roles and Responsibilities</th>
+                      <td width="2%">:</td>
+                      <td>{{job.discription}}</td>
+                    </tr>
+                    <tr>
+                      <th width="40%">Qualification</th>
+                      <td width="2%">:</td>
+                      <td>{{job.qualification}}</td>
+                    </tr>
+                    <tr>
+                      <th width="40%">Experience</th>
+                      <td width="2%">:</td>
+                      <td>{{job.experince}}</td>
+                    </tr>
+                    <tr>
+                      <th width="40%">Status</th>
+                      <td width="2%">:</td>
+                      <td>{{job.job_status}}</td>
+                    </tr>
+                    <tr>
+                      <th width="40%">Level</th>
+                      <td width="2%">:</td>
+                      <td>{{job.level}}</td>
+                    </tr>
 
-                <tr>
-                  <th width="30%">Working Days</th>
-                  <td width="2%">:</td>
-                  <td>{{job.working_day}}</td>
-                </tr>
-
-                <tr>
-                  <th width="30%">Working Hours</th>
-                  <td width="2%">:</td>
-                  <td>{{job.working_hours}}</td>
-                </tr>
-                <tr>
-                  <th width="30%">Job Type</th>
-                  <td width="2%">:</td>
-                  <td>{{job.job_type}}</td>
-                </tr>
-                <tr>
-                    <th width="30%">Accomodation</th>
-                    <td width="2%">:</td>
-                    <td>{{job.accommodation}}</td>
-                  </tr>
-                  <tr>
-                    <th width="30%">Salary</th>
-                    <td width="2%">:</td>
-                    <td>{{job.salary}}</td>
-                  </tr>
-                  <tr>
-                    <th width="30%">Salary Duration</th>
-                    <td width="2%">:</td>
-                    <td>{{job.monthly_or_anual}}</td>
-                  </tr>
-                  <tr>
-                    <th width="30%">Vacancy</th>
-                    <td width="2%">:</td>
-                    <td>{{job.vacancy}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Roles and Responsibilities</th>
-                    <td width="2%">:</td>
-                    <td>{{job.discription}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Qualification</th>
-                    <td width="2%">:</td>
-                    <td>{{job.qualification}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Experience</th>
-                    <td width="2%">:</td>
-                    <td>{{job.experince}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Status</th>
-                    <td width="2%">:</td>
-                    <td>{{job.job_status}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Delete Resion</th>
-                    <td width="2%">:</td>
-                    <td>{{job.resion}}</td>
-                  </tr>
-
-              </table>
+                    <tr>
+                      <th width="40%">Delete Resion</th>
+                      <td width="2%">:</td>
+                      <td>{{job.resion}}</td>
+                    </tr>
+  
+                </table>
+              </div>
             </div>
           </div>
-          <div class="card shadow-sm">
-            <div class="card-header bg-transparent border-0">
-              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>About Hospital</h3>
-            </div>
-            <div class="card-body pt-0">
-              <table class="table table-bordered">
-                <tr>
-                  <th width="40%">Total Beds</th>
-                  <td width="2%">:</td>
-                  <td>{{job.total_bed}}</td>
-                </tr>
-                <tr>
-                    <th width="40%">ICU</th>
-                    <td width="2%">:</td>
-                    <td>{{job.icu}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">NICUC</th>
-                    <td width="2%">:</td>
-                    <td>{{job.nicuc}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">PICU</th>
-                    <td width="2%">:</td>
-                    <td>{{job.picu}}</td>
-                  </tr>
-
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                  <h3 class="mb-0"><i class="far fa-clone pr-1"></i>About Hospital</h3>
+                </div>
+                <div class="card-body pt-0">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="40%">Total Beds</th>
+                      <td width="2%">:</td>
+                      <td>{{job.total_bed}}</td>
+                    </tr>
+                    <tr>
+                        <th width="40%">ICU</th>
+                        <td width="2%">:</td>
+                        <td>{{job.icu}}</td>
+                      </tr>
+                      <tr>
+                        <th width="40%">NICUC</th>
+                        <td width="2%">:</td>
+                        <td>{{job.nicuc}}</td>
+                      </tr>
+                      <tr>
+                        <th width="40%">PICU</th>
+                        <td width="2%">:</td>
+                        <td>{{job.picu}}</td>
+                      </tr>
+    
+                    
+                  </table>
+                </div>
+    
+    
                 
-              </table>
+    
+            </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                  <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
+                </div>
+                <div class="card-body pt-0">
+                  <tr>
+                    <th width="40%">HR Contact</th>
+                    <td width="2%">:</td>
+                    <td>{{job.hr_contact}}</td>
+                  </tr>
+                  <tr>
+                    <th width="40%">Social Contact</th>
+                    <td width="2%">:</td>
+                    <td>{{job.social_contact}}</td>
+                  </tr>
+      
+                </div>
+      
+      
+            </div>
             </div>
 
-
-            
-
-        </div>
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
-          </div>
-          <div class="card-body pt-0">
-            <tr>
-              <th width="40%">HR Contact</th>
-              <td width="2%">:</td>
-              <td>{{job.hr_contact}}</td>
-            </tr>
-            <tr>
-              <th width="40%">Social Contact</th>
-              <td width="2%">:</td>
-              <td>{{job.social_contact}}</td>
-            </tr>
+            <div class="col-lg-6">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                <tr>
+                  <th width="40%">Date of Post</th>
+                  <td width="2%">:</td>
+                  <td>{{job.post_date}}</td>
+                </tr>
+                <!--<tr>
+                  <th width="40%">Category</th>
+                  <td width="2%">:</td>
+                  <td>{{job.category}}</td>
+                </tr>-->
+                </div>
+              </div>
+            </div>
 
           </div>
+         
+        
+     
 
 
-      </div>
-      <div class="card shadow-sm">
-        <div class="card-body">
-        <tr>
-          <th width="40%">Date of Post</th>
-          <td width="2%">:</td>
-          <td>{{job.post_date}}</td>
-        </tr>
-        <!--<tr>
-          <th width="40%">Category</th>
-          <td width="2%">:</td>
-          <td>{{job.category}}</td>
-        </tr>-->
-        </div>
-      </div>
-
-
-
-      </div>
+      
     </div>
 
   </div>
