@@ -74,36 +74,14 @@ export class AddJobComponent implements OnInit {
 
   
 
-  //DEPARTMENT
-  speciality(data:any){
-    this.admin.CategoryReletedDepatment(data).subscribe(
-      (r)=>{
-        var array:any[]=[]
-        if (r.message){
-          this.departments=array
-          
-        }
-        else{
+  
 
-          this.departments=r
-          console.log(r)
-
-        }
-        
-      }
-
-    )
-  }
-
-
+///GETING DEPARTMET RALETED TO CATEGORY
   categoryName(event:any){
-    console.log(event.target.value)
     this.admin.categroyGEt(event.target.value).subscribe(
       (c)=>{
         this.CatName=c.title
         this.speciality(c.title)
-       
-        console.log(c.title)
         this.categorydesignation()
       }
     )
@@ -111,6 +89,7 @@ export class AddJobComponent implements OnInit {
     
   }
 
+  ///GETING DESIGNATION RELATED TO CATEGORY
 categorydesignation(){
   this.admin.categoryDepartment(this.CatName).subscribe(
     (r)=>{
@@ -132,6 +111,26 @@ categorydesignation(){
   
 }
 
+//DEPARTMENT
+speciality(id:any){
+  this.admin.CategoryReletedDepatment(id).subscribe(
+    (r)=>{
+      var array:any[]=[]
+      if (r.message){
+        this.departments=array
+        
+      }
+      else{
+
+        this.departments=r
+        console.log(r)
+
+      }
+      
+    }
+
+  )
+}
 //HOSPITAL TYPE
   hospitaltype(){
     this.admin.HospitalType().subscribe(
