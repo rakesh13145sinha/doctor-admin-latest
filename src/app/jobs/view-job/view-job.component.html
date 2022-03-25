@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-sm-6">
                 <h4 class="page-title">Job Details</h4>
-                <a class=" btn btn-primary" routerLink="/admin/jobs/edit-job/{{job.id}}">Edit</a>
+                <a class="btn btn-primary" routerLink="/admin/jobs/edit-job/{{job.id}}">Edit</a>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
@@ -51,18 +51,18 @@
                   <td>{{job.hospital_type}}</td>
                 </tr>
                 <tr>
-                  <th width="40%">Category</th>
+                  <th width="40%" class="text-primary">Category</th>
                   <td width="2%">:</td>
                   <td>{{job.category}}</td>
                 </tr>
                 <tr>
-                  <th width="30%">Designation</th>
+                  <th width="30%" class="text-primary">Designation</th>
                   <td width="2%">:</td>
                   <td>{{job.designation}}</td>
                 </tr>
                 
                 <tr>
-                  <th width="30%">Department</th>
+                  <th width="30%"class="text-primary">Department</th>
                   <td width="2%">:</td>
                   <td>{{job.Speciality}}</td>
                 </tr>
@@ -243,6 +243,7 @@
                   <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
                 </div>
                 <div class="card-body pt-0">
+                  <table class="table">
                   <tr>
                     <th width="40%">HR Contact</th>
                     <td width="2%">:</td>
@@ -253,6 +254,7 @@
                     <td width="2%">:</td>
                     <td>{{job.social_contact}}</td>
                   </tr>
+                  </table>
       
                 </div>
       
@@ -263,6 +265,7 @@
             <div class="col-lg-6">
               <div class="card shadow-sm">
                 <div class="card-body">
+                  <table class="table">
                 <tr>
                   <th width="40%">Date of Post</th>
                   <td width="2%">:</td>
@@ -273,6 +276,7 @@
                   <td width="2%">:</td>
                   <td>{{job.category}}</td>
                 </tr>-->
+                </table>
                 </div>
               </div>
             </div>

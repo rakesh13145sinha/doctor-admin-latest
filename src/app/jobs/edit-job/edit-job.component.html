@@ -170,7 +170,7 @@
                     
                     </mat-select>
                 </mat-form-field>-->
-
+                <mat-form-field appearance="fill" >
                 <mat-select *ngIf="qualification" multiple>
                     <mat-select-trigger >
                         {{qualification.value ? qualification.value[0] : ''}}
@@ -184,6 +184,7 @@
 
                     
                   </mat-select>
+                  </mat-form-field>
                 
             </div>
 

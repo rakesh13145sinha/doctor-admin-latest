@@ -20,13 +20,14 @@
 
 .question {
   /* position: relative; */
-  background: #f9f9f9;
+  background: #fff;
   margin: 0;
   padding: 10px 10px 10px 10px;
   /* display: block; */
   text-align: center;
   width: 100%;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 }
 .answers {
   padding: 0px 15px;
