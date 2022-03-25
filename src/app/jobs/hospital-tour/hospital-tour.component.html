@@ -23,7 +23,6 @@
 
 <div class="container card">
     <form action="">
-        <h6>Hospital Photos and Videos</h6>
         <div class="row">
             <div class="col-md-6">
                 <label for="">Hospital Photos</label>
@@ -31,124 +30,147 @@
             </div>
             <div class="col-md-6">
                 <label for="">Hospital Videos</label>
-                <input type="file" class="form-control" multiple>
+                <input type="text" class="form-control">
             </div>
            
-        </div>
-        <h6>Highlights</h6>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
-
-        <!--Add Highlight Form-->
-        <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form>
-                <div class="modal-body">
-                  <label> Title</label>
-                  <input type="text" class="form-control" formControlName="title">
-                  <label>Upload Image</label>
-                  <input type="file" class="form-control">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="submit"   class="btn btn-primary" value="Create category"/>
-                </div>
-                </form>
-              </div>
-            </div>
-        </div>
-        <!--Add Highlight Form Over-->
-
-
-
-        <div class="row">
-        
-            <div class="highlights">
-                <img src="assets/images/us_flag.jpg" alt="">
-                <div class="highlight-action">
-                    <div class="highlight-title">Radiodiagnostic</div>
-                   <button class="remove"> Remove</button>
-                  
-                </div>
-            </div>
-            
-           
-        
-      
-        
-        </div>
-
-        <h6>Speciality</h6>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
-
-         <!--Add Speciality Form-->
-         <div class="modal fade" id="addSpecialityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form>
-                <div class="modal-body">
-                  <label> Title</label>
-                  <input type="text" class="form-control" formControlName="title">
-                  <label>Upload Image</label>
-                  <input type="file" class="form-control">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="submit"   class="btn btn-primary" value="Create category"/>
-                </div>
-                </form>
-              </div>
-            </div>
-        </div>
-        <!--Add Speciality Form Over-->
-
-        <div class="row">
-        
-            <div class="highlights">
-                <img src="assets/images/spain_flag.jpg" alt="">
-                <div class="highlight-action">
-                    <div class="highlight-title">Radiodiagnostic</div>
-                   <button class="remove"> Remove</button>
-                  
-                </div>
-            </div>
-            
-        </div>
-        <h6>Hospital Information</h6>
-        <div class="row">
-            <div class="col-md-4">
-                <label for="">No. of Speciality</label>
-                <input type="number" class="form-control">
-            </div>
-            <div class="col-md-4">
-                <label for="">No. of Beds</label>
-                <input type="number" class="form-control">
-            </div>
-            <div class="col-md-4">
-                <label for="">No. of OT</label>
-                <input type="number" class="form-control">
-            </div>
-            <div class="col-md-4">
-                <label for="">Daily</label>
-                <input type="number" class="form-control">
-            </div>
         </div>
         <div class="submit_form">
             <input type="submit" class="btn btn-primary" value="Submit"/>
         </div>
-    </form>
+        
+        </form>
+        </div>
+       
+            <div class="container card">
+                <form>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
 
+                    <!--Add Highlight Form-->
+                    <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <form>
+                            <div class="modal-body">
+                            <label> Title</label>
+                            <input type="text" class="form-control" formControlName="title">
+                            <label>Upload Image</label>
+                            <input type="file" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit"   class="btn btn-primary" value="Create category"/>
+                            </div>
+                            
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                    <!--Add Highlight Form Over-->
+
+
+
+                    <div class="row">
+                    
+                        <div class="highlights">
+                            <img src="assets/images/us_flag.jpg" alt="">
+                            <div class="highlight-action">
+                                <div class="highlight-title">Radiodiagnostic</div>
+                            <button class="remove"> Remove</button>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit_form">
+                        <input type="submit" class="btn btn-primary" value="Submit"/>
+                    </div>
+                </form>
+                
+            </div>
+
+           
+            <div class="container card">
+                <form>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
+
+                    <!--Add Speciality Form-->
+                    <div class="modal fade" id="addSpecialityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                             </button>
+                           </div>
+                           <form>
+                           <div class="modal-body">
+                             <label> Title</label>
+                             <input type="text" class="form-control" formControlName="title">
+                             <label>Upload Image</label>
+                             <input type="file" class="form-control">
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                             <input type="submit"   class="btn btn-primary" value="Create category"/>
+                           </div>
+                           </form>
+                         </div>
+                       </div>
+                   </div>
+                   <!--Add Speciality Form Over-->
+           
+                   <div class="row">
+                   
+                       <div class="highlights">
+                           <img src="assets/images/spain_flag.jpg" alt="">
+                           <div class="highlight-action">
+                               <div class="highlight-title">Radiodiagnostic</div>
+                              <button class="remove"> Remove</button>
+                             
+                           </div>
+                       </div>
+                       
+                   </div>
+                   <div class="submit_form">
+                    <input type="submit" class="btn btn-primary" value="Submit"/>
+                </div>
+                </form>
+            </div>
+       
+
+            <div class="container card">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">No. of Speciality</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">No. of Beds</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">No. of OT</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Daily</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="submit_form">
+                        <input type="submit" class="btn btn-primary" value="Submit"/>
+                    </div>
+                </form>
+            </div>
+      
+       
+       
+       
    
-</div>
