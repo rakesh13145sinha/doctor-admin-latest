@@ -8,11 +8,11 @@
 
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
-                    <li><a routerLink="admin/home">Dashboard</a></li>
+                    <li><a routerLink="/admin/home">Dashboard</a></li>
 
 
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li class="breadcrumb-item">All Jobs</li>
+                    <li  class="breadcrumb-item"><a routerLink="/admin/jobs/all-jobs">All Jobs</a></li>
                 </ol>
 
             </div>
@@ -40,8 +40,8 @@
               </label>
               <div class="answers">
                   <label>Select Category</label>
-                  <select class="form-control" name="spec" (click)="depart($event)">
-                    <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
+                  <select class="form-control" name="spec" (click)="categoryName($event)">
+                    <option value="{{category.id}}"  *ngFor="let category of categories" >{{category.title}}</option>
                     
 
                 </select>
@@ -55,7 +55,7 @@
               </label>
               <div class="answers">
                 <label>Select Designation</label>
-                  <select class="form-control" name="designation" (click)="postion($event)">
+                  <select class="form-control" name="designation" (click)="designationName($event)">
                     <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
                    
 
@@ -73,10 +73,9 @@
               </label>
               <div class="answers">
                 <label>Select Qualifiaction</label>
-                <select class="form-control">
-                  <option value="" *ngFor="let qualification of qualificationList">{{qualification}}</option>
-                  
-
+                <select class="form-control" name="qualification"  (click)="QualificationName($event)">
+                  <option value="{{qualification}}" *ngFor="let qualification of qualificationList">{{qualification}}</option>
+                
               </select>
               </div>
             </div>
@@ -89,7 +88,7 @@
                 </label>
                 <div class="answers">
                   <label>Select State</label>
-                  <select class="form-control" (click)="statechooice($event)">
+                  <select class="form-control" (click)="statejob($event)">
                     <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
 
                 </select>

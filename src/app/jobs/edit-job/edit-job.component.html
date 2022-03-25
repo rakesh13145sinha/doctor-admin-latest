@@ -56,7 +56,7 @@
 
             <div class="col-md-4">
                 <label for="">Category / Blong To</label>
-                <select  class="form-control"  name="title" >
+                <select  class="form-control"  name="title" (click)="categoryName($event)">
                     <option value="{{category.id}}" *ngFor="let category of categories" >{{category.title}}</option>
                     
                 </select>

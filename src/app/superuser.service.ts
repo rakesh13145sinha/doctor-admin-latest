@@ -127,7 +127,28 @@ CreateJobs(id:any,data:any):Observable<any>{
   return this.http.post<any>(this.url+"admin/category/jobs/"+"?category_id="+id,data,{"headers":this.headers})
 }
 
+//CATEGORY JOBS
+CategoryJobs(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/category/jobs/"+"?category_id="+id,{"headers":this.headers})
+}
+
+//DESIGNATION JOBS
+
+DesignationJobs(name:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/category/jobs/"+"?designation="+name,{"headers":this.headers})
+}
+
+//Qualification JOBS
+
+QualificationJobs(name:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/category/jobs/"+"?qualification="+name,{"headers":this.headers})
+}
 //UPDATE JOB
+
+//STATE JOBS
+StateJobs(name:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/category/jobs/"+"?state="+name,{"headers":this.headers})
+}
 
 Updatedetails(id:any,data:any):Observable<any>{
   return this.http.put<any>(this.url+"admin/category/jobs/"+"?job_id="+id,data,{"headers":this.headers})
@@ -161,6 +182,7 @@ Departmentjobs(dep:any):Observable<any>{
   return this.http.get<any>(this.url+"admin/dropdownlist/speciality_department"+"?department="+dep,{"headers":this.headers})
 
 }
+
 /////ALL CASE DETAILS
 GetAllCase():Observable<any>{
   return this.http.get<any>(this.url+"admin/case",{"headers":this.headers})

@@ -20,6 +20,7 @@ export class AllJobsComponent implements OnInit {
   qualificationList:any[]=[];
   statecities:any[]=[];
   cities:any[]=[];
+  categories:any[]=[];
   constructor(private admin:SuperuserService,
               private toastr:ToastrService,
               private router:Router,
@@ -35,12 +36,36 @@ export class AllJobsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ShowAllJobs()
-    this.speciality()
+    // this.speciality()
     this.designation()
     this.states()
     this.education()
+    this.allcategories()
     
   }
+
+  //CATEGORY
+allcategories(){
+  this.admin.Allcategory().subscribe(
+    (r)=>{
+      this.categories=r
+      console.log(r)
+    }
+  )
+}
+
+//SELECT CATEGORY NAME
+
+categoryName(event:any){
+  console.log(event.target.value)
+  this.admin.CategoryJobs(event.target.value).subscribe(
+    (r)=>{
+      this.jobs=r
+      console.log(r)
+    }
+  )
+
+}
 
    //DEPARTMENT
    speciality(){
@@ -63,6 +88,16 @@ designation(){
   )
 }
 
+designationName(event:any){
+  console.log(event.target.value)
+  this.admin.DesignationJobs(event.target.value).subscribe(
+    (r)=>{
+      this.jobs=r
+      console.log(r)
+    }
+    
+  )
+}
 //STATE
 states(){
   this.admin.State().subscribe(
@@ -75,15 +110,7 @@ states(){
 }
 
 
-// //CITIES
-// city(){
-//   this.admin.Cities().subscribe(
-//     (r)=>{
-//       this.statecities=r
-//       // console.log(this.statecities)
-//     }
-//   )
-// }
+
 //Qualification
 education(){
   this.admin.Qualification().subscribe(
@@ -94,8 +121,24 @@ education(){
   )
 }
 
+QualificationName(event:any){
+  this.admin.QualificationJobs(event.target.value).subscribe(
+    (r)=>{
+      this.jobs=r
+      console.log(r)
+    }
+  )
+}
 
 
+statejob(event:any){
+  this.admin.StateJobs(event.target.value).subscribe(
+    (r)=>{
+      this.jobs=r
+      console.log(this.jobs)
+    }
+  )
+}
 chooicecity(event:any){
 
    // alert(event.target.value)
@@ -146,13 +189,6 @@ this.cities=c[0].city
       }
     )
   }
-///DESIGNATION
-postion(event:any){
-
-}
-statechooice(event:any){
-
-}
 
 
 

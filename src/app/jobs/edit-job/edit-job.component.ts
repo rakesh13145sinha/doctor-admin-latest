@@ -44,7 +44,7 @@ export class EditJobComponent implements OnInit {
 
   ngOnInit(): void {
     this.SingleJob()
-    this.speciality()
+    // this.speciality()
     this.hospitaltype()
     this.designation()
     this.allcategories()
@@ -69,16 +69,43 @@ SingleJob(){
 
     }
 
+  
   //DEPARTMENT
-  speciality(){
-    this.admin.Department().subscribe(
+  speciality(data:any){
+    this.admin.CategoryReletedDepatment(data).subscribe(
       (r)=>{
-        this.departments=r
-        // console.log(r)
+        var array:any[]=[]
+        if (r.message){
+          this.departments=array
+          
+        }
+        else{
+
+          this.departments=r
+          console.log(r)
+
+        }
+        
       }
 
     )
   }
+
+///SELECT CATEGORY NAME
+
+categoryName(event:any){
+  console.log(event.target.value)
+  this.admin.categroyGEt(event.target.value).subscribe(
+    (c)=>{
+      this.speciality(c.title)
+      console.log(c.title)
+    }
+  )
+  
+}
+
+
+
 //HOSPITAL TYPE
   hospitaltype(){
     this.admin.HospitalType().subscribe(
