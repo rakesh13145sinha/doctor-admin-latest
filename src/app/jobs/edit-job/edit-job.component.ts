@@ -205,9 +205,9 @@ department(event:any){
 
 //EDIT JOB
   onSubmit(event:any){
-    // console.log(event.title.value)
-    // console.log("submit")
-    // console.log(this.job.category)
+    console.log(event.title.value)
+    console.log("submit")
+    console.log(this.job.category)
   
   
   var formData = new FormData();
