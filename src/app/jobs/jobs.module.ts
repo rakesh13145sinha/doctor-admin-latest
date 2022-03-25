@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatSelectModule} from '@angular/material/select';
     DeletedJobsComponent,
     AddJobComponent,
     EditJobComponent,
-    ViewJobComponent
+    ViewJobComponent,
+    HospitalTourComponent
 
   ],
   imports: [

@@ -1,0 +1,60 @@
+input:focus,
+select:focus {
+  border: 1px solid #4f46e5;
+}
+
+.action-btn i {
+  font-size: 18px;
+  padding-right: 20px;
+}
+.bx-chevron-right {
+  font-size: 10px;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form h6 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #4f46e5;
+}
+
+.submit_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+form {
+  padding-bottom: 20px;
+}
+
+.highlights {
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.highlight-action {
+  padding: 5px;
+}
+.highlight-title {
+  margin-bottom: 5px;
+}
+
+.remove {
+  border: none;
+}
+
+img {
+  height: 50px;
+  width: 60px;
+  object-fit: fill;
+}
