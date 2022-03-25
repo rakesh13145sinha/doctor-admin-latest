@@ -1,21 +1,29 @@
 <div class="container-fluid">
     <div class="page-title-box">
         <div class="row align-items-center">
-            <div class="col-sm-6">
+            
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col-sm-6">
               <label>Select Exam</label>
               <select  class="form-control" (change)="ChangeExam($event)">
                 <option value="SS-NEET" >SS-NEET</option>
                 <option value="PG-NEET" >PG-NEET</option>
                
             </select>
+            </div>
+            <div class="col-sm-6">
+
             <label>Select Subject</label>
             <select  class="form-control" (change)="ChangeSubject($event)">
               <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
              
              
           </select>
+          </div>
             </div>
-            <div class="col-sm-6">
+          </div>
+            <div class="col-sm-4">
                 <ol class="breadcrumb float-right">
                     <li><a routerLink="/admin/home">Dashboard</a></li>
 

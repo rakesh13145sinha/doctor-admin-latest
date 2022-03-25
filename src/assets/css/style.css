@@ -1168,14 +1168,6 @@ dt {
   display: none !important;
 }
 
-.enlarged #wrapper #sidebar-menu .mm-collapse.mm-show {
-  display: none;
-}
-
-.enlarged #wrapper #sidebar-menu .nav.mm-collapse {
-  height: inherit !important;
-}
-
 .enlarged #wrapper #sidebar-menu ul ul {
   padding-bottom: 5px;
   padding-top: 5px;
