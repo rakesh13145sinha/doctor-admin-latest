@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
+import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
     AddJobComponent,
     EditJobComponent,
     ViewJobComponent,
-    HospitalTourComponent
+    HospitalTourComponent,
+    TourRequestsComponent
 
   ],
   imports: [
