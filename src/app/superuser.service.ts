@@ -183,6 +183,11 @@ Departmentjobs(dep:any):Observable<any>{
 
 }
 
+///CATEGORY DEPARTMENT
+categoryDepartment(category:any):Observable<any>{
+  return this.http.get<any>(this.url+"job/category/designation/"+category)
+}
+
 /////ALL CASE DETAILS
 GetAllCase():Observable<any>{
   return this.http.get<any>(this.url+"admin/case",{"headers":this.headers})

@@ -18,13 +18,12 @@ export class EditJobComponent implements OnInit {
   job:any;
   image!:File
   qua =new Set();
-  
   departments:any[]=[];
   hospitaltypes:any[]=[]
   designations:any[]=[];
   categories:any[]=[];
   allstate:any[]=[];
- 
+  speciality:any;
   statecities:any[]=[];
   cities:any[]=[];
   edu:any[]=[];
@@ -44,19 +43,11 @@ export class EditJobComponent implements OnInit {
 
   ngOnInit(): void {
     this.SingleJob()
-    // this.speciality()
     this.hospitaltype()
-    this.designation()
     this.allcategories()
     this.states()
     this.city()
     this.education()
-
-
-
-
-   
-    
   }
 //SINGLE JOB
 SingleJob(){
@@ -70,26 +61,7 @@ SingleJob(){
     }
 
   
-  //DEPARTMENT
-  speciality(data:any){
-    this.admin.CategoryReletedDepatment(data).subscribe(
-      (r)=>{
-        var array:any[]=[]
-        if (r.message){
-          this.departments=array
-          
-        }
-        else{
-
-          this.departments=r
-          console.log(r)
-
-        }
-        
-      }
-
-    )
-  }
+  
 
 ///SELECT CATEGORY NAME
 
@@ -97,15 +69,56 @@ categoryName(event:any){
   console.log(event.target.value)
   this.admin.categroyGEt(event.target.value).subscribe(
     (c)=>{
-      this.speciality(c.title)
+      this.speciality=c.title
       console.log(c.title)
+      this.categorydesignation()
+      this.Depart_Speciality()
+    }
+  )
+  
+}
+///CATEGORY DESIGNATION
+categorydesignation(){
+  this.admin.categoryDepartment(this.speciality).subscribe(
+    (r)=>{
+      if (r.status!=false){
+        this.designations=r
+        console.log(r)
+
+        }
+      else{
+        var array:any[]=[{"designation":"null"}]
+        this.designations=array
+        console.log(r)
+
+      }
+      
+
     }
   )
   
 }
 
+//DEPARTMENT
+Depart_Speciality(){
+  this.admin.CategoryReletedDepatment(this.speciality).subscribe(
+    (r)=>{
+      var array:any[]=[{"department":"Null"}]
+      if (r.message){
+        this.departments=array
+        
+      }
+      else{
 
+        this.departments=r
+        console.log(r)
 
+      }
+      
+    }
+
+  )
+}
 //HOSPITAL TYPE
   hospitaltype(){
     this.admin.HospitalType().subscribe(
@@ -118,15 +131,7 @@ categoryName(event:any){
 
     )
   }
- //Designations
- designation(){
-   this.admin.Designation().subscribe(
-     (r)=>{
-       this.designations=r
-      //  console.log(r)
-     }
-   )
- }
+ 
 //CATEGORY
 allcategories(){
   this.admin.Allcategory().subscribe(
@@ -198,10 +203,7 @@ selected(data:any){
   }
 }
 
-department(event:any){
-  console.log(event.target.value)
-  console.log(this.job.Speciality)
-}
+
 
 //EDIT JOB
   onSubmit(event:any){

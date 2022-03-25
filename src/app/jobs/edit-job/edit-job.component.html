@@ -66,7 +66,7 @@
 
             <div class="col-md-4">
                 <label for="">Speciality/Department</label>
-                <select  class="form-control" name="Speciality" [(ngModel)]="job.Speciality" (click)="department($event)" >
+                <select  class="form-control" name="Speciality" [(ngModel)]="job.Speciality">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
             </div>
@@ -75,7 +75,7 @@
                 <label for="">Designation</label>
                 <select  class="form-control" name="designation" [(ngModel)]="job.designation">
                     
-                    <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
+                    <option value="{{dis.designation}}" *ngFor="let dis of designations">{{dis.designation}}</option>
                 </select>
             </div>
             

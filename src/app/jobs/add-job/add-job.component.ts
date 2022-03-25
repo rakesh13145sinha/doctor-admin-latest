@@ -65,7 +65,7 @@ export class AddJobComponent implements OnInit {
   ngOnInit(): void {
     
     this.hospitaltype()
-    this.designation()
+    
     this.allcategories()
     this.states()
     this.city()
@@ -104,10 +104,34 @@ export class AddJobComponent implements OnInit {
         this.speciality(c.title)
        
         console.log(c.title)
+        this.categorydesignation()
       }
     )
     
+    
   }
+
+categorydesignation(){
+  this.admin.categoryDepartment(this.CatName).subscribe(
+    (r)=>{
+      if (r.status!=false){
+        this.designations=r
+        console.log(r)
+
+        }
+      else{
+        var array:any[]=[]
+        this.designations=array
+        console.log(r)
+
+      }
+      
+
+    }
+  )
+  
+}
+
 //HOSPITAL TYPE
   hospitaltype(){
     this.admin.HospitalType().subscribe(
@@ -120,15 +144,7 @@ export class AddJobComponent implements OnInit {
 
     )
   }
- //Designations
- designation(){
-   this.admin.Designation().subscribe(
-     (r)=>{
-       this.designations=r
-      //  console.log(r)
-     }
-   )
- }
+ 
 //CATEGORY
 allcategories(){
   this.admin.Allcategory().subscribe(
