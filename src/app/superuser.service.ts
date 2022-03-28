@@ -292,7 +292,7 @@ Hospitaltourimage(id:any,data:any):Observable<any>{
 }
 
 Hospitaltourimageget(id:any):Observable<any>{
-  return this.http.post<any>(this.url+"admin/hospital/image/"+id,{"headers":this.headers})
+  return this.http.get<any>(this.url+"admin/hospital/image/"+id,{"headers":this.headers})
 }
 
 

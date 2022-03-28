@@ -26,9 +26,10 @@ form h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  margin-top: 10px;
 }
 form {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 

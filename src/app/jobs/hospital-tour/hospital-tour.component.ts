@@ -15,6 +15,7 @@ export class HospitalTourComponent implements OnInit {
   id:any;
   image_url=this.admin.imageurl
   hospitaltourimg:any;
+  hospitaltourimage:any[]=[];
   hospitalhighlight:any;
   hospital_h_lights:any[]=[]
   highlightimage!:File;
@@ -62,23 +63,55 @@ export class HospitalTourComponent implements OnInit {
              }
 
   ngOnInit(): void {
-   this.admin.Hospitaltourighlightsget(this.id).subscribe(
-     (r)=>{
-       this.hospital_h_lights=r
-     }
-   );
-   this.admin.HospitalSpecialityget(this.id).subscribe(
-    (r)=>{
-      this.Specialityget=r
-    }
-  );
+    
+  this.hospital_tour_image()
+  this.Highlight()
+  this.HospitalSpecialities()
+   
+   
+
   }
+
+
+
+///GET HOSPITAL TOURE IMAGE
+hospital_tour_image(){
+  this.admin.Hospitaltourimageget(this.id).subscribe(
+    (r)=>{
+      this.hospitaltourimage=r
+    }
+  )
+
+}
+
+  /// GET HOSPITAL TOUR HIGHLIGHT
+  Highlight(){
+
+    this.admin.Hospitaltourighlightsget(this.id).subscribe(
+      (r)=>{
+        this.hospital_h_lights=r
+      }
+    );
+
+  }
+
+  ///Hospital Speciality 
+
+  HospitalSpecialities(){
+    this.admin.HospitalSpecialityget(this.id).subscribe(
+      (r)=>{
+        this.Specialityget=r
+      }
+    );
+
+  }
+
   imageupload(event:any){
     this.selectedFiles=<FileList>event.target.files
   }
 
   
-
+///API CALL FOR HOSPITAL IMAGE UPLOAD
   ImageUploadSumit(){
     
     var formData=new FormData();
@@ -95,7 +128,7 @@ export class HospitalTourComponent implements OnInit {
         
       }
     )
-    //this.hospitaltourimg.reset()
+    this.hospital_tour_image()
     
 
     }
@@ -124,6 +157,7 @@ export class HospitalTourComponent implements OnInit {
         console.log(r)
         this.toastr.success("Hospital tour highlight uploaded successfull")
         this.hospitalhighlight.reset()
+        this.Highlight()
       }
     )
 
@@ -146,6 +180,7 @@ export class HospitalTourComponent implements OnInit {
         console.log(r)
         this.toastr.success("Hospital tour Speciality uploaded successfull")
         this.Speciality.reset()
+        this.HospitalSpecialities()
         
       }
     )

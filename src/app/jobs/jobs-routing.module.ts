@@ -1,3 +1,4 @@
+import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
 import { ViewJobComponent } from './../jobs/view-job/view-job.component';
 import { EditJobComponent } from './../jobs/edit-job/edit-job.component';
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path:"edit-job/:id",component:EditJobComponent},
   {path:"view-job/:id",component:ViewJobComponent},
   {path:"hospital-tour/:id",component:HospitalTourComponent},
+  {path:"tour-requests",component:TourRequestsComponent},
+
 
 
 

@@ -43,10 +43,10 @@
     <!--show hospital tour image-->
     <div class="row">
         
-      <div class="highlights" *ngFor="let s of Specialityget">
+      <div class="highlights" *ngFor="let s of hospitaltourimage">
           <img src="{{image_url}}{{s.image}}" alt="">
           <div class="highlight-action">
-              <div class="highlight-title">{{s.title}}</div>
+              
              <button class="remove" routerLink="/admin/hospital/speciality/{{s.jobid}}"> Remove</button>
             
           </div>
@@ -89,6 +89,33 @@
       
         <!--Add Highlight Form Over-->
 
+                    <!--Add Highlight Form-->
+                    <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <form>
+                            <div class="modal-body">
+                            <label> Title</label>
+                            <input type="text" class="form-control" formControlName="title">
+                            <label>Upload Image</label>
+                            <input type="file" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit"   class="btn btn-primary" value="Create category"/>
+                            </div>
+                            
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                    <!--Add Highlight Form Over-->
 
 
         <div class="row">
@@ -194,4 +221,4 @@
       </form>
 
    
-</div>
+
