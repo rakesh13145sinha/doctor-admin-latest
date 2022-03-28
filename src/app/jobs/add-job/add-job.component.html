@@ -35,10 +35,13 @@
             
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select  class="form-control" formControlName="hospitaltype">
+                <select  class="form-control" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
                     <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
                     
                 </select>
+                <ng-template #elseHospital>
+                    <input type="text" class="form-control" (click)="hospital_type($event)"  formControlName="hospitaltype" placeholder="Enter hospital Type">
+                </ng-template>
             </div>
             
             <div class="col-md-4">
@@ -55,7 +58,7 @@
             <div class="col-md-4">
                 <label for="">Category / Blong To</label>
                 <select  class="form-control" formControlName="category" (click)="categoryName($event)">
-                    <option value="{{category.id}}"  *ngFor="let category of categories" >{{category.title}}</option>
+                    <option value="{{category.title}}"  *ngFor="let category of categories" >{{category.title}}</option>
                     
                 </select>
             </div>

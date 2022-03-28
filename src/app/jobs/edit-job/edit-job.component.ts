@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { SuperuserService } from 'src/app/superuser.service';
 import {FormBuilder, FormControl} from '@angular/forms';
 
+
 @Component({
   selector: 'app-edit-job',
   templateUrl: './edit-job.component.html',
@@ -23,7 +24,7 @@ export class EditJobComponent implements OnInit {
   designations:any[]=[];
   categories:any[]=[];
   allstate:any[]=[];
-  speciality:any;
+  
   statecities:any[]=[];
   cities:any[]=[];
   edu:any[]=[];
@@ -55,31 +56,30 @@ SingleJob(){
     (r)=>{
       this.job=r
       console.log(this.job)
+      this.categorydesignation(this.job.category)
+      this.Depart_Speciality(this.job.category)
+      
     }
   )
 
     }
 
-  
+ 
   
 
 ///SELECT CATEGORY NAME
 
 categoryName(event:any){
   console.log(event.target.value)
-  this.admin.categroyGEt(event.target.value).subscribe(
-    (c)=>{
-      this.speciality=c.title
-      console.log(c.title)
-      this.categorydesignation()
-      this.Depart_Speciality()
-    }
-  )
+    console.log(event.target.value)
+    this.categorydesignation(event.target.value)
+    this.Depart_Speciality(event.target.value)
+   
   
 }
 ///CATEGORY DESIGNATION
-categorydesignation(){
-  this.admin.categoryDepartment(this.speciality).subscribe(
+categorydesignation(category:any){
+  this.admin.categoryDepartment(category).subscribe(
     (r)=>{
       if (r.status!=false){
         this.designations=r
@@ -100,8 +100,8 @@ categorydesignation(){
 }
 
 //DEPARTMENT
-Depart_Speciality(){
-  this.admin.CategoryReletedDepatment(this.speciality).subscribe(
+Depart_Speciality(category:any){
+  this.admin.CategoryReletedDepatment(category).subscribe(
     (r)=>{
       var array:any[]=[{"department":"Null"}]
       if (r.message){
@@ -119,6 +119,31 @@ Depart_Speciality(){
 
   )
 }
+Speciality(event:any){
+  this.job.Speciality=event.target.value
+  console.log(event.target.value)
+}
+location(event:any){
+  console.log(event.target.value)
+    this.job.location=event.target.value
+}
+position(event:any){
+  console.log(event.target.value)
+    this.job.designation=event.target.value
+
+}
+
+
+//CATEGORY
+allcategories(){
+  this.admin.Allcategory().subscribe(
+    (r)=>{
+      this.categories=r
+      // console.log(r)
+      
+    }
+  )
+} 
 //HOSPITAL TYPE
   hospitaltype(){
     this.admin.HospitalType().subscribe(
@@ -132,15 +157,7 @@ Depart_Speciality(){
     )
   }
  
-//CATEGORY
-allcategories(){
-  this.admin.Allcategory().subscribe(
-    (r)=>{
-      this.categories=r
-      // console.log(r)
-    }
-  )
-}
+
 ///State 
 states(){
   this.admin.State().subscribe(
@@ -186,6 +203,7 @@ chooice(event:any){
   // console.log(this.cities)
   
 }  
+
 ///SELECTED QUALIFICATION ADD IN SET
 selected(data:any){
   
@@ -207,19 +225,21 @@ selected(data:any){
 
 //EDIT JOB
   onSubmit(event:any){
-    console.log(event.title.value)
-    console.log("submit")
-    console.log(this.job.category)
-  
+    // console.log(event.title.value)
+    // console.log("submit")
+    // console.log(this.job.category)
+    // console.log(this.job.location)
+    console.log(this.job.Speciality)
   
   var formData = new FormData();
-  // formData.append("category",event.title.value)
+  //formData.append("category",event.title.value)
   formData.append("Speciality",this.job.Speciality)
   formData.append("designation",this.job.designation)
   formData.append("hosptial_name",this.job.hosptial_name)
   //formData.append("hospitail_image",this.image,this.image.name)
   formData.append("state",this.job.state)
   formData.append("location",this.job.location)
+  
   formData.append("salary",this.job.salary)
   formData.append("monthly_or_anual",this.job.monthly_or_anual)
   formData.append("vacancy",this.job.vacancy)

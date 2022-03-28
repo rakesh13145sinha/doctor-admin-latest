@@ -286,4 +286,37 @@ ExamUpdate(id:any,exam:any):Observable<any>{
 Examdelete(id:any):Observable<any>{
   return this.http.delete<any>(this.url+"admin/create/question"+"?id="+id,{"headers":this.headers})
 }
+///HOSPITAL TOUR BANNER IMAGE UPLOAD
+Hospitaltourimage(id:any,data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/image/"+id,data,{"headers":this.headers})
+}
+
+Hospitaltourimageget(id:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/image/"+id,{"headers":this.headers})
+}
+
+
+Hospitaltourighlights(id:any,data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/highlight/"+id,data,{"headers":this.headers})
+}
+
+Hospitaltourighlightsget(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/highlight/"+id,{"headers":this.headers})
+}
+
+HospitalSpeciality(id:any,data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/speciality/"+id,data,{"headers":this.headers})
+}
+
+HospitalSpecialityget(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/speciality/"+id,{"headers":this.headers})
+}
+
+HospitalINFO(id:any,data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/information/"+id,data,{"headers":this.headers})
+}
+HospitalINFOGET(id:any,):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/information/"+id,{"headers":this.headers})
+}
+
 }

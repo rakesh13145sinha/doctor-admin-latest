@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SuperuserService } from 'src/app/superuser.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl} from '@angular/forms';
 import { delay } from 'rxjs';
@@ -28,11 +28,12 @@ export class AddJobComponent implements OnInit {
   cities:any[]=[];
   edu:any[]=[];
   CatName:any;
+  typeofhospital:boolean=true
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
     this.jobform=fb.group({
                             hospitalname:[""],
-                            hospitaltype:[""],
+                            hospitaltype:["",[Validators.required]],
                             category:[""],
                             depatment:[""],
                             designation:[""],
@@ -78,20 +79,20 @@ export class AddJobComponent implements OnInit {
 
 ///GETING DEPARTMET RALETED TO CATEGORY
   categoryName(event:any){
-    this.admin.categroyGEt(event.target.value).subscribe(
-      (c)=>{
-        this.CatName=c.title
-        this.speciality(c.title)
-        this.categorydesignation()
-      }
-    )
+    // this.admin.categroyGEt(event.target.value).subscribe(
+    //   (c)=>{
+        
+        this.speciality(event.target.value)
+        this.categorydesignation(event.target.value)
+    //   }
+    // )
     
     
   }
 
   ///GETING DESIGNATION RELATED TO CATEGORY
-categorydesignation(){
-  this.admin.categoryDepartment(this.CatName).subscribe(
+categorydesignation(event:any){
+  this.admin.categoryDepartment(event).subscribe(
     (r)=>{
       if (r.status!=false){
         this.designations=r
@@ -144,6 +145,32 @@ speciality(id:any){
     )
   }
  
+//hospital type
+hospital_type(event:any){
+  console.log(event)
+  
+  if (event.target.value=="Others")
+
+    {
+      console.log(event.target.value)
+      this.typeofhospital=false
+      
+      console.log(this.jobform.value.hospitaltype)
+      this.jobform.value.hospitaltype=event.target.value
+      console.log(this.jobform.value.hospitaltype)
+
+
+    }
+  
+  else{
+    this.typeofhospital=true
+    console.log(event.target.value)
+    console.log(this.jobform.value.hospitaltype)
+    this.jobform.value.hospitaltype=event.target.value
+    console.log(this.jobform.value.hospitaltype)
+  }
+  
+}
 //CATEGORY
 allcategories(){
   this.admin.Allcategory().subscribe(

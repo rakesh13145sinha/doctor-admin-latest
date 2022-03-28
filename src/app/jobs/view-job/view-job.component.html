@@ -269,13 +269,9 @@
                 <tr>
                   <th width="40%">Date of Post</th>
                   <td width="2%">:</td>
-                  <td>{{job.post_date}}</td>
+                  <td>{{job.created_date | date: 'd-MMM-y'}}</td>
                 </tr>
-                <!--<tr>
-                  <th width="40%">Category</th>
-                  <td width="2%">:</td>
-                  <td>{{job.category}}</td>
-                </tr>-->
+                
                 </table>
                 </div>
               </div>
