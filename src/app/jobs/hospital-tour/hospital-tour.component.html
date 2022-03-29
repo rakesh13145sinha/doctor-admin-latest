@@ -26,18 +26,14 @@
         <h6>Hospital Photos and Videos</h6>
         <div class="row">
             <div class="col-md-6">
-                <label for="">Hospital Photos</label>
                 <input type="file" class="form-control" name="image" formControlName="himage"  (change)="imageupload($event)" multiple>
+
             </div>
-            
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
+            </div>
         </div>
-        <div class="row">
-          
-          <div class="col-md-6">
-            
-            <input type="submit" class="btn btn-sussess" name="submit" value="submit" class="form-control" >
-        </div>
-      </div>
+       
     </form>
 
     <!--show hospital tour image-->
@@ -136,11 +132,12 @@
         </div>
     
      
-        <h6>Speciality</h6>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
-
+       
          <!--Add Speciality Form-->
          <form [formGroup]="Speciality" (ngSubmit)="Hospitalspiciality()">
+            <h6>Speciality</h6>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
+    
             <div class="modal fade" id="addSpecialityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
