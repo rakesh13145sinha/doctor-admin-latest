@@ -1,9 +1,8 @@
 <div class="container-fluid">
     <div class="page-title-box">
         <div class="row align-items-center">
-            <div class="col-sm-6">
-                <h4 class="page-title">All Jobs</h4>
-
+            <div class="col-sm-6" style="display: flex;">
+               <a routerLink="/admin/jobs/add-job" class="btn btn-primary">Add Job</a>
             </div>
 
             <div class="col-sm-6">
@@ -23,18 +22,12 @@
         </div>
 </div>
 
-<div class="col-xl-12">
-    <a routerLink="/admin/jobs/add-job" class="btn btn-primary">Add Job</a>
-</div>
 
 
-
-  <div class="row mt-4">
-    <div class="col-sm-2">
-        <div class="content">
-            <h6 class="text-primary">Filter Data</h6>
-            <div>
-              <input type="checkbox" id="speciality"   class="questions">
+  
+  <div class="row">
+    <div class="col-sm-3" style="position: sticky;">
+      <input type="checkbox" id="speciality"   class="questions">
               <label for="speciality" class="question">
                   Category <i class="bx bx-down-arrow-alt"></i>
               </label>
@@ -46,159 +39,155 @@
 
                 </select>
             </div>
+    </div>
+    <div class="col-sm-3">
+      <input type="checkbox" id="question2" class="questions">
 
-            <div>
-              <input type="checkbox" id="question2" class="questions">
+      <label for="question2" class="question">
+        Designation <i class="bx bx-down-arrow-alt"></i>
+      </label>
+      <div class="answers">
+        <label>Select Designation</label>
+          <select class="form-control" name="designation" (click)="designationName($event)">
+            <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
+           
 
-              <label for="question2" class="question">
-                Designation <i class="bx bx-down-arrow-alt"></i>
-              </label>
-              <div class="answers">
-                <label>Select Designation</label>
-                  <select class="form-control" name="designation" (click)="designationName($event)">
-                    <option value="{{dis.position}}" *ngFor="let dis of designations">{{dis.position}}</option>
-                   
-
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <input type="checkbox" id="question3" name="q" class="questions">
-
-              <label for="question3" class="question">
-
-                Qualifiaction
-                <i class="bx bx-down-arrow-alt"></i>
-              </label>
-              <div class="answers">
-                <label>Select Qualifiaction</label>
-                <select class="form-control" name="qualification"  (click)="QualificationName($event)">
-                  <option value="{{qualification}}" *ngFor="let qualification of qualificationList">{{qualification}}</option>
-                
-              </select>
-              </div>
-            </div>
-            <div>
-                <input type="checkbox" id="question4" name="q" class="questions">
-
-                <label for="question4" class="question">
-                    Location
-                    <i class="bx bx-down-arrow-alt"></i>
-                </label>
-                <div class="answers">
-                  <label>Select State</label>
-                  <select class="form-control" (click)="statejob($event)">
-                    <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
-
-                </select>
-                <label>Select City</label>
-                <select class="form-control" (click)="chooicecity($event)">
-                  <option value="{{city.name}}" *ngFor="let city of statecities">{{city.name}}</option>
-
-              </select>
-                </div>
-              </div>
-            </div>
+        </select>
       </div>
+    </div>
+    <div class="col-sm-3">
+      <input type="checkbox" id="question3" name="q" class="questions">
+
+      <label for="question3" class="question">
+
+        Qualifiaction
+        <i class="bx bx-down-arrow-alt"></i>
+      </label>
+      <div class="answers">
+        <label>Select Qualifiaction</label>
+        <select class="form-control" name="qualification"  (click)="QualificationName($event)">
+          <option value="{{qualification}}" *ngFor="let qualification of qualificationList">{{qualification}}</option>
+        
+      </select>
       </div>
+    </div>
+    <div class="col-sm-3">
+      <input type="checkbox" id="question4" name="q" class="questions">
 
-      <div class="col-sm-10 mt-2">
+      <label for="question4" class="question">
+          Location
+          <i class="bx bx-down-arrow-alt"></i>
+      </label>
+      <div class="answers">
+        <label>Select State</label>
+        <select class="form-control" (click)="statejob($event)">
+          <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
 
-        <div class="row">
+      </select>
+      <label>Select City</label>
+      <select class="form-control" (click)="chooicecity($event)">
+        <option value="{{city.name}}" *ngFor="let city of statecities">{{city.name}}</option>
 
-
-
-         
-
-            <div class="col-xl-12">
-
-                <div class="card m-b-30 m-t-30">
-                    <div class="card-body">
-                        <h4 class="mt-0 header-title mb-4">{{jobs.length}} Jobs found</h4>
-                        <div class="table-responsive ">
-                            <table class="table table-hover advanced-web-table">
-                                <thead>
-                                    <tr>
-                                      <th scope="col">Job ID</th>
-                                        <th scope="col">Speciality</th>
-
-                                        <th scope="col">Designation</th>
-
-                                        <th scope="col">Location</th>
-                                        <th scope="col">Hospital Name</th>
-                                        <th scope="col">Hospital Type</th>
+    </select>
+      </div>
+    </div>
 
 
+  </div>
+     
+      <div class="row">
+        
+        <div class="col-xl-12">
+          <div class="card m-b-30 m-t-30">
+            <div class="card-body">
+                <h4 class="mt-0 header-title mb-4">{{jobs.length}} Jobs found</h4>
+                <div class="table-responsive ">
+                    <table class="table table-hover advanced-web-table">
+                        <thead>
+                            <tr>
+                              <th scope="col">Job ID</th>
+                                <th scope="col">Speciality</th>
 
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
+                                <th scope="col">Designation</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let job of jobs | paginate : { id: 'foo',
-                                    itemsPerPage: pageSize,
-                                    currentPage: currentPage,
-                                    totalItems: jobs.length};let i=index">
-
-                                        <td>{{job.id}}</td>
-                                        <td>{{job.Speciality}}</td>
-                                        <td>{{job.designation}}</td>
-                                        <td>{{job.location}}</td>
-                                        <td>{{job.hosptial_name}}</td>
-                                        <td>{{job.hospital_type}}</td>
-
-
-                                        <td *ngIf="job.job_status==true ;else elsBlock"><span class="badge badge-success">Active</span></td>
-                                        <ng-template #elsBlock>
-                                          <td><span class="badge badge-danger">InActive</span></td>
-                                        </ng-template>
-                                        <td style="display: flex;">
-
-                                            <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn" >
-                                                <i class='bx bx-show'></i>
-                                               </a>
-                                           <a  routerLink="/admin/jobs/edit-job/{{job.id}}" class="action-btn" >
-                                            <i class='bx bx-edit'></i>
-                                           </a>
+                                <th scope="col">Location</th>
+                                <th scope="col">Hospital Name</th>
+                                <th scope="col">Hospital Type</th>
 
 
 
-                                           <a  class="action-btn" data-toggle="modal" (click)="delete(job.id)" data-target="#deleteModal">
-                                            <i class='bx bx-trash text-danger'></i>
-                                           </a>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
 
-                                           <a  class="action-btn text-primary "  routerLink="/admin/jobs/hospital-tour/{{job.id}}" >
-                                            Hospital Tour
-                                           </a>
-                                            <div>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let job of jobs | paginate : { id: 'foo',
+                            itemsPerPage: pageSize,
+                            currentPage: currentPage,
+                            totalItems: jobs.length};let i=index">
+
+                                <td>{{job.id}}</td>
+                                <td>{{job.Speciality}}</td>
+                                <td>{{job.designation}}</td>
+                                <td>{{job.location}}</td>
+                                <td>{{job.hosptial_name}}</td>
+                                <td>{{job.hospital_type}}</td>
+
+
+                                <td *ngIf="job.job_status==true ;else elsBlock"><span class="badge badge-success">Active</span></td>
+                                <ng-template #elsBlock>
+                                  <td><span class="badge badge-danger">InActive</span></td>
+                                </ng-template>
+                                <td style="display: flex;">
+
+                                    <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn" >
+                                        <i class='bx bx-show'></i>
+                                       </a>
+                                   <a  routerLink="/admin/jobs/edit-job/{{job.id}}" class="action-btn" >
+                                    <i class='bx bx-edit'></i>
+                                   </a>
 
 
 
-                                            </div>
-                                        </td>
-                                    </tr>
+                                   <a  class="action-btn" data-toggle="modal" (click)="delete(job.id)" data-target="#deleteModal">
+                                    <i class='bx bx-trash text-danger'></i>
+                                   </a>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                   <a  class="action-btn text-primary "  routerLink="/admin/jobs/hospital-tour/{{job.id}}" >
+                                   <i class="bx bx-buildings"></i>
+                                   </a>
+                                    <div>
 
+
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
-
-                <nav aria-label="Page navigation example">
-
-                  <div class="my-2 text-right">
-                    <pagination-controls  id="foo" (pageChange)="currentPage = $event"></pagination-controls>
-                </div>
-
-                  </nav>
-
             </div>
 
         </div>
+
+        <nav aria-label="Page navigation example">
+
+          <div class="my-2 text-right">
+            <pagination-controls  id="foo" (pageChange)="currentPage = $event"></pagination-controls>
+        </div>
+
+          </nav>
+        </div>
       </div>
+
+       
+
+          
+           
+
+      
 
        <!-- Edit Model-->
        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -257,7 +246,6 @@
               </div>
           </div>
       </div>
-  </div>
   </div>
 
 

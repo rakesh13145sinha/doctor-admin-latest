@@ -24,12 +24,12 @@
 <div class="container card">
     <form [formGroup]="hospitaltourimg" (ngSubmit)="ImageUploadSumit()">
         <h6>Hospital Photos and Videos</h6>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row" style="display: flex;">
+            <div class="col-md-8">
                 <input type="file" class="form-control" name="image" formControlName="himage"  (change)="imageupload($event)" multiple>
 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
             </div>
         </div>
@@ -200,14 +200,25 @@
                       <label for="">No of OT</label>
                       <input type="number" class="form-control" formControlName="no_of_OT">
                   </div>
+                  <div class="col-md-3">
+                    <label for="">ICU </label>
+                    <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
+                </div>
+                <div class="col-md-3">
+                    <label for="">NICUC </label>
+                    <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
+                </div>
+                <div class="col-md-3">
+                    <label for="">PICU </label>
+                    <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
+                </div>
+                <div class="col-md-3">
+                    <label for="">Location</label>  
+                    <input type="text" class="form-control" formControlName="location">
+                  </div>
               </div>
 
-            <div class="row">
-                <div class="col-md-3">
-                  <label for="">Location</label>  
-                  <input type="text" class="form-control" formControlName="location">
-                </div>
-            </div>
+           
 
        
 
