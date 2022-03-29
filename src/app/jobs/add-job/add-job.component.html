@@ -25,45 +25,7 @@
 <div class="container card" >
     
     <form [formGroup]="jobform" (ngSubmit)="AddJobs()">
-<<<<<<< HEAD
-       
-       
-        <h6>Job Details</h6>
-=======
-        <h6>Hospital Details</h6>
-        <div class="row">
-            <div class="col-md-4">
-            <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" id="hospitalname" formControlName="hospitalname" placeholder="Hospital Name">
-            <div *ngIf="formSubmitted && jobform.get('hospitalname').hasError('required')">
-                <span style="color:red">*Hospital Name required</span>   
-            </div>
-        
-        
-        </div>
-                   
-            
-            <div class="col-md-4">
-                <label for="">Hospital Type</label>
-                <select  class="form-control" id="hospitaltype" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
-                    <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
-                    
-                </select>
-                <ng-template #elseHospital>
-                    <input type="text" class="form-control" (click)="hospital_type($event)"  formControlName="hospitaltype" placeholder="Enter hospital Type">
-                </ng-template>
-
-                <div *ngIf="formSubmitted && jobform.get('hospitaltype').hasError('required')">
-                    <span style="color:red">*Hospital Type selection required</span>   
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-                <input class="form-control" type="file" multiple  (change)="imageupload($event)">
-                          
-            </div>
->>>>>>> 003fd77b4db6a69624437f3d24bb28880319e9a4
+<
 
         <div class="row">
             <div class="col-md-4">
