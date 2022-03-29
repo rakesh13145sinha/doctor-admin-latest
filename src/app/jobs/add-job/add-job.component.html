@@ -125,15 +125,7 @@
             </div>
            
 
-            <div class="col-md-4">
-                <label for="">Active/Inactive</label>
-                <select  class="form-control" formControlName="status">
-                    <option value="true" >Active</option>
-                    <option value="false" >InActive</option>
-                    
-                </select>
-                
-            </div>
+          
         </div>
        
         <h6>Basic Details</h6>
@@ -165,7 +157,7 @@
             </div>
 
             <div class="col-md-4">
-                <label for="">Level</label>
+                <label for="">Level(Optional)</label>
                 <select class="form-control" formControlName="">
                     <option value="">Junior Level</option>
                     <option value="">Senior Level</option>
@@ -274,35 +266,8 @@
         </div>
         <h6>Additional Details</h6>
         <div class="row">
-            <div class="col-md-4">
-                <label for="">Total Beds</label>
-                <input type="text"  class="form-control" id="totalbed" formControlName="totalbed" placeholder="Total Bed in Hospital">
-                <div *ngIf="formSubmitted && jobform.get('totalbed').hasError('required')">
-                    <span style="color:red">* Total Beds required</span>   
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label for="">ICU </label>
-                <input type="text"  class="form-control" id="icu" formControlName="icu" placeholder="Number of ICU">
-                <div *ngIf="formSubmitted && jobform.get('icu').hasError('required')">
-                    <span style="color:red">* ICU required field</span>   
-                </div>
+           
             
-            </div>
-            <div class="col-md-4">
-                <label for="">NICUC </label>
-                <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
-                <div *ngIf="formSubmitted && jobform.get('nicuc').hasError('required')">
-                    <span style="color:red">* NICUC required field</span>   
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label for="">PICU </label>
-                <input type="text"  class="form-control" id="picu" formControlName="picu" placeholder="Number of PICU">
-                <div *ngIf="formSubmitted && jobform.get('picu').hasError('required')">
-                    <span style="color:red">* PICU  required field</span>   
-                </div>
-            </div>
             <div class="col-md-4">
                 <label for=""> HR Contact</label>
                 <input type="text"  class="form-control" id="hrcontact" formControlName="hrcontact" placeholder="Enter 10 digit mobile number of HR">

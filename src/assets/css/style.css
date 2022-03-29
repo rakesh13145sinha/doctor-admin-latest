@@ -1168,10 +1168,18 @@ dt {
   display: none !important;
 }
 
+.enlarged #wrapper #sidebar-menu .mm-collapse.mm-show {
+  display: none;
+}
+
+.enlarged #wrapper #sidebar-menu .nav.mm-collapse {
+  height: inherit !important;
+}
+
 .enlarged #wrapper #sidebar-menu ul ul {
   padding-bottom: 5px;
   padding-top: 5px;
-  background-color: #222437;
+  background-color: #0d9488;
 }
 
 .enlarged #wrapper .left.side-menu {
@@ -1188,8 +1196,8 @@ dt {
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li:hover > a {
   position: relative;
   width: 260px;
-  color: #f6f6f6;
-  background-color: #2e304a;
+  color: #000;
+  background-color: #0d9488;
   z-index: 1;
 }
 
@@ -1227,7 +1235,6 @@ dt {
   position: relative;
   width: 190px;
   z-index: 6;
-  color: #fff;
 }
 
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li:hover > ul a:hover {
@@ -1248,7 +1255,7 @@ dt {
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:active,
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:focus {
   color: #f6f6f6;
-  background-color: #2e304a;
+  background-color: #0d9488;
 }
 
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a i {
@@ -1424,127 +1431,6 @@ dt {
   color: rgba(165, 166, 173, 0.7);
 }
 
-/******* menu light *******/
-.left-side-menu-light .side-menu {
-  background-color: #ffffff;
-}
-
-.left-side-menu-light #sidebar-menu > ul > li > a.mm-active {
-  color: #4090cb !important;
-  background-color: #f9f9f9;
-  -webkit-box-shadow: 0px 1px 1px 0px rgba(43, 46, 49, 0.07);
-  box-shadow: 0px 1px 1px 0px rgba(43, 46, 49, 0.07);
-}
-
-.left-side-menu-light #sidebar-menu > ul > li > a:hover,
-.left-side-menu-light #sidebar-menu > ul > li > a:focus,
-.left-side-menu-light #sidebar-menu > ul > li > a:active {
-  color: #4090cb;
-}
-
-.left-side-menu-light #sidebar-menu > ul > li > a.waves-effect .waves-ripple {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.left-side-menu-light #sidebar-menu > ul > li > a .badge-light {
-  background-color: #4f46e5;
-  color: #ffffff;
-}
-
-.left-side-menu-light #sidebar-menu .submenu li a:hover {
-  background-color: #ffffff;
-  color: #4090cb;
-}
-
-.left-side-menu-light.enlarged #sidebar-menu > ul > li:hover > a {
-  color: #4090cb !important;
-  background-color: #f9f9f9 !important;
-}
-
-.left-side-menu-light.enlarged #sidebar-menu > ul > li:hover > ul a:hover {
-  color: #4090cb !important;
-}
-
-.left-side-menu-light.enlarged #sidebar-menu > ul > li > a:hover,
-.left-side-menu-light.enlarged #sidebar-menu > ul > li > a:active,
-.left-side-menu-light.enlarged #sidebar-menu > ul > li > a:focus {
-  color: #4090cb !important;
-}
-
-.left-side-menu-light.enlarged #sidebar-menu ul ul {
-  background-color: #ffffff !important;
-  -webkit-box-shadow: 0px 0px 13px 0px rgba(236, 236, 241, 0.44);
-  box-shadow: 0px 0px 13px 0px rgba(236, 236, 241, 0.44);
-}
-
-.left-side-menu-light .navbar-custom {
-  background-color: #383c40;
-}
-
-.left-side-menu-light .navbar-custom .button-menu-mobile {
-  color: #e9ecef;
-  background-color: #383c40;
-}
-
-.left-side-menu-light .navbar-custom .btn-light {
-  background-color: #42464b !important;
-  border-color: #42464b !important;
-  color: #ced4da !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-.left-side-menu-light .navbar-custom .notification-list .nav-link {
-  color: #ced4da;
-}
-
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control::-webkit-input-placeholder {
-  color: #ced4da;
-}
-
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control:-ms-input-placeholder {
-  color: #ced4da;
-}
-
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control::-ms-input-placeholder {
-  color: #ced4da;
-}
-
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control::placeholder {
-  color: #ced4da;
-}
-
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control,
-.left-side-menu-light
-  .navbar-custom
-  .notification-list
-  .app-search
-  .form-control:focus {
-  border: 1px solid #42464b;
-  background: #42464b;
-  color: #ced4da;
-}
-
 @media (max-width: 576px) {
   .page-title-box .breadcrumb {
     display: none;
@@ -1561,33 +1447,6 @@ dt {
   .notify-details {
     margin-left: 0px !important;
   }
-}
-
-/* ==============
-  Alertify
-===================*/
-.alertify,
-.alertify-logs {
-  z-index: 99;
-}
-
-.alertify input {
-  border: 2px solid #7d7e87;
-}
-
-.alertify-logs > .success {
-  background-color: #02c58d;
-  color: #ffffff;
-}
-
-.alertify-logs > .error {
-  background-color: #fc5454;
-  color: #ffffff;
-}
-
-.alertify-logs > *,
-.alertify-logs > .default {
-  background-color: #4f46e5;
 }
 
 /* =============
