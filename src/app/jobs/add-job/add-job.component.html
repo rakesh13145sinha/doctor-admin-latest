@@ -29,19 +29,28 @@
         <div class="row">
             <div class="col-md-4">
             <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
+            <input type="text"  class="form-control" id="hospitalname" formControlName="hospitalname" placeholder="Hospital Name">
+            <div *ngIf="formSubmitted && jobform.get('hospitalname').hasError('required')">
+                <span style="color:red">*Hospital Name required</span>   
             </div>
-          
+        
+        
+        </div>
+                   
             
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select  class="form-control" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
+                <select  class="form-control" id="hospitaltype" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
                     <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
                     
                 </select>
                 <ng-template #elseHospital>
                     <input type="text" class="form-control" (click)="hospital_type($event)"  formControlName="hospitaltype" placeholder="Enter hospital Type">
                 </ng-template>
+
+                <div *ngIf="formSubmitted && jobform.get('hospitaltype').hasError('required')">
+                    <span style="color:red">*Hospital Type selection required</span>   
+                </div>
             </div>
             
             <div class="col-md-4">
@@ -61,6 +70,9 @@
                     <option value="{{category.title}}"  *ngFor="let category of categories" >{{category.title}}</option>
                     
                 </select>
+                <div *ngIf="formSubmitted && jobform.get('category').hasError('required')">
+                    <span style="color:red">*category field required</span>   
+                </div>
             </div>
 
 
@@ -70,20 +82,21 @@
                 <select  class="form-control" formControlName="depatment">
                     <option value="{{dep.department}}" *ngFor="let dep of departments">{{dep.department}}</option>
                 </select>
-               <!-- <ng-template #elseDep>
-                    <select  class="form-control">
-                        <option>Update Soon</option>
-                    </select>
-
-                </ng-template>-->
+                <div *ngIf="formSubmitted && jobform.get('depatment').hasError('required')">
+                    <span style="color:red">*Speciality/Department field required</span>   
+                </div>
             </div>
            
             <div class="col-md-4">
                 <label for="">Designation</label>
-                <select  class="form-control" formControlName="designation">
+                <select  class="form-control" id="designation" formControlName="designation">
                     
                     <option value="{{dis.designation}}" *ngFor="let dis of designations">{{dis.designation}}</option>
                 </select>
+
+                <div *ngIf="formSubmitted && jobform.get('designation').hasError('required')">
+                    <span style="color:red">*Designation field required</span>   
+                </div>
             </div>
             
            
@@ -128,21 +141,27 @@
         <div class="row">
             <div class="col-md-4">
             <label for="">Roles and Responsibilities</label>
-            <input type="text"  class="form-control" formControlName="discription" placeholder="About jobs">
-
+            <input type="text"  class="form-control" id="discription" formControlName="discription" placeholder="About jobs">
+            <div *ngIf="formSubmitted && jobform.get('discription').hasError('required')">
+                <span style="color:red">*Roles and Responsibilities required</span>   
+            </div>
             
 
             </div>
             <div class="col-md-4">
             <label for="">Working Days </label>
-            <input type="text"  class="form-control" formControlName="days" placeholder="Working days">
-
+            <input type="text"  class="form-control" id="days" formControlName="days" placeholder="Working days">
+            <div *ngIf="formSubmitted && jobform.get('days').hasError('required')">
+                <span style="color:red">* Working Days required</span>   
+            </div>
             </div>
 
             <div class="col-md-4">
             <label for="">Working Hours</label>
-            <input type="text"  class="form-control" formControlName="hours" placeholder="Duration of Work in one day">
-
+            <input type="text"  class="form-control" id="hours" formControlName="hours" placeholder="Duration of Work in one day">
+            <div *ngIf="formSubmitted && jobform.get('hours').hasError('required')">
+                <span style="color:red">* Working Hours required</span>   
+            </div>
             </div>
 
             <div class="col-md-4">
@@ -182,19 +201,17 @@
             <div class="col-md-4">
                 <label for="">Experince</label>
                 
-                <input type="text"  class="form-control" formControlName="experince" placeholder="Experince">
-                
+                <input type="text"  class="form-control" id="experince" formControlName="experince" placeholder="Experince">
+                <div *ngIf="formSubmitted && jobform.get('experince').hasError('required')">
+                    <span style="color:red">* Experince required</span>   
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="">Gender</label>
-                
-                
                 <select  class="form-control" formControlName="gender">
                     <option value="Male">MALE</option>
                     <option value="Female">FEMALE</option>
                     <option value="Male/Female">MALE/FEMALE</option>
-
-                   
                 </select>
             </div>
           
@@ -216,15 +233,17 @@
                 <label for="">Accomodation</label>
                 <select  class="form-control" formControlName="accomodation">
                     <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value="No" selected>No</option>
                     
                 </select>
             </div>
 
             <div class="col-md-4">
             <label for="">Salary</label>
-            <input type="text"  class="form-control" formControlName="salary">
-
+            <input type="text"  class="form-control" id="salary" formControlName="salary">
+            <div *ngIf="formSubmitted && jobform.get('salary').hasError('required')">
+                <span style="color:red">* Salary required</span>   
+            </div>
             </div>
 
 
@@ -233,14 +252,22 @@
             <div class="col-md-4">
                 <label for="">Salary Duration</label>
                 <select class="form-control" formControlName="duration">
-                    <option value="Monthly">Monthly</option>
+                    <option value="Monthly" selected>Monthly</option>
                     <option value="Anual">Yearly</option>
+
+                    <div *ngIf="formSubmitted && jobform.get('duration').hasError('required')">
+                        <span style="color:red">* Salary Duration required</span>   
+                    </div>
                    
                 </select>
             </div>
                 <div class="col-md-4">
                     <label for="">Vacancy</label>
-                    <input type="number"  class="form-control" formControlName="vacancy">
+                    <input type="number"  class="form-control" id="vacancy" formControlName="vacancy">
+                    
+                    <div *ngIf="formSubmitted && jobform.get('vacancy').hasError('required')">
+                        <span style="color:red">* Vacancys required</span>   
+                    </div>
                  </div>
         
     
@@ -249,27 +276,46 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Total Beds</label>
-                <input type="text"  class="form-control" formControlName="totalbed" placeholder="Total Bed in Hospital">
+                <input type="text"  class="form-control" id="totalbed" formControlName="totalbed" placeholder="Total Bed in Hospital">
+                <div *ngIf="formSubmitted && jobform.get('totalbed').hasError('required')">
+                    <span style="color:red">* Total Beds required</span>   
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="">ICU </label>
-                <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
+                <input type="text"  class="form-control" id="icu" formControlName="icu" placeholder="Number of ICU">
+                <div *ngIf="formSubmitted && jobform.get('icu').hasError('required')">
+                    <span style="color:red">* ICU required field</span>   
+                </div>
+            
             </div>
             <div class="col-md-4">
                 <label for="">NICUC </label>
                 <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
+                <div *ngIf="formSubmitted && jobform.get('nicuc').hasError('required')">
+                    <span style="color:red">* NICUC required field</span>   
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="">PICU </label>
-                <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
+                <input type="text"  class="form-control" id="picu" formControlName="picu" placeholder="Number of PICU">
+                <div *ngIf="formSubmitted && jobform.get('picu').hasError('required')">
+                    <span style="color:red">* PICU  required field</span>   
+                </div>
             </div>
             <div class="col-md-4">
                 <label for=""> HR Contact</label>
-                <input type="text"  class="form-control" formControlName="hrcontact" placeholder="Enter 10 digit mobile number of HR">
+                <input type="text"  class="form-control" id="hrcontact" formControlName="hrcontact" placeholder="Enter 10 digit mobile number of HR">
+                <div *ngIf="formSubmitted && jobform.get('hrcontact').hasError('required')">
+                    <span style="color:red">*  HR Contact required field</span>   
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="">Social Contact </label>
-                <input type="text"  class="form-control" formControlName="socialcontact" placeholder="Share linkdn profile link">
+                <input type="text"  class="form-control" id="socialcontact" formControlName="socialcontact" placeholder="Share linkdn profile link">
+                <div *ngIf="formSubmitted && jobform.get('socialcontact').hasError('required')">
+                    <span style="color:red">* Social Contact required field</span>   
+                </div>
             </div>
         </div>
 

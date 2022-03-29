@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder } from '@angular/forms';
-import { delay } from 'rxjs/operators';
+
 @Component({
   selector: 'app-hospital-tour',
   templateUrl: './hospital-tour.component.html',
@@ -64,13 +64,10 @@ export class HospitalTourComponent implements OnInit {
 
   ngOnInit(): void {
     
-  this.hospital_tour_image()
-  this.Highlight()
-  this.HospitalSpecialities()
-   
-   
-
-  }
+      this.hospital_tour_image()
+      this.Highlight()
+      this.HospitalSpecialities()
+                }
 
 
 
@@ -139,6 +136,17 @@ hospital_tour_image(){
     
   }
 
+  ///delete hospital toure image
+  deletehospitaltourimage(id:any){
+    alert("this is delete")
+    // this.admin.Hospitaltourimagedelete(id).subscribe(
+    //   (r)=>{
+    //     console.log(r)
+    //     this.toastr.success("Hospital tour image deleted successfull")
+    //     this.hospital_tour_image()
+    //   }
+    // )
+  }
 
   ///HOSPITAL HIGHLIGHT 
 
@@ -163,6 +171,18 @@ hospital_tour_image(){
 
   }
 
+  ///delete hospital highlights delete
+
+  hospitalhighdelete(id:any){
+    console.log("hospital highlights")
+    // this.admin.Hospitaltourighlightsdelete(id).subscribe(
+    //   (r)=>{
+    //     console.log(r)
+    //     this.toastr.success("Highlighs deleted successfull")
+    //   }
+    // )
+  }
+
   ///HOSPITAL SPECIALITY
   hospitalSpecialityImage(event:any){
     this.SpecialityImage=<File>event.target.files[0]
@@ -185,6 +205,12 @@ hospital_tour_image(){
       }
     )
 
+  }
+
+  ///delete hospital specialiry delete
+
+  hospitalSpecialitydelete(id:any){
+    alert("want to delete")
   }
 
   HospitalInfo(){

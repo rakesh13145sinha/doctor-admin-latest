@@ -44,10 +44,10 @@
     <div class="row">
         
       <div class="highlights" *ngFor="let s of hospitaltourimage">
-          <img src="{{image_url}}{{s.image}}" alt="">
+          <img src="{{image_url}}{{s.image}}" alt="image">
           <div class="highlight-action">
               
-             <button class="remove" routerLink="/admin/hospital/speciality/{{s.jobid}}"> Remove</button>
+             <button class="remove" (click)="deletehospitaltourimage(s.id)"> Remove</button>
             
           </div>
       </div>
@@ -124,18 +124,14 @@
                 <img src="{{image_url}}{{h.image}}" alt="image">
                 <div class="highlight-action">
                     <div class="highlight-title">{{h.title}}</div>
-                   <button class="remove" routerLink="/admin/hospital/highlight/{{h.jobid}}"> Remove</button>
+                    <button class="remove" (click)="hospitalhighdelete(h.id)"> Remove</button>
                   
                 </div>
             </div>
             
-           
-        
-      
-        
         </div>
     
-     
+        
         <h6>Speciality</h6>
         <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
 
@@ -174,7 +170,7 @@
                 <img src="{{image_url}}{{s.image}}" alt="">
                 <div class="highlight-action">
                     <div class="highlight-title">{{s.title}}</div>
-                   <button class="remove" routerLink="/admin/hospital/speciality/{{s.jobid}}"> Remove</button>
+                   <button class="remove" (click)="hospitalSpecialitydelete(s.id)"> Remove</button>
                   
                 </div>
             </div>

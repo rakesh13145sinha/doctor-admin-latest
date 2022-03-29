@@ -3,7 +3,7 @@ import { SuperuserService } from 'src/app/superuser.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl} from '@angular/forms';
-import { delay } from 'rxjs';
+
 @Component({
   selector: 'app-add-job',
   templateUrl: './add-job.component.html',
@@ -29,35 +29,36 @@ export class AddJobComponent implements OnInit {
   edu:any[]=[];
   CatName:any;
   typeofhospital:boolean=true
+  formSubmitted:boolean=false
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
     this.jobform=fb.group({
-                            hospitalname:[""],
+                            hospitalname:["",[Validators.required]],
                             hospitaltype:["",[Validators.required]],
-                            category:[""],
-                            depatment:[""],
-                            designation:[""],
-                            discription:[""],
-                            qualifcation:[""],
-                            state:[""],
-                            city:[""],
-                            qualification:[""],
-                            days:[""],
-                            hours:[""],
-                            jobtype:[""],
-                            accomodation:[""],
-                            salary:[""],
-                            duration:[""],
-                            vacancy:[""],
-                            totalbed:[""],
-                            icu:[""],
-                            nicuc:[""],
-                            picu:[""],
-                            hrcontact:[""],
-                            socialcontact:[""],
-                            experince:[""],
-                            gender:[""],
-                            status:[""]
+                            category:["",[Validators.required]],
+                            depatment:["",[Validators.required]],
+                            designation:["",[Validators.required]],
+                            discription:["",[Validators.required]],
+                            qualifcation:["",[Validators.required]],
+                            state:["",[Validators.required]],
+                            city:["",[Validators.required]],
+                            qualification:["",[Validators.required]],
+                            days:["",[Validators.required]],
+                            hours:["",[Validators.required]],
+                            jobtype:["",[Validators.required]],
+                            accomodation:["",[Validators.required]],
+                            salary:["",[Validators.required]],
+                            duration:["",[Validators.required]],
+                            vacancy:["",[Validators.required]],
+                            totalbed:["",[Validators.required]],
+                            icu:["",[Validators.required]],
+                            nicuc:["",[Validators.required]],
+                            picu:["",[Validators.required]],
+                            hrcontact:["",[Validators.required]],
+                            socialcontact:["",[Validators.required]],
+                            experince:["",[Validators.required]],
+                            gender:["",[Validators.required]],
+                            status:["",[Validators.required]]
 
                            })
 
@@ -268,40 +269,49 @@ AddJobs(){
   console.log(this.jobform.value.experince)
   console.log(this.jobform.value.gender)
   var formData=new FormData();
-  formData.append("category",this.jobform.value.category)
-  formData.append("Speciality",this.jobform.value.depatment)
-  formData.append("designation",this.jobform.value.designation)
-  formData.append("hosptial_name",this.jobform.value.hospitalname)
-  formData.append("hospitail_image",this.image,this.image.name)
-  formData.append("state",this.jobform.value.state)
-  formData.append("location",this.jobform.value.city)
-  formData.append("salary",this.jobform.value.salary)
-  formData.append("monthly_or_anual",this.jobform.value.duration)
-  formData.append("vacancy",this.jobform.value.vacancy)
-  formData.append("working_hours",this.jobform.value.hours)
-  formData.append("qualification",Array.from(this.qua).join(','))
-  formData.append("working_day",this.jobform.value.days)
-  formData.append("discription",this.jobform.value.discription)
-  formData.append("accommodation",this.jobform.value.accomodation)
-  formData.append("hospital_type",this.jobform.value.hospitaltype)
-  formData.append("job_type",this.jobform.value.jobtype)
-  formData.append("total_bed",this.jobform.value.totalbed)
-  formData.append("icu",this.jobform.value.icu)
-  formData.append("nicuc",this.jobform.value.nicuc)
-  formData.append("picu",this.jobform.value.picu)
-  formData.append("hr_contact",this.jobform.value.hrcontact)
-  formData.append("social_contact",this.jobform.value.socialcontact)
-  formData.append("experince",this.jobform.value.experince)
-  formData.append("gender",this.jobform.value.gender)
-  formData.append("job_status",this.jobform.value.status)
-  this.admin.CreateJobs(this.jobform.value.category,formData).subscribe(
-    (r)=>{
-      console.log(r)
-      this.toastr.success("Job Posted successfull")
-      this.jobform.reset()
+  if (this.jobform.valid)
     
+    {
+      console.log("=========================")
+      formData.append("category",this.jobform.value.category)
+      formData.append("Speciality",this.jobform.value.depatment)
+      formData.append("designation",this.jobform.value.designation)
+      formData.append("hosptial_name",this.jobform.value.hospitalname)
+      formData.append("hospitail_image",this.image,this.image.name)
+      formData.append("state",this.jobform.value.state)
+      formData.append("location",this.jobform.value.city)
+      formData.append("salary",this.jobform.value.salary)
+      formData.append("monthly_or_anual",this.jobform.value.duration)
+      formData.append("vacancy",this.jobform.value.vacancy)
+      formData.append("working_hours",this.jobform.value.hours)
+      formData.append("qualification",Array.from(this.qua).join(','))
+      formData.append("working_day",this.jobform.value.days)
+      formData.append("discription",this.jobform.value.discription)
+      formData.append("accommodation",this.jobform.value.accomodation)
+      formData.append("hospital_type",this.jobform.value.hospitaltype)
+      formData.append("job_type",this.jobform.value.jobtype)
+      formData.append("total_bed",this.jobform.value.totalbed)
+      formData.append("icu",this.jobform.value.icu)
+      formData.append("nicuc",this.jobform.value.nicuc)
+      formData.append("picu",this.jobform.value.picu)
+      formData.append("hr_contact",this.jobform.value.hrcontact)
+      formData.append("social_contact",this.jobform.value.socialcontact)
+      formData.append("experince",this.jobform.value.experince)
+      formData.append("gender",this.jobform.value.gender)
+      formData.append("job_status",this.jobform.value.status)
+      this.admin.CreateJobs(this.jobform.value.category,formData).subscribe(
+        (r)=>{
+          console.log(r)
+          this.toastr.success("Job Posted successfull")
+          this.jobform.reset()
+        
+        }
+      )
     }
-  )
+  else{
+    this.formSubmitted=true
+  }
+  
   
 
 

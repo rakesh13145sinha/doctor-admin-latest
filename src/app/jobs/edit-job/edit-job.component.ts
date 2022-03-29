@@ -14,7 +14,7 @@ export class EditJobComponent implements OnInit {
   qualification = new FormControl();
 
   qualificationList: string[] = [ ]; 
-  
+  selected="MBBS"
   id:any;
   job:any;
   image!:File
@@ -49,6 +49,7 @@ export class EditJobComponent implements OnInit {
     this.states()
     this.city()
     this.education()
+    
   }
 //SINGLE JOB
 SingleJob(){
@@ -205,18 +206,19 @@ chooice(event:any){
 }  
 
 ///SELECTED QUALIFICATION ADD IN SET
-selected(data:any){
+select(data:any){
   
-  console.log(data)
+  //console.log(data)
+  console.log(this.job.qualification.split(","))
   if (this.qua.has(data) )
     {
         this.qua.delete(data)
-        console.log(this.qua)
+        // console.log(this.qua)
         console.log(Array.from(this.qua).join(','))
     }
   else{
     this.qua.add(data)
-    console.log(this.qua)
+    //console.log(this.qua)
     console.log(Array.from(this.qua).join(','))
   }
 }
