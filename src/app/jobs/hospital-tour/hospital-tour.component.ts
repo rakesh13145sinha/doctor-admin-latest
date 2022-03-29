@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder } from '@angular/forms';
-import { delay } from 'rxjs/operators';
+
 @Component({
   selector: 'app-hospital-tour',
   templateUrl: './hospital-tour.component.html',
@@ -64,13 +64,10 @@ export class HospitalTourComponent implements OnInit {
 
   ngOnInit(): void {
     
-  this.hospital_tour_image()
-  this.Highlight()
-  this.HospitalSpecialities()
-   
-   
-
-  }
+      this.hospital_tour_image()
+      this.Highlight()
+      this.HospitalSpecialities()
+                }
 
 
 
@@ -139,6 +136,25 @@ hospital_tour_image(){
     
   }
 
+  ///delete hospital toure image
+  deletehospitaltourimage(id:any){
+     var con=confirm("Confirm remove this record");
+    if (con){
+
+          this.admin.Hospitaltourimagedelete(id).subscribe(
+          (r)=>{
+            console.log(r)
+            this.toastr.error("Hospital tour image deleted successfull")
+            this.hospital_tour_image()
+          }
+        )
+      
+    }
+    else{
+      this.hospital_tour_image()
+    }
+    
+  }
 
   ///HOSPITAL HIGHLIGHT 
 
@@ -163,6 +179,27 @@ hospital_tour_image(){
 
   }
 
+  ///delete hospital highlights delete
+
+  hospitalhighdelete(id:any){
+      var con =confirm("Sour you want to remove this record")
+      if (con){
+
+          this.admin.Hospitaltourighlightsdelete(id).subscribe(
+            (r)=>{
+              
+              this.toastr.error("Highlighs deleted successfull")
+              this.Highlight()
+            }
+          )
+
+      }
+      else{
+        this.Highlight()
+      }
+    
+  }
+
   ///HOSPITAL SPECIALITY
   hospitalSpecialityImage(event:any){
     this.SpecialityImage=<File>event.target.files[0]
@@ -185,6 +222,30 @@ hospital_tour_image(){
       }
     )
 
+  }
+
+  ///delete hospital specialiry delete
+
+  hosSpecialitydelete(id:any){
+    var con =confirm("Are you sure remove this record!")
+    if (con){
+
+      this.admin.HospitalSpecialitydelete(id).subscribe(
+        (r)=>{
+          console.log(r)
+          
+          this.toastr.error("Hospital tour Speciality deleted successfull")
+          this.HospitalSpecialities()
+         
+          
+        }
+      )
+
+    }
+    else{
+
+      this.HospitalSpecialities()
+    }
   }
 
   HospitalInfo(){
