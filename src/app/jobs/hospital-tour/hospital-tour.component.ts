@@ -138,14 +138,22 @@ hospital_tour_image(){
 
   ///delete hospital toure image
   deletehospitaltourimage(id:any){
-    alert("this is delete")
-    // this.admin.Hospitaltourimagedelete(id).subscribe(
-    //   (r)=>{
-    //     console.log(r)
-    //     this.toastr.success("Hospital tour image deleted successfull")
-    //     this.hospital_tour_image()
-    //   }
-    // )
+     var con=confirm("Confirm remove this record");
+    if (con){
+
+          this.admin.Hospitaltourimagedelete(id).subscribe(
+          (r)=>{
+            console.log(r)
+            this.toastr.error("Hospital tour image deleted successfull")
+            this.hospital_tour_image()
+          }
+        )
+      
+    }
+    else{
+      this.hospital_tour_image()
+    }
+    
   }
 
   ///HOSPITAL HIGHLIGHT 
@@ -174,13 +182,22 @@ hospital_tour_image(){
   ///delete hospital highlights delete
 
   hospitalhighdelete(id:any){
-    console.log("hospital highlights")
-    // this.admin.Hospitaltourighlightsdelete(id).subscribe(
-    //   (r)=>{
-    //     console.log(r)
-    //     this.toastr.success("Highlighs deleted successfull")
-    //   }
-    // )
+      var con =confirm("Sour you want to remove this record")
+      if (con){
+
+          this.admin.Hospitaltourighlightsdelete(id).subscribe(
+            (r)=>{
+              
+              this.toastr.error("Highlighs deleted successfull")
+              this.Highlight()
+            }
+          )
+
+      }
+      else{
+        this.Highlight()
+      }
+    
   }
 
   ///HOSPITAL SPECIALITY
@@ -209,8 +226,26 @@ hospital_tour_image(){
 
   ///delete hospital specialiry delete
 
-  hospitalSpecialitydelete(id:any){
-    alert("want to delete")
+  hosSpecialitydelete(id:any){
+    var con =confirm("Are you sure remove this record!")
+    if (con){
+
+      this.admin.HospitalSpecialitydelete(id).subscribe(
+        (r)=>{
+          console.log(r)
+          
+          this.toastr.error("Hospital tour Speciality deleted successfull")
+          this.HospitalSpecialities()
+         
+          
+        }
+      )
+
+    }
+    else{
+
+      this.HospitalSpecialities()
+    }
   }
 
   HospitalInfo(){

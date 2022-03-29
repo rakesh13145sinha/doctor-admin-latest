@@ -19,7 +19,7 @@ label {
 form h6 {
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #4f46e5;
+  /* color: #4f46e5; */
 }
 
 .submit_form {
@@ -37,7 +37,7 @@ form {
   padding: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
-  width: 200px;
+  /* width: 200px; */
   height: 70px;
   margin: 10px;
   flex-wrap: wrap;
