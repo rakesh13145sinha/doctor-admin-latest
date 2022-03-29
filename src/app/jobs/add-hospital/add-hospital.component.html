@@ -2,7 +2,7 @@
     <div class="page-title-box">
         <div class="row align-items-center">
             <div class="col-sm-6">
-                <h4 class="page-title">Hospital Info</h4>
+                <h4 class="page-title">Add Hospital</h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
@@ -13,7 +13,7 @@
                     <li><i class='bx bx-chevron-right'></i></li>
 
 
-                    <li class="breadcrumb-item">Hospital Info</li>
+                    <li class="breadcrumb-item">Add Hospital</li>
                 </ol>
             </div>
         </div>
@@ -22,11 +22,11 @@
 
 
 <div class="container card">
-    <form [formGroup]="hospitaltourimg" (ngSubmit)="ImageUploadSumit()">
+    <form>
         <h6>Hospital Photos and Videos</h6>
         <div class="row" style="display: flex;">
             <div class="col-md-8">
-                <input type="file" class="form-control" name="image" formControlName="himage"  (change)="imageupload($event)" multiple>
+                <input type="file" class="form-control" name="image" formControlName="himage"   multiple>
 
             </div>
             <div class="col-md-4">
@@ -39,11 +39,11 @@
     <!--show hospital tour image-->
     <div class="row">
         
-      <div class="highlights" *ngFor="let s of hospitaltourimage">
-          <img src="{{image_url}}{{s.image}}" alt="">
+      <div class="highlights">
+          <img src="" alt="">
           <div class="highlight-action">
               
-             <button class="remove" routerLink="/admin/hospital/speciality/{{s.jobid}}"> Remove</button>
+             <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
             
           </div>
       </div>
@@ -52,7 +52,7 @@
      <!--this is for hospital highlight-->
 
 
-      <form [formGroup]="hospitalhighlight" (ngSubmit)="highlightupload()">
+      <form>
         <h6>Highlights</h6>
         <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
 
@@ -71,7 +71,7 @@
                   <label> Title</label>
                   <input type="text" class="form-control" formControlName="title">
                   <label>Upload Image</label>
-                  <input type="file" class="form-control" formControlName="highlightimage" (change)="highlightimg($event)">
+                  <input type="file" class="form-control" formControlName="highlightimage" >
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -116,11 +116,11 @@
 
         <div class="row">
         
-            <div class="highlights" *ngFor="let h of hospital_h_lights">
-                <img src="{{image_url}}{{h.image}}" alt="image">
+            <div class="highlights">
+                <img src="" alt="">
                 <div class="highlight-action">
-                    <div class="highlight-title">{{h.title}}</div>
-                   <button class="remove" routerLink="/admin/hospital/highlight/{{h.jobid}}"> Remove</button>
+                    <div class="highlight-title"></div>
+                   <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
                   
                 </div>
             </div>
@@ -134,7 +134,7 @@
      
        
          <!--Add Speciality Form-->
-         <form [formGroup]="Speciality" (ngSubmit)="Hospitalspiciality()">
+         <form>
             <h6>Speciality</h6>
             <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
     
@@ -152,7 +152,7 @@
                       <label> Title</label>
                       <input type="text" class="form-control" formControlName="title">
                       <label>Upload Image</label>
-                      <input type="file" class="form-control" formControlName="image" (change)="hospitalSpecialityImage($event)">
+                      <input type="file" class="form-control" formControlName="image">
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -167,11 +167,11 @@
 
         <div class="row">
         
-            <div class="highlights" *ngFor="let s of Specialityget">
-                <img src="{{image_url}}{{s.image}}" alt="">
+            <div class="highlights" >
+                <img src="" alt="">
                 <div class="highlight-action">
-                    <div class="highlight-title">{{s.title}}</div>
-                   <button class="remove" routerLink="/admin/hospital/speciality/{{s.jobid}}"> Remove</button>
+                    <div class="highlight-title"></div>
+                   <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
                   
                 </div>
             </div>
@@ -182,7 +182,7 @@
 
 
         <h6>Hospital Information</h6>
-        <form [formGroup]="Hospitalinfo" (ngSubmit)="HospitalInfo()">
+        <form>
             <div class="row">
                   <div class="col-md-3">
                       <label for="">No. of Speciality</label>

@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
 import { TourRequestsComponent } from './tour-requests/tour-requests.component';
+import { HospitalListComponent } from './hospital-list/hospital-list.component';
+import { AddHospitalComponent } from './add-hospital/add-hospital.component';
+import { EditHospitalComponent } from './edit-hospital/edit-hospital.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { TourRequestsComponent } from './tour-requests/tour-requests.component';
     EditJobComponent,
     ViewJobComponent,
     HospitalTourComponent,
-    TourRequestsComponent
+    TourRequestsComponent,
+    HospitalListComponent,
+    AddHospitalComponent,
+    EditHospitalComponent
 
   ],
   imports: [

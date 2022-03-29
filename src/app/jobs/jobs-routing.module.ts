@@ -1,3 +1,6 @@
+import { EditHospitalComponent } from './edit-hospital/edit-hospital.component';
+import { AddHospitalComponent } from './add-hospital/add-hospital.component';
+import { HospitalListComponent } from './hospital-list/hospital-list.component';
 import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 import { HospitalTourComponent } from './hospital-tour/hospital-tour.component';
 import { ViewJobComponent } from './../jobs/view-job/view-job.component';
@@ -17,8 +20,16 @@ const routes: Routes = [
   {path:"add-job",component:AddJobComponent},
   {path:"edit-job/:id",component:EditJobComponent},
   {path:"view-job/:id",component:ViewJobComponent},
-  {path:"hospital-tour/:id",component:HospitalTourComponent},
   {path:"tour-requests",component:TourRequestsComponent},
+  {path:"hospital-list",component:HospitalListComponent},
+  {path:"hospital-tour/:id",component:HospitalTourComponent},
+  {path:"add-hospital",component:AddHospitalComponent},
+  {path:"edit-hospital",component:EditHospitalComponent},
+
+
+  
+
+
 
 
 

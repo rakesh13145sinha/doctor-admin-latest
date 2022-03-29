@@ -21,6 +21,7 @@
 
 .question {
   /* position: relative; */
+  border-radius: 5px;
   background: #fff;
   margin: 0;
   padding: 10px 10px 10px 10px;
