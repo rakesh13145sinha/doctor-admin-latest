@@ -200,19 +200,21 @@
         <div class="row">
             <div class="col-md-4">
             <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
+            <input type="text"  class="form-control" (keyup)="hospitals($event)"  placeholder="Hospital Name">
+            
+            <select  formControlName="hospitalname" (click)="selecthospital($event)">
+                <option value="{{h.name}}/{{h.location}}" *ngFor="let h of hospital">{{h.name}}/{{h.location}}</option>
+                
+            </select>
+               
+            
             </div>
           
             
             <div class="col-md-4">
                 <label for="">Hospital Type</label>
-                <select  class="form-control" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
-                    <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
-                    
-                </select>
-                <ng-template #elseHospital>
-                    <input type="text" class="form-control" (click)="hospital_type($event)"  formControlName="hospitaltype" placeholder="Enter hospital Type">
-                </ng-template>
+                <input type="text" class="form-control" name="hospitaltype" value="" >
+               
             </div>
             
             <div class="col-md-4">
@@ -228,23 +230,15 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">State</label>
-                <select  class="form-control" formControlName="state" (click)="chooice($event)">
-                    <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
-                    
-                </select>
+                <input type="text" class="form-control" name="state" value=""  >
+                
                 
             </div>
            
             <div class="col-md-4">
                 <label for="city">City</label>
-                <input type="text" formControlName="city" class="form-control" *ngIf="cities.length==0;else elseBlock" placeholder="city">
+                <input type="text" name="city" class="form-control" placeholder="city">
                     
-                <ng-template #elseBlock>
-                    <select  class="form-control" formControlName="city">
-                        <option value="{{city.name}}" *ngFor="let city of cities">{{city.name}}</option>
-                       
-                    </select>
-                </ng-template>
                
             </div>
            

@@ -251,7 +251,7 @@ hospital_tour_image(){
   HospitalInfo(){
     console.log(this.Hospitalinfo.value)
     
-    this.admin.HospitalINFO(this.id,this.Hospitalinfo.value).subscribe(
+    this.admin.HospitalINFO(this.Hospitalinfo.value).subscribe(
       (r)=>{
         console.log(r)
         this.toastr.success("Hospital tour Info uploaded successfull")

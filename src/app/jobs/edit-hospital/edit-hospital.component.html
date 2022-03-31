@@ -20,216 +20,56 @@
         </div>
 </div>
 
-
-<div class="container card">
-    <form>
-        <h6>Hospital Photos and Videos</h6>
-        <div class="row" style="display: flex;">
-            <div class="col-md-8">
-                <input type="file" class="form-control" name="image" formControlName="himage"   multiple>
-
-            </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
-            </div>
-        </div>
        
-    </form>
-
-    <!--show hospital tour image-->
-    <div class="row">
-        
-      <div class="highlights">
-          <img src="" alt="">
-          <div class="highlight-action">
-              
-             <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
-            
-          </div>
-      </div>
-      
-  </div>
-     <!--this is for hospital highlight-->
-
-
-      <form>
-        <h6>Highlights</h6>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
-
-        
-        <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                
-                <div class="modal-body">
-                  <label> Title</label>
-                  <input type="text" class="form-control" formControlName="title">
-                  <label>Upload Image</label>
-                  <input type="file" class="form-control" formControlName="highlightimage" >
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="submit"   class="btn btn-primary" value="Hospital Highlight"/>
-                </div>
-             
-              </div>
-            </div>
-        </div>
-      </form>
-      
-        <!--Add Highlight Form Over-->
-
-                    <!--Add Highlight Form-->
-                    <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <form>
-                            <div class="modal-body">
-                            <label> Title</label>
-                            <input type="text" class="form-control" formControlName="title">
-                            <label>Upload Image</label>
-                            <input type="file" class="form-control">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit"   class="btn btn-primary" value="Create category"/>
-                            </div>
-                            
-                            </form>
-                        </div>
-                        </div>
-                    </div>
-                    <!--Add Highlight Form Over-->
-
-
-        <div class="row">
-        
-            <div class="highlights">
-                <img src="" alt="image">
-                <div class="highlight-action">
-                    <div class="highlight-title"></div>
-                   <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
-                  
-                </div>
-            </div>
-            
-           
-        
-      
-        
-        </div>
-    
-     
-       
-         <!--Add Speciality Form-->
-         <form>
-            <h6>Speciality</h6>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
-    
-            <div class="modal fade" id="addSpecialityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Add Speciality</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                  
-                    <div class="modal-body">
-                      <label> Title</label>
-                      <input type="text" class="form-control" formControlName="title">
-                      <label>Upload Image</label>
-                      <input type="file" class="form-control" formControlName="image">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <input type="submit" name="submit"  class="btn btn-primary" value="Hospital Speciality"/>
-                    </div>
-                  
-                  </div>
-                </div>
-            </div>
-        </form>
-        <!--Add Speciality Form Over-->
-
-        <div class="row">
-        
-            <div class="highlights" >
-                <img src="" alt="">
-                <div class="highlight-action">
-                    <div class="highlight-title"></div>
-                   <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
-                  
-                </div>
-            </div>
-            
-        </div>
-      
-
-
-
-        <h6>Hospital Information</h6>
-        <form>
+        <form #EditHospital (ngSubmit)="Hospitalinfoupdate(EditHospital)">
             <div class="row">
                 <div class="col-md-4">
                     <label for="Name">Hospital Name</label>
-                    <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
+                    <input type="text"  class="form-control" name="name" [(ngModel)]="hospitalinfo.name"  placeholder="Hospital Name" required>
                     </div>
                   
                     
                     <div class="col-md-4">
                         <label for="">Hospital Type</label>
-                        <select  class="form-control" formControlName="hospitaltype">
-                            <option value="" ></option>
+                        
+                        <select  class="form-control" name="hospitaltype" [(ngModel)]="hospitalinfo.typeofhospital">
+                            <option value="{{h.hospitaltype}}" *ngFor="let h of hospitaltypes" >{{h.hospitaltype}}</option>
                             
                         </select>
                       
                     </div>
                   <div class="col-md-4">
                       <label for="">No. of Speciality</label>
-                      <input type="number" class="form-control" formControlName="no_of_sepeciality">
+                      <input type="text" class="form-control" name="no_of_sepeciality" [(ngModel)]="hospitalinfo.no_of_sepeciality">
                   </div>
                   <div class="col-md-4">
                       <label for="">No. of Beds</label>
-                      <input type="number" class="form-control" formControlName="no_of_bed">
+                      <input type="text" class="form-control" name="no_of_bed" [(ngModel)]="hospitalinfo.no_of_bed">
                   </div>
                   <div class="col-md-4">
                       <label for="">No. of OPD Patients</label>
-                      <input type="number" class="form-control" formControlName="daily_OPD">
+                      <input type="text" class="form-control" name="daily_OPD" [(ngModel)]="hospitalinfo.daily_OPD">
                   </div>
                   <div class="col-md-4">
                       <label for="">No of OT</label>
-                      <input type="number" class="form-control" formControlName="no_of_OT">
+                      <input type="text" class="form-control" name="no_of_OT" [(ngModel)]="hospitalinfo.no_of_OT">
                   </div>
                   <div class="col-md-4">
                     <label for="">ICU </label>
-                    <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
+                    <input type="text"  class="form-control" name="icu" [(ngModel)]="hospitalinfo.icu" placeholder="Number of ICU">
                 </div>
                 <div class="col-md-4">
                     <label for="">NICUC </label>
-                    <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
+                    <input type="text"  class="form-control" name="nicuc" [(ngModel)]="hospitalinfo.nicuc" placeholder="Number of NICUC">
                 </div>
                 <div class="col-md-4">
                     <label for="">PICU </label>
-                    <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
+                    <input type="text"  class="form-control" name="picu" [(ngModel)]="hospitalinfo.picu" placeholder="Number of PICU">
                 </div>
                 <div class="col-md-4">
                     <label for="">State</label>
-                    <select  class="form-control" formControlName="state">
-                        <option value=""></option>
+                    <select  class="form-control" name="state" [(ngModel)]="hospitalinfo.state" (change)="selectstate($event)">
+                        <option value="{{state.name}}" *ngFor="let state of states">{{state.name}}</option>
                         
                     </select>
                     
@@ -237,9 +77,11 @@
                
                 <div class="col-md-4">
                     <label for="city">City</label>
-                    <input type="text" formControlName="city" class="form-control"  placeholder="city">
-                        
                    
+                    <select  class="form-control" [(ngModel)]="hospitalinfo.location" (change)="location($event)" >
+                        <option value="{{c.name}}" *ngFor="let c of cities">{{c.name}}</option>
+                        
+                    </select> 
                    
                 </div>
                
@@ -247,7 +89,7 @@
 
        
         <div class="submit_form">
-            <input type="submit" class="btn btn-primary" value="Submit"/>
+            <input type="submit" class="btn btn-primary" name="submit" value="submit"/>
         </div>
       </form>
 

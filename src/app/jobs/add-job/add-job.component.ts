@@ -3,6 +3,7 @@ import { SuperuserService } from 'src/app/superuser.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {FormControl} from '@angular/forms';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-add-job',
@@ -30,6 +31,10 @@ export class AddJobComponent implements OnInit {
   CatName:any;
   typeofhospital:boolean=true
   formSubmitted:boolean=false
+  hospital:any[]=[];
+  searchhospital:any;
+  icu:any;
+  
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
     this.jobform=fb.group({
@@ -242,6 +247,35 @@ selected(data:any){
   }
 }
 
+hospitals(event:any){
+  console.log(event.target.value)
+  this.admin.HospitalINFOName(event.target.value).subscribe(
+    (r)=>{
+      this.hospital=r
+      console.log(r)
+    }
+  )
+}
+
+selecthospital(name:any){
+  console.log(name.target.value)
+  var name_and_location=name.target.value.split("/")
+  console.log(name_and_location[0])
+  console.log(name_and_location[1])
+  if (name.target.value){
+    this.admin.HospitalNamenandLocation(name_and_location[0],name_and_location[1]).subscribe(
+      (r)=>{
+        this.searchhospital=r
+        console.log(r)
+      }
+    )
+
+  }
+else{
+  console.log("thinking")
+}
+  
+}
 AddJobs(){
   console.log(this.jobform.value.hospitalname)
   console.log(this.jobform.value.hospitaltype)

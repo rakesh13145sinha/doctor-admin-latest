@@ -322,13 +322,26 @@ HospitalSpecialitydelete(id:any):Observable<any>{
 }
 
 
-HospitalINFO(id:any,data:any):Observable<any>{
-  return this.http.post<any>(this.url+"admin/hospital/information/"+id,data,{"headers":this.headers})
+HospitalINFO(data:any):Observable<any>{
+  return this.http.post<any>(this.url+"admin/hospital/information/",data,{"headers":this.headers})
 }
-HospitalINFOGET(id:any,):Observable<any>{
-  return this.http.get<any>(this.url+"admin/hospital/information/"+id,{"headers":this.headers})
+HospitalINFOGET():Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/information/",{"headers":this.headers})
 }
 
+HospitalINFOGETid(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/information/"+"?hospitalid="+id,{"headers":this.headers})
+}
+
+HospitalINFOName(name:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/information/"+"?name="+name,{"headers":this.headers})
+}
+HospitalNamenandLocation(name:any,location:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/information/"+"?name="+name+"&location="+location,{"headers":this.headers})
+}
+HospitalINFOupdate(id:any,data:any):Observable<any>{
+  return this.http.put<any>(this.url+"admin/hospital/information/"+"?hospitalid="+id,data,{"headers":this.headers})
+}
 HospitalINFOdelete(id:any,):Observable<any>{
   return this.http.delete<any>(this.url+"admin/hospital/information/"+id,{"headers":this.headers})
 }

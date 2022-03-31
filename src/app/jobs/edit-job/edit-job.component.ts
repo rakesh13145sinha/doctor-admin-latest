@@ -238,7 +238,7 @@ select(data:any){
   formData.append("Speciality",this.job.Speciality)
   formData.append("designation",this.job.designation)
   formData.append("hosptial_name",this.job.hosptial_name)
-  //formData.append("hospitail_image",this.image,this.image.name)
+  formData.append("hospitail_image",this.image,this.image.name)
   formData.append("state",this.job.state)
   formData.append("location",this.job.location)
   

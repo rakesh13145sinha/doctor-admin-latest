@@ -30,26 +30,25 @@
                                   
                                   <th scope="col">Hospital Id</th>
                                     <th scope="col">Hospital Name</th>
-
                                     <th scope="col">Hospital Type</th>
-                                    <th scope="col">City</th>
                                     <th scope="col">State</th>
-
-                                    
-
+                                    <th scope="col">City</th>
                                     <th scope="col">Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let info of hospitalinfo | paginate : { id: 'foo',
+                                itemsPerPage: pageSize,
+                                currentPage: currentPage,
+                                totalItems: hospitalinfo.length};let i=index">
                                    
-                                    <td>user.hospitalid</td>
-                                    <td>user.hospital_name</td>
+                                    <td>{{info.id}}</td>
+                                    <td>{{info.name}}</td>
 
-                                    <td>user.hospital_typt</td>
-                                    <td>user.city</td>
-                                    <td>user.state</td>
+                                    <td>{{info.typeofhospital}}</td>
+                                    <td>{{info.state}}</td>
+                                    <td>{{info.location}}</td>
 
 
                                     
@@ -57,9 +56,9 @@
                                        <a routerLink="/" class="action-btn">
                                         <i class='bx bx-show'></i>
                                        </a>
-                                       <a routerLink="/admin/jobs/edit-hospital" class="action-btn">
+                                       <a routerLink="/admin/jobs/edit-hospital/{{info.id}}" class="action-btn">
                                         <i class='bx bx-edit'></i>
-                                       </a> <a routerLink="/" class="action-btn text-danger">
+                                       </a> <a (click)="hospitalinfodelete(info.id)" class="action-btn text-danger">
                                         <i class='bx bx-trash'></i>
                                        </a>
 
@@ -84,7 +83,7 @@
             <nav aria-label="Page navigation example">
 
               <div class="my-2 text-right">
-                <!-- <pagination-controls></pagination-controls> -->
+                <pagination-controls  id="foo" (pageChange)="currentPage = $event"></pagination-controls>
             </div>
 
               </nav>

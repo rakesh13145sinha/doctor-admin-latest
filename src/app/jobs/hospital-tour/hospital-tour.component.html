@@ -21,20 +21,20 @@
 </div>
 
 
-<div class="container card">
-    <form [formGroup]="hospitaltourimg" (ngSubmit)="ImageUploadSumit()">
-        <h6>Hospital Photos and Videos</h6>
-        <div class="row" style="display: flex;">
-            <div class="col-md-8">
-                <input type="file" class="form-control" name="image" formControlName="himage"  (change)="imageupload($event)" multiple>
+  <div class="container card">
+      <form [formGroup]="hospitaltourimg" (ngSubmit)="ImageUploadSumit()">
+          <h6>Hospital Photos and Videos</h6>
+          <div class="row" style="display: flex;">
+              <div class="col-md-8">
+                  <input type="file" class="form-control" name="image" formControlName="himage"  (change)="imageupload($event)" multiple>
 
-            </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
-            </div>
-        </div>
-       
-    </form>
+              </div>
+              <div class="col-md-4">
+                  <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
+              </div>
+          </div>
+        
+      </form>
 
     <!--show hospital tour image-->
     <div class="row">

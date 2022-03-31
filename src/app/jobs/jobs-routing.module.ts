@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:"hospital-list",component:HospitalListComponent},
   {path:"hospital-tour/:id",component:HospitalTourComponent},
   {path:"add-hospital",component:AddHospitalComponent},
-  {path:"edit-hospital",component:EditHospitalComponent},
+  {path:"edit-hospital/:id",component:EditHospitalComponent},
 
 
   
