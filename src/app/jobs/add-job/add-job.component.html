@@ -24,7 +24,11 @@
 
 <div class="container card" >
     
+    
     <form [formGroup]="jobform" (ngSubmit)="AddJobs()">
+        <h6>Hospital Details</h6>
+
+
 
 
         <div class="row">
@@ -199,58 +203,13 @@
         <h6>Hospital Details</h6>
         <div class="row">
             <div class="col-md-4">
-            <label for="Name">Hospital Name</label>
+            <label for="Name">Hospital List</label>
             <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
             </div>
-          
-            
-            <div class="col-md-4">
-                <label for="">Hospital Type</label>
-                <select  class="form-control" formControlName="hospitaltype" (click)="hospital_type($event)" *ngIf="typeofhospital==true; else elseHospital">
-                    <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
-                    
-                </select>
-                <ng-template #elseHospital>
-                    <input type="text" class="form-control" (click)="hospital_type($event)"  formControlName="hospitaltype" placeholder="Enter hospital Type">
-                </ng-template>
-            </div>
-            
-            <div class="col-md-4">
-                <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-                <input class="form-control" type="file" multiple  (change)="imageupload($event)">
-                          
-            </div>
-
-        
         </div>
         
         
-        <div class="row">
-            <div class="col-md-4">
-                <label for="">State</label>
-                <select  class="form-control" formControlName="state" (click)="chooice($event)">
-                    <option value="{{s.name}}" *ngFor="let s of allstate">{{s.name}}</option>
-                    
-                </select>
-                
-            </div>
-           
-            <div class="col-md-4">
-                <label for="city">City</label>
-                <input type="text" formControlName="city" class="form-control" *ngIf="cities.length==0;else elseBlock" placeholder="city">
-                    
-                <ng-template #elseBlock>
-                    <select  class="form-control" formControlName="city">
-                        <option value="{{city.name}}" *ngFor="let city of cities">{{city.name}}</option>
-                       
-                    </select>
-                </ng-template>
-               
-            </div>
-           
-
-          
-        </div>
+        
 
        
        
