@@ -20,7 +20,7 @@
         </div>
 </div>
 
-<<<<<<< HEAD
+
        
         <form #EditHospital (ngSubmit)="Hospitalinfoupdate(EditHospital)">
             <div class="row">
@@ -79,10 +79,16 @@
                 <div class="col-md-4">
                     <label for="city">City</label>
                    
-                    <select  class="form-control" [(ngModel)]="hospitalinfo.location" (change)="location($event)" >
+                    <select  class="form-control" [(ngModel)]="hospitalinfo.city" (change)="location($event)" >
                         <option value="{{c.name}}" *ngFor="let c of cities">{{c.name}}</option>
                         
                     </select> 
+                   
+                </div>
+                <div class="col-md-4">
+                    <label for="city">Location</label>
+                   
+                   <input type="text" class="form-control" />
                    
                 </div>
                
@@ -93,76 +99,7 @@
             <input type="submit" class="btn btn-primary" name="submit" value="submit"/>
         </div>
       </form>
-=======
 
-<div class="container">
-
-<!--Hospital Details Start-->
-    <form class="card">
-        <div class="row">
-            <div class="col-md-4">
-                <label for="Name">Hospital Name</label>
-                <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
-                </div>
-              
-                
-                <div class="col-md-4">
-                    <label for="">Hospital Type</label>
-                    <select  class="form-control" formControlName="hospitaltype">
-                        <option value="" ></option>
-                        
-                    </select>
-                  
-                </div>
-              <div class="col-md-4">
-                  <label for="">No. of Speciality</label>
-                  <input type="number" class="form-control" formControlName="no_of_sepeciality">
-              </div>
-              <div class="col-md-4">
-                  <label for="">No. of Beds</label>
-                  <input type="number" class="form-control" formControlName="no_of_bed">
-              </div>
-              <div class="col-md-4">
-                  <label for="">No. of OPD Patients</label>
-                  <input type="number" class="form-control" formControlName="daily_OPD">
-              </div>
-              <div class="col-md-4">
-                  <label for="">No of OT</label>
-                  <input type="number" class="form-control" formControlName="no_of_OT">
-              </div>
-              <div class="col-md-4">
-                <label for="">ICU </label>
-                <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
-            </div>
-            <div class="col-md-4">
-                <label for="">NICUC </label>
-                <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
-            </div>
-            <div class="col-md-4">
-                <label for="">PICU </label>
-                <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
-            </div>
-            <div class="col-md-4">
-                <label for="">State</label>
-                <select  class="form-control" formControlName="state">
-                    <option value=""></option>
-                    
-                </select>
-                
-            </div>
-           
-            <div class="col-md-4">
-                <label for="city">City</label>
-                <input type="text" formControlName="city" class="form-control"  placeholder="city">
-                 
-            </div>
-           
-           
-          </div>
-        <div class="submit_form">
-            <input type="submit" class="btn btn-success" value="Submit"/>
-        </div>
-    </form>
  <!--Hospital Details Over-->
     
 
@@ -283,12 +220,12 @@
  <!-- Speciality Over-->
 
 
-</div>
+
        
       
 
 
->>>>>>> 00404d228d4c41d21749fe3825a4d9ba96b40006
+
 
        
    

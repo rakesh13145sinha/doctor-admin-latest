@@ -117,10 +117,16 @@
             <div class="col-md-4">
                 <label for="city">City</label>
                
-                <select  class="form-control" formControlName="location">
+                <select  class="form-control" formControlName="city">
                     <option value="{{c.name}}" *ngFor="let c of cities">{{c.name}}</option>
                     
                 </select> 
+            </div>
+
+            <div class="col-md-4">
+                <label for="city">Location</label>
+               
+                <input type="text" class="form-control" formControlName="location" placeholder="Enter Hospital location"/>
             </div>
            
           </div>
