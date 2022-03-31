@@ -29,17 +29,17 @@ form h6 {
   margin-top: 10px;
 }
 form {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .highlights {
   padding: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
-  /* width: 200px; */
+  width: 200px;
   height: 70px;
-  margin: 10px;
+  margin: 13px;
+  margin-left: 0px;
   flex-wrap: wrap;
   border-radius: 5px;
 }

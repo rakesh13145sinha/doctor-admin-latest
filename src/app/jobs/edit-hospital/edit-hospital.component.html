@@ -2,7 +2,7 @@
     <div class="page-title-box">
         <div class="row align-items-center">
             <div class="col-sm-6">
-                <h4 class="page-title">Hospital Info</h4>
+                <h4 class="page-title">Add Hospital</h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
@@ -13,13 +13,14 @@
                     <li><i class='bx bx-chevron-right'></i></li>
 
 
-                    <li class="breadcrumb-item">Hospital Info</li>
+                    <li class="breadcrumb-item">Add Hospital</li>
                 </ol>
             </div>
         </div>
         </div>
 </div>
 
+<<<<<<< HEAD
        
         <form #EditHospital (ngSubmit)="Hospitalinfoupdate(EditHospital)">
             <div class="row">
@@ -92,6 +93,203 @@
             <input type="submit" class="btn btn-primary" name="submit" value="submit"/>
         </div>
       </form>
+=======
 
+<div class="container">
+
+<!--Hospital Details Start-->
+    <form class="card">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="Name">Hospital Name</label>
+                <input type="text"  class="form-control" formControlName="hospitalname" placeholder="Hospital Name" required>
+                </div>
+              
+                
+                <div class="col-md-4">
+                    <label for="">Hospital Type</label>
+                    <select  class="form-control" formControlName="hospitaltype">
+                        <option value="" ></option>
+                        
+                    </select>
+                  
+                </div>
+              <div class="col-md-4">
+                  <label for="">No. of Speciality</label>
+                  <input type="number" class="form-control" formControlName="no_of_sepeciality">
+              </div>
+              <div class="col-md-4">
+                  <label for="">No. of Beds</label>
+                  <input type="number" class="form-control" formControlName="no_of_bed">
+              </div>
+              <div class="col-md-4">
+                  <label for="">No. of OPD Patients</label>
+                  <input type="number" class="form-control" formControlName="daily_OPD">
+              </div>
+              <div class="col-md-4">
+                  <label for="">No of OT</label>
+                  <input type="number" class="form-control" formControlName="no_of_OT">
+              </div>
+              <div class="col-md-4">
+                <label for="">ICU </label>
+                <input type="text"  class="form-control" formControlName="icu" placeholder="Number of ICU">
+            </div>
+            <div class="col-md-4">
+                <label for="">NICUC </label>
+                <input type="text"  class="form-control" formControlName="nicuc" placeholder="Number of NICUC">
+            </div>
+            <div class="col-md-4">
+                <label for="">PICU </label>
+                <input type="text"  class="form-control" formControlName="picu" placeholder="Number of PICU">
+            </div>
+            <div class="col-md-4">
+                <label for="">State</label>
+                <select  class="form-control" formControlName="state">
+                    <option value=""></option>
+                    
+                </select>
+                
+            </div>
+           
+            <div class="col-md-4">
+                <label for="city">City</label>
+                <input type="text" formControlName="city" class="form-control"  placeholder="city">
+                 
+            </div>
+           
+           
+          </div>
+        <div class="submit_form">
+            <input type="submit" class="btn btn-success" value="Submit"/>
+        </div>
+    </form>
+ <!--Hospital Details Over-->
+    
+
+<!--Hospital Photos and Videos Start-->
+    <form class="card">
+        <h6>Hospital Photos and Videos</h6>
+        <div class="row" style="display: flex;">
+            <div class="col-md-6">
+                <input type="file" class="form-control" name="image" formControlName="himage"   multiple>
+
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success" name="submit" value="submit" >Submit</button>
+            </div>
+        </div>
+         <!--show hospital tour image start-->
+         <div class="highlights">
+            <img src="" alt="">
+            <div class="highlight-action">   
+               <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+            </div>
+        </div>
+         <!--show hospital tour image Over-->
+    </form>
+<!--Hospital Photos and Videos Over-->
+
+<!--Highlights Start-->
+   <form class="card">
+       
+        <div class="row">
+            <div class="col-sm-3">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
+        </div>
+        </div>
+
+         <!--Add Highlight Form-->
+        <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                
+                <div class="modal-body">
+                  <label> Title</label>
+                  <input type="text" class="form-control" formControlName="title">
+                  <label>Upload Image</label>
+                  <input type="file" class="form-control" formControlName="highlightimage" >
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <input type="submit"   class="btn btn-primary" value="Hospital Highlight"/>
+                </div>
+             
+              </div>
+            </div>
+        </div>
+         <!--Add Highlight Form Over-->
+
+         <div class="highlights">
+            <img src="" alt="">
+            <div class="highlight-action">
+                <div class="highlight-title"></div>
+               <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
+              
+            </div>
+        </div>
+
+    </form>
+<!--Highlights Over-->
+      
+
+                   
+ <!-- Speciality Start-->
+         <form class="card">
+            <div class="row">
+                <div class="col-md-3">
+                     <button class="btn btn-primary" data-toggle="modal" data-target="#addSpecialityModal">Add Speciality</button>
+                </div>
+            </div>
+    
+            <div class="modal fade" id="addSpecialityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Speciality</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  
+                    <div class="modal-body">
+                      <label> Title</label>
+                      <input type="text" class="form-control" formControlName="title">
+                      <label>Upload Image</label>
+                      <input type="file" class="form-control" formControlName="image">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <input type="submit" name="submit"  class="btn btn-primary" value="Hospital Speciality"/>
+                    </div>
+                  
+                  </div>
+                </div>
+            </div>
+            <div class="highlights" >
+                <img src="" alt="">
+                <div class="highlight-action">
+                    <div class="highlight-title"></div>
+                   <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+                  
+                </div>
+            </div>
+        </form>
+ <!-- Speciality Over-->
+
+
+</div>
+       
+      
+
+
+>>>>>>> 00404d228d4c41d21749fe3825a4d9ba96b40006
+
+       
    
 

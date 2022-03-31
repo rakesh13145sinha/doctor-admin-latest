@@ -33,8 +33,16 @@
                 <input type="submit" class="btn btn-success" name="submit" value="submit" >
             </div>
         </div>
-       
+         <!--show hospital tour image start-->
+         <div class="highlights">
+            <img src="" alt="">
+            <div class="highlight-action">   
+               <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+            </div>
+        </div>
+         <!--show hospital tour image Over-->
     </form>
+<!--Hospital Photos and Videos Over-->
 
     <!--show hospital tour image-->
     <div class="row">
@@ -57,8 +65,10 @@
       <form [formGroup]="hospitalhighlight" (ngSubmit)="highlightupload()">
         <h6>Highlights</h6>
         <button class="btn btn-primary" data-toggle="modal" data-target="#addHighlightModal">Add Highlights</button>
+        </div>
+        </div>
 
-        
+         <!--Add Highlight Form-->
         <div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -85,36 +95,16 @@
         </div>
       </form>
       
-        <!--Add Highlight Form Over-->
+       
 
-                    <!--Add Highlight Form-->
-                    <!--<div class="modal fade" id="addHighlightModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add Highlight</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <form>
-                            <div class="modal-body">
-                            <label> Title</label>
-                            <input type="text" class="form-control" formControlName="title">
-                            <label>Upload Image</label>
-                            <input type="file" class="form-control">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit"   class="btn btn-primary" value="Create category"/>
-                            </div>
-                            
-                            </form>
-                        </div>
-                        </div>
-                    </div>-->
-                    <!--Add Highlight Form Over-->
-
+         <div class="highlights">
+            <img src="" alt="">
+            <div class="highlight-action">
+                <div class="highlight-title"></div>
+               <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
+              
+            </div>
+        </div>
 
         <!--<div class="row" *ngIf="hospital_h_lights.lenght !=0 else ; elseLight">
         
@@ -205,8 +195,12 @@
                   
                 </div>
             </div>
-            
-        </div>
+        </form>
+ <!-- Speciality Over-->
+
+
+</div>
+       
       
 
 
@@ -315,10 +309,5 @@
                
               </div>
        
-        <div class="submit_form">
-            <input type="submit" class="btn btn-primary" value="Submit"/>
-        </div>
-      </form>
-
    
 
