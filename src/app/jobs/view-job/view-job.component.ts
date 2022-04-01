@@ -32,6 +32,11 @@ export class ViewJobComponent implements OnInit {
     )
 
   }
+  viewHospital(){
+    console.log(this.job.hosptial_name)
+    console.log((this.job.location))
+    
+  }
 
 
 }

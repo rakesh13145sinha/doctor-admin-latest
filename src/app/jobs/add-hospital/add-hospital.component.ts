@@ -196,10 +196,12 @@ ImageUploadSumit(){
                           console.log(localStorage.getItem("hospitalid"))
                           console.log(this.selectedFiles[i])
                           this.toastr.success("Hospital tour image uploaded successfull",)
+                          this.hospital_tour_image()
                           }
                       )
+                      this.hospital_tour_image()
         }
-  this.hospital_tour_image()
+  
   this.hospitaltourimg.reset()
 
   }

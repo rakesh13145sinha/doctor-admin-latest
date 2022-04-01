@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import {FormControl} from '@angular/forms';
 import { delay } from 'rxjs';
 
+
 @Component({
   selector: 'app-add-job',
   templateUrl: './add-job.component.html',
@@ -34,20 +35,24 @@ export class AddJobComponent implements OnInit {
   hospital:any[]=[];
   searchhospital:any;
   icu:any;
+  hospital_name!:string;
+  hospitallocation!:string;
+  hospital_types!:string;
+  hospitalstate!:string;
+  hospitalcity!:string;
+  hospitalid!:number;
+  
+
   
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
     this.jobform=fb.group({
-                            hospitalname:["",[Validators.required]],
-                            hospitaltype:["",[Validators.required]],
+                            
                             category:["",[Validators.required]],
                             depatment:["",[Validators.required]],
                             designation:["",[Validators.required]],
                             discription:["",[Validators.required]],
-                            qualifcation:["",[Validators.required]],
-                            state:["",[Validators.required]],
-                            city:["",[Validators.required]],
-                            qualification:["",[Validators.required]],
+                            
                             days:["",[Validators.required]],
                             hours:["",[Validators.required]],
                             jobtype:["",[Validators.required]],
@@ -55,15 +60,13 @@ export class AddJobComponent implements OnInit {
                             salary:["",[Validators.required]],
                             duration:["",[Validators.required]],
                             vacancy:["",[Validators.required]],
-                            totalbed:["",[Validators.required]],
-                            icu:["",[Validators.required]],
-                            nicuc:["",[Validators.required]],
-                            picu:["",[Validators.required]],
+                            
                             hrcontact:["",[Validators.required]],
                             socialcontact:["",[Validators.required]],
                             experince:["",[Validators.required]],
                             gender:["",[Validators.required]],
-                            status:["",[Validators.required]]
+                            status:["",[Validators.required]],
+                            
 
                            })
 
@@ -267,6 +270,12 @@ selecthospital(name:any){
       (r)=>{
         this.searchhospital=r
         console.log(r)
+        this.hospital_name=name_and_location[0]
+        this.hospitallocation=name_and_location[1]
+        console.log(this.hospital_name)
+        this.gethospital()
+        
+       
       }
     )
 
@@ -274,17 +283,39 @@ selecthospital(name:any){
 else{
   console.log("thinking")
 }
+ 
+   
   
 }
+
+///get hospital data name and location
+
+gethospital(){
+  this.admin.HospitalNamenandLocation(this.hospital_name,this.hospitallocation).subscribe(
+    (r)=>{
+      console.log(r)
+      console.log(r.state)
+      this.hospitalstate=r.state
+      console.log(r.city)
+      this.hospitalcity=r.city
+      console.log(r.location)
+      this.hospital_types=r.typeofhospital
+      this.hospitalid=r.id
+      console.log(this.hospitalid)
+
+    }
+  )
+  
+    }
+
+
 AddJobs(){
-  console.log(this.jobform.value.hospitalname)
-  console.log(this.jobform.value.hospitaltype)
-  console.log(this.image,this.image.name)
+  
+  console.log(this.hospital_name)
   console.log(this.jobform.value.category)
   console.log(this.jobform.value.depatment)
   console.log(this.jobform.value.designation)
-  console.log(this.jobform.value.state)
-  console.log(this.jobform.value.city)
+
   console.log(this.jobform.value.discription)
   console.log(this.jobform.value.days)
   console.log(this.jobform.value.hours)
@@ -294,26 +325,24 @@ AddJobs(){
   console.log(this.jobform.value.salary)
   console.log(this.jobform.value.duration)
   console.log(this.jobform.value.vacancy)
-  console.log(this.jobform.value.totalbed)
-  console.log(this.jobform.value.icu)
-  console.log(this.jobform.value.nicuc)
-  console.log(this.jobform.value.picu)
   console.log(this.jobform.value.hrcontact)
   console.log(this.jobform.value.socialcontact)
   console.log(this.jobform.value.experince)
   console.log(this.jobform.value.gender)
+  
   var formData=new FormData();
   if (this.jobform.valid)
     
     {
+      
       console.log("=========================")
       formData.append("category",this.jobform.value.category)
       formData.append("Speciality",this.jobform.value.depatment)
       formData.append("designation",this.jobform.value.designation)
-      formData.append("hosptial_name",this.jobform.value.hospitalname)
-      formData.append("hospitail_image",this.image,this.image.name)
-      formData.append("state",this.jobform.value.state)
-      formData.append("location",this.jobform.value.city)
+      formData.append("hosptial_name",this.hospital_name)
+     
+      
+      formData.append("location",this.hospitallocation)
       formData.append("salary",this.jobform.value.salary)
       formData.append("monthly_or_anual",this.jobform.value.duration)
       formData.append("vacancy",this.jobform.value.vacancy)
@@ -322,17 +351,14 @@ AddJobs(){
       formData.append("working_day",this.jobform.value.days)
       formData.append("discription",this.jobform.value.discription)
       formData.append("accommodation",this.jobform.value.accomodation)
-      formData.append("hospital_type",this.jobform.value.hospitaltype)
+      
       formData.append("job_type",this.jobform.value.jobtype)
-      formData.append("total_bed",this.jobform.value.totalbed)
-      formData.append("icu",this.jobform.value.icu)
-      formData.append("nicuc",this.jobform.value.nicuc)
-      formData.append("picu",this.jobform.value.picu)
+      formData.append("job_status",this.jobform.value.status)
       formData.append("hr_contact",this.jobform.value.hrcontact)
       formData.append("social_contact",this.jobform.value.socialcontact)
       formData.append("experince",this.jobform.value.experince)
       formData.append("gender",this.jobform.value.gender)
-      formData.append("job_status",this.jobform.value.status)
+      
       this.admin.CreateJobs(this.jobform.value.category,formData).subscribe(
         (r)=>{
           console.log(r)
@@ -354,3 +380,5 @@ AddJobs(){
 }
 
 }
+
+
