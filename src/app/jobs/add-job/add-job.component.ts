@@ -34,6 +34,8 @@ export class AddJobComponent implements OnInit {
   hospital:any[]=[];
   searchhospital:any;
   icu:any;
+  hospital_name!:string;
+
   
 
   constructor(private admin:SuperuserService,private fb:FormBuilder,private toastr:ToastrService) { 
@@ -267,6 +269,10 @@ selecthospital(name:any){
       (r)=>{
         this.searchhospital=r
         console.log(r)
+        this.hospital_name=name_and_location[0]
+        
+        
+       
       }
     )
 

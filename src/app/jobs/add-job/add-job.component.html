@@ -200,65 +200,55 @@
             </div>
         </div>
 
-        <h6>Hospital Details</h6>
-        <div class="row">
-            <div class="col-md-4">
-            <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" (keyup)="hospitals($event)"  placeholder="Hospital Name">
-            
-            <select  formControlName="hospitalname" (click)="selecthospital($event)">
-                <option value="{{h.name}}/{{h.location}}" *ngFor="let h of hospital">{{h.name}}/{{h.location}}</option>
-                
-            </select>
-               
-            
-            </div>
-          
-            
-            <div class="col-md-4">
-                <label for="">Hospital Type</label>
-                <input type="text" class="form-control" name="hospitaltype" value="" >
-               
-            </div>
-            
-            <div class="col-md-4">
-                <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-                <input class="form-control" type="file" multiple  (change)="imageupload($event)">
-                          
-            </div>
-
-        
-        </div>
-        
-        
-        <div class="row">
-            <div class="col-md-4">
-                <label for="">State</label>
-                <input type="text" class="form-control" name="state" value=""  >
-                
-                
-            </div>
-           
-            <div class="col-md-4">
-                <label for="city">City</label>
-                <input type="text" name="city" class="form-control" placeholder="city">
-                    
-               
-            </div>
-           
-
-          
-        </div>
-
-       
-       
-
-        
-
-        
-        <div class="submit_form">
-            <input type="submit" class="btn btn-primary" value="Submit"/>
-        </div>
-
     </form>
+
+
+
+    <h6>Hospital Details</h6>
+    <div class="row">
+        <div class="col-md-3">
+        <label for="Name">Hospital Name</label>
+        <input type="text"  class="form-control" (keyup)="hospitals($event)"  [(ngModel)]="hospital_name" placeholder="Hospital Name">
+        
+        <select   (change)="selecthospital($event)">
+            <option value="{{h.name}}/{{h.location}}" *ngFor="let h of hospital">{{h.name}}/{{h.location}}</option>
+            
+        </select>
+           
+        
+        </div>
+      
+        
+        <div class="col-md-3">
+            <label for="">Hospital Type</label>
+            <input type="text" class="form-control" name="hospitaltype" >
+           
+        </div>
+
+        <div class="col-md-2">
+            <label for="">State</label>
+            <input type="text" class="form-control" name="state" value=""  >
+            
+            
+        </div>
+        <div class="col-md-2">
+            <label for="city">City</label>
+            <input type="text" name="city" class="form-control" placeholder="city">
+                
+           
+        </div>
+        <div class="col-md-2">
+            <label for="city">Location</label>
+            <input type="text" name="city" class="form-control" placeholder="Location">
+                
+           
+        </div>
+        
+    
+    </div>
+
+    
+    <div class="submit_form">
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+    </div>
 </div>
