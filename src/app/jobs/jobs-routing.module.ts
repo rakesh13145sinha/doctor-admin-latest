@@ -22,6 +22,7 @@ const routes: Routes = [
   {path:"view-job/:id",component:ViewJobComponent},
   {path:"tour-requests",component:TourRequestsComponent},
   {path:"hospital-list",component:HospitalListComponent},
+
   {path:"hospital-tour/:id",component:HospitalTourComponent},
   {path:"add-hospital",component:AddHospitalComponent},
   {path:"edit-hospital/:id",component:EditHospitalComponent},

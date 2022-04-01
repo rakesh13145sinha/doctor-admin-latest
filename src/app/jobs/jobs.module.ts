@@ -17,6 +17,7 @@ import { TourRequestsComponent } from './tour-requests/tour-requests.component';
 import { HospitalListComponent } from './hospital-list/hospital-list.component';
 import { AddHospitalComponent } from './add-hospital/add-hospital.component';
 import { EditHospitalComponent } from './edit-hospital/edit-hospital.component';
+import { ViewHospitalComponent } from './view-hospital/view-hospital.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { EditHospitalComponent } from './edit-hospital/edit-hospital.component';
     TourRequestsComponent,
     HospitalListComponent,
     AddHospitalComponent,
-    EditHospitalComponent
+    EditHospitalComponent,
+    ViewHospitalComponent
 
   ],
   imports: [
