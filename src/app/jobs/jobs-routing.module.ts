@@ -1,3 +1,4 @@
+import { ViewHospitalComponent } from './view-hospital/view-hospital.component';
 import { EditHospitalComponent } from './edit-hospital/edit-hospital.component';
 import { AddHospitalComponent } from './add-hospital/add-hospital.component';
 import { HospitalListComponent } from './hospital-list/hospital-list.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:"view-job/:id",component:ViewJobComponent},
   {path:"tour-requests",component:TourRequestsComponent},
   {path:"hospital-list",component:HospitalListComponent},
-
+  {path:"view-hospital",component:ViewHospitalComponent},
   {path:"hospital-tour/:id",component:HospitalTourComponent},
   {path:"add-hospital",component:AddHospitalComponent},
   {path:"edit-hospital/:id",component:EditHospitalComponent},
