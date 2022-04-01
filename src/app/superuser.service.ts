@@ -339,6 +339,9 @@ HospitalINFOName(name:any):Observable<any>{
 HospitalNamenandLocation(name:any,location:any):Observable<any>{
   return this.http.get<any>(this.url+"admin/hospital/information/"+"?name="+name+"&location="+location,{"headers":this.headers})
 }
+Hospitalgetid(id:any):Observable<any>{
+  return this.http.get<any>(this.url+"admin/hospital/info/"+id,{"headers":this.headers})
+}
 HospitalINFOupdate(id:any,data:any):Observable<any>{
   return this.http.put<any>(this.url+"admin/hospital/information/"+"?hospitalid="+id,data,{"headers":this.headers})
 }
