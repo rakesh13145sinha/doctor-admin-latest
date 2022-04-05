@@ -111,32 +111,39 @@
 <div class="container">
     <div class="card">
         <h6>Hospital Photos and Videos</h6>
-        
-         <div class="highlights" *ngFor="let img of hospital.banner">
+        <div class="row">
+          <div class="highlights" *ngFor="let img of hospital.banner">
             <img src="{{image_url}}{{img.image}}" alt="bannerimg">
             <div class="highlight-action">   
                <button class="remove" (click)="deletebanner(img.id)"> Remove</button>
             </div>
         </div>
+        </div>
+        
+         
     </div>
     <div class="card">
         <h6>Hospital Highlights</h6>
-        
-         <div class="highlights" *ngFor="let img of hospital.highlight">
+        <div class="row">
+          <div class="highlights" *ngFor="let img of hospital.highlight">
             <img src="{{image_url}}{{img.image}}" alt="">
             <div class="highlight-action">   
                <button class="remove" (click)="deletehighlight(img.id)"> Remove</button>
             </div>
         </div>
+        </div>
+         
     </div>
     <div class="card">
         <h6>Hospital Speciality</h6>
-        
-         <div class="highlights" *ngFor="let img of hospital.speciality">
+        <div class="row">
+          <div class="highlights" *ngFor="let img of hospital.speciality">
             <img src="{{image_url}}{{img.image}}" alt="speciality">
             <div class="highlight-action">   
                <button class="remove" (click)="deletespeciality(img.id)"> Remove</button>
             </div>
         </div>
+        </div>
+         
     </div>
  </div>

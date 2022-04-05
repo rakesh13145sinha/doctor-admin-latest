@@ -25,48 +25,70 @@
 <div class="container card" >
     <h6>Hospital Details</h6>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
         <label for="Name">Hospital Name</label>
         <input type="text"  class="form-control" (keyup)="hospitals($event)"  [(ngModel)]="hospital_name" placeholder="Hospital Name">
         
-        <select   (click)="selecthospital($event)">
+        <select   (click)="selecthospital($event)" class="form-control">
             <option value="{{h.name}}/{{h.location}}" *ngFor="let h of hospital">{{h.name}}/{{h.location}}</option>
-            
         </select>
            
         
         </div>
+
+        <div class="col-md-4">
+                <label for="">Hospital</label>
+                <input type="text" list="programmingLanguages" 
+                            placeholder="Enter Here" class="form-control" />
+                <datalist id="programmingLanguages">
+                    <option value="Objective C">Objective C</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                    <option value="Cobol">Cobol</option>
+                    <option value="Go">Go</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Pascal">Pascal</option>
+                    <option value="Perl">Perl</option>
+                    <option value="R">R</option>
+                    <option value="Swift">Swift</option>
+                </datalist>
+            
+        </div>
       
         
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label for="">Hospital Type</label>
             <input type="text" class="form-control" name="hospitaltype" [(ngModel)]="hospital_types" >
            
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-4">
             <label for="">State</label>
             <input type="text" class="form-control" name="state" [(ngModel)]="hospitalstate">
             
             
         </div>
-        <div class="col-md-2">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
             <label for="city">City</label>
             <input type="text" name="city" class="form-control" [(ngModel)]="hospitalcity"  placeholder="city">
                 
            
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <label for="city">Location</label>
             <input type="text" name="location" class="form-control" [(ngModel)]="hospitallocation"  placeholder="Location">
                 
            
         </div>
-        
     </div>
     <!---->
     <form [formGroup]="jobform" (ngSubmit)="AddJobs()">
-        <h6>Hospital Details</h6>
+        <h6>Job Details</h6>
 
 
 

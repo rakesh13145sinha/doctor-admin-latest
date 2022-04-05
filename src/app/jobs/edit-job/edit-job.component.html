@@ -120,18 +120,18 @@
 
         <div class="row">
             
-            <div class="col-md-2">
+            <div class="col-md-4">
             <label for="">Working Days </label>
             <input type="text"  class="form-control"  name="workingdays" [(ngModel)]="job.working_day" placeholder="Working days">
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
             <label for="">Working Hours</label>
             <input type="text"  class="form-control"  name="workinghour" [(ngModel)]="job.working_hours" placeholder="Duration of Work in one day">
 
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Level</label>
                 <select class="form-control" formControlName="">
                     <option value="">Junior Level</option>
@@ -140,19 +140,19 @@
                 </select>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Experince</label>
                 
                 <input type="text"  name="exp" [(ngModel)]="job.experince" class="form-control"  placeholder="Experince">
                 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Vacancy</label>
                 <input type="number"  class="form-control"  name="vacancy" [(ngModel)]="job.vacancy">
              </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Gender</label>
                 
                 
@@ -169,7 +169,7 @@
         </div>
         
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label for="">Qualification</label><br/>
               
                 <mat-form-field appearance="fill" >
@@ -187,7 +187,7 @@
                   </mat-form-field>
                 
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Job Type</label>
                 <select  class="form-control" name="jobtype"[(ngModel)]="job.job_type">
                     <option value="Part Time">Part Time</option>
@@ -196,7 +196,7 @@
                 </select> 
             </div>
            
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Accomodation</label>
                 <select  class="form-control" name="accomodation" [(ngModel)]="job.accommodation">
                     <option value="Yes">Yes</option>
@@ -205,13 +205,13 @@
                 </select>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label for="">Salary</label>
                 <input type="text"  class="form-control" name="salary"[(ngModel)]="job.salary">
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <label for="">Salary Duration</label>
                 <select class="form-control" name="duration"[(ngModel)]="job.monthly_or_anual">
                     <option value="Monthly">Monthly</option>
@@ -219,23 +219,19 @@
                     
                 </select>
             </div>
-
-
+           
         </div>
         <div class="row">
-            
-                
-
-                 <div class="col-md-12" row=10>
+           
+                <div class="col-md-12">
                     <label for="">Roles and Responsibilities</label>
-                    <textarea type="text"  class="form-control" name="role" [(ngModel)]="job.discription" rows="10"></textarea>
-        
-                    
-        
-                    </div>
-        
+                    <textarea type="text"  class="form-control" name="role" [(ngModel)]="job.discription" rows="4">
     
+                    </textarea>
+                  
+            </div>
         </div>
+       
         
        
         <div class="submit_form">

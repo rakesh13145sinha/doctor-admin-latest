@@ -106,7 +106,7 @@
 <!--Hospital Photos and Videos Start-->
     <form class="card">
         <h6>Hospital Photos and Videos</h6>
-        <div class="row" style="display: flex;">
+        <div class="row">
             <div class="col-md-6">
                 <input type="file" class="form-control" name="image" formControlName="himage"   multiple>
 
@@ -116,12 +116,15 @@
             </div>
         </div>
          <!--show hospital tour image start-->
-         <div class="highlights">
-            <img src="" alt="">
-            <div class="highlight-action">   
-               <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+         <div class="row">
+            <div class="highlights">
+                <img src="" alt="">
+                <div class="highlight-action">   
+                   <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+                </div>
             </div>
-        </div>
+         </div>
+         
          <!--show hospital tour image Over-->
     </form>
 <!--Hospital Photos and Videos Over-->
@@ -161,15 +164,18 @@
             </div>
         </div>
          <!--Add Highlight Form Over-->
-
-         <div class="highlights">
-            <img src="" alt="">
-            <div class="highlight-action">
-                <div class="highlight-title"></div>
-               <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
-              
+        <div class="row">
+            <div class="highlights">
+                <img src="" alt="">
+                <div class="highlight-action">
+                    <div class="highlight-title"></div>
+                   <button class="remove" routerLink="/admin/hospital/highlight/"> Remove</button>
+                  
+                </div>
             </div>
         </div>
+        
+        
 
     </form>
 <!--Highlights Over-->
@@ -208,14 +214,18 @@
                   </div>
                 </div>
             </div>
-            <div class="highlights" >
-                <img src="" alt="">
-                <div class="highlight-action">
-                    <div class="highlight-title"></div>
-                   <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
-                  
+
+            <div class="row">
+                <div class="highlights" >
+                    <img src="" alt="">
+                    <div class="highlight-action">
+                        <div class="highlight-title"></div>
+                       <button class="remove" routerLink="/admin/hospital/speciality/"> Remove</button>
+                      
+                    </div>
                 </div>
             </div>
+            
         </form>
  <!-- Speciality Over-->
 
