@@ -30,35 +30,35 @@
                 <tr>
                   <th width="40%">Hospital Name</th>
                   <td width="2%">:</td>
-                  <td>hosptial_name</td>
+                  <td>{{hospital.name}}</td>
                 </tr>
 
                 <tr>
                   <th width="30%">Hospital Type</th>
                   <td width="2%">:</td>
-                  <td>job.hospital_type</td>
+                  <td>{{hospital.typeofhospital}}</td>
                 </tr>
                 <tr>
                   <th width="40%" >No. of Speciality</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.no_of_sepeciality}}</td>
                 </tr>
                 <tr>
                   <th width="30%">No. of Beds</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.no_of_bed}}</td>
                 </tr>
                 
                 <tr>
                   <th width="30%">No. of OPD Patients</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.daily_OPD}}</td>
                 </tr>
 
                 <tr>
-                    <th width="30%">No of OT</th>
+                    <th width="30%">Number of OT</th>
                     <td width="2%">:</td>
-                    <td></td>
+                    <td>{{hospital.no_of_OT}}</td>
                 </tr>
               </table>
             </div>
@@ -75,30 +75,30 @@
               <tr>
                   <th width="30%">ICU</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.icu}}</td>
               </tr>
               <tr>
                   <th width="30%">NICUC</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.nicuc}}</td>
               </tr>
               <tr>
                   <th width="30%">PICU</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.picu}}</td>
               </tr>
               <tr>
                   <th width="30%">State</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.state}}</td>
               </tr><tr>
                   <th width="30%">City</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.city}}</td>
               </tr><tr>
                   <th width="30%">Location</th>
                   <td width="2%">:</td>
-                  <td></td>
+                  <td>{{hospital.location}}</td>
               </tr>
               </table>
               </div>
@@ -112,30 +112,30 @@
     <div class="card">
         <h6>Hospital Photos and Videos</h6>
         
-         <div class="highlights">
-            <img src="" alt="">
+         <div class="highlights" *ngFor="let img of hospital.banner">
+            <img src="{{image_url}}{{img.image}}" alt="bannerimg">
             <div class="highlight-action">   
-               <button class="remove" routerLink=""> Remove</button>
+               <button class="remove" (click)="deletebanner(img.id)"> Remove</button>
             </div>
         </div>
     </div>
     <div class="card">
         <h6>Hospital Highlights</h6>
         
-         <div class="highlights">
-            <img src="" alt="">
+         <div class="highlights" *ngFor="let img of hospital.highlight">
+            <img src="{{image_url}}{{img.image}}" alt="">
             <div class="highlight-action">   
-               <button class="remove" routerLink=""> Remove</button>
+               <button class="remove" (click)="deletehighlight(img.id)"> Remove</button>
             </div>
         </div>
     </div>
     <div class="card">
         <h6>Hospital Speciality</h6>
         
-         <div class="highlights">
-            <img src="" alt="">
+         <div class="highlights" *ngFor="let img of hospital.speciality">
+            <img src="{{image_url}}{{img.image}}" alt="speciality">
             <div class="highlight-action">   
-               <button class="remove" routerLink=""> Remove</button>
+               <button class="remove" (click)="deletespeciality(img.id)"> Remove</button>
             </div>
         </div>
     </div>

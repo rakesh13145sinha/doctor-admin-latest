@@ -119,25 +119,19 @@
         <h6>Basic Details</h6>
 
         <div class="row">
-            <div class="col-md-4">
-            <label for="">Roles and Responsibilities</label>
-            <input type="text"  class="form-control" name="role" [(ngModel)]="job.discription"  placeholder="About jobs">
-
             
-
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
             <label for="">Working Days </label>
             <input type="text"  class="form-control"  name="workingdays" [(ngModel)]="job.working_day" placeholder="Working days">
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2">
             <label for="">Working Hours</label>
             <input type="text"  class="form-control"  name="workinghour" [(ngModel)]="job.working_hours" placeholder="Duration of Work in one day">
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="">Level</label>
                 <select class="form-control" formControlName="">
                     <option value="">Junior Level</option>
@@ -146,15 +140,36 @@
                 </select>
             </div>
 
+            <div class="col-md-2">
+                <label for="">Experince</label>
+                
+                <input type="text"  name="exp" [(ngModel)]="job.experince" class="form-control"  placeholder="Experince">
+                
+            </div>
+
+            <div class="col-md-2">
+                <label for="">Vacancy</label>
+                <input type="number"  class="form-control"  name="vacancy" [(ngModel)]="job.vacancy">
+             </div>
+
+            <div class="col-md-2">
+                <label for="">Gender</label>
+                
+                
+                <select  class="form-control" name="gender" [(ngModel)]="job.gender" >
+                    <option value="Male">MALE</option>
+                    <option value="Female">FEMALE</option>
+                    <option value="Male/Female">MALE/FEMALE</option>
+
+                   
+                </select>
+            </div>
+
 
         </div>
-        <h6>Details</h6>
         
         <div class="row">
-            
-            
-
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="">Qualification</label><br/>
               
                 <mat-form-field appearance="fill" >
@@ -172,39 +187,7 @@
                   </mat-form-field>
                 
             </div>
-
-
-
-           
-
-
-
-           
-            <div class="col-md-4">
-                <label for="">Experince</label>
-                
-                <input type="text"  name="exp" [(ngModel)]="job.experince" class="form-control"  placeholder="Experince">
-                
-            </div>
-            <div class="col-md-4">
-                <label for="">Gender</label>
-                
-                
-                <select  class="form-control" name="gender" [(ngModel)]="job.gender" >
-                    <option value="Male">MALE</option>
-                    <option value="Female">FEMALE</option>
-                    <option value="Male/Female">MALE/FEMALE</option>
-
-                   
-                </select>
-            </div>
-          
-        </div>
-
-
-
-        <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="">Job Type</label>
                 <select  class="form-control" name="jobtype"[(ngModel)]="job.job_type">
                     <option value="Part Time">Part Time</option>
@@ -213,7 +196,7 @@
                 </select> 
             </div>
            
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="">Accomodation</label>
                 <select  class="form-control" name="accomodation" [(ngModel)]="job.accommodation">
                     <option value="Yes">Yes</option>
@@ -222,16 +205,13 @@
                 </select>
             </div>
 
-            <div class="col-md-4">
-            <label for="">Salary</label>
-            <input type="text"  class="form-control" name="salary"[(ngModel)]="job.salary">
+            <div class="col-md-3">
+                <label for="">Salary</label>
+                <input type="text"  class="form-control" name="salary"[(ngModel)]="job.salary">
 
             </div>
 
-
-        </div>
-        <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="">Salary Duration</label>
                 <select class="form-control" name="duration"[(ngModel)]="job.monthly_or_anual">
                     <option value="Monthly">Monthly</option>
@@ -239,41 +219,24 @@
                     
                 </select>
             </div>
-                <div class="col-md-4">
-                    <label for="">Vacancy</label>
-                    <input type="number"  class="form-control"  name="vacancy" [(ngModel)]="job.vacancy">
-                 </div>
+
+
+        </div>
+        <div class="row">
+            
+                
+
+                 <div class="col-md-12" row=10>
+                    <label for="">Roles and Responsibilities</label>
+                    <textarea type="text"  class="form-control" name="role" [(ngModel)]="job.discription" rows="10"></textarea>
+        
+                    
+        
+                    </div>
         
     
         </div>
-        <h6>Additional Details</h6>
-        <div class="row">
-            <div class="col-md-4">
-                <label for="">Total Beds</label>
-                <input type="text"  class="form-control"  name="totalbed" [(ngModel)]="job.total_bed" placeholder="Total Bed in Hospital">
-            </div>
-            <div class="col-md-4">
-                <label for="">ICU </label>
-                <input type="text"  class="form-control" name="icu" [(ngModel)]="job.icu" placeholder="Number of ICU">
-            </div>
-            <div class="col-md-4">
-                <label for="">NICUC </label>
-                <input type="text"  class="form-control" name="nicuc" [(ngModel)]="job.nicuc" placeholder="Number of NICUC">
-            </div>
-            <div class="col-md-4">
-                <label for="">PICU </label>
-                <input type="text"  class="form-control" name="picu" [(ngModel)]="job.picu" placeholder="Number of PICU">
-            </div>
-            <div class="col-md-4">
-                <label for=""> HR Contact</label>
-                <input type="text"  class="form-control"name="hrcontact" [(ngModel)]="job.hr_contact" name="hrcontact" placeholder="Enter 10 digit mobile number of HR">
-            </div>
-            <div class="col-md-4">
-                <label for="">Social Contact </label>
-                <input type="text"  class="form-control" name="social_contact"  [(ngModel)]="job.social_contact" placeholder="Share linkdn profile link">
-            </div>
-        </div>
-
+        
        
         <div class="submit_form">
             <input type="submit" name="submit" class="btn btn-primary" value="Submit"/>
