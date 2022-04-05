@@ -151,6 +151,7 @@ this.cities=c[0].city
     this.admin.ShowAllJobs().subscribe(
       (r)=>{
         this.jobs=r
+        console.log(r)
       }
     )
   }

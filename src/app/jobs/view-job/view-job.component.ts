@@ -10,6 +10,7 @@ import { SuperuserService } from 'src/app/superuser.service';
 export class ViewJobComponent implements OnInit {
   jobid:any;
   job:any;
+  hospitalinfo:any;
   constructor(
               private admin:SuperuserService,
               private router :Router,
@@ -27,7 +28,8 @@ export class ViewJobComponent implements OnInit {
       (r)=>{
         this.job=r
         console.log(r)
-        console.log("===================")
+        this.hospitalinfo=r['hospital']
+        console.log(this.hospitalinfo)
       }
     )
 
@@ -35,8 +37,12 @@ export class ViewJobComponent implements OnInit {
   viewHospital(){
     console.log(this.job.hosptial_name)
     console.log((this.job.location))
+    this.admin.HospitalNamenandLocation(this.job.hospital_name,this.job.location).subscribe(
+      (r)=>{})
     
   }
 
+
+  
 
 }

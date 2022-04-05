@@ -132,8 +132,10 @@
                                 <td>{{job.designation}}</td>
                                 <td>{{job.location}}</td>
                                 <td>{{job.hosptial_name}}</td>
-                                <td>{{job.hospital_type}}</td>
-
+                                <td *ngIf="job.hospital === null;else elseNone">Need to delete(old job)</td>
+                                <ng-template #elseNone>
+                                  <td >{{job.hospital.typeofhospital}}</td>
+                                </ng-template>
 
                                 <td *ngIf="job.job_status==true ;else elsBlock"><span class="badge badge-success">Active</span></td>
                                 <ng-template #elsBlock>
@@ -144,7 +146,7 @@
                                     <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn" >
                                         <i class='bx bx-show'></i>
                                        </a>
-                                   <a  routerLink="/admin/jobs/edit-job/{{job.id}}" class="action-btn" >
+                                   <a  routerLink="/admin/jobs/edit-job/{{job.id}}/{{job.hospital.id}}" class="action-btn" >
                                     <i class='bx bx-edit'></i>
                                    </a>
 

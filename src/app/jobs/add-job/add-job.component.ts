@@ -37,6 +37,7 @@ export class AddJobComponent implements OnInit {
   icu:any;
   hospital_name!:string;
   hospitallocation!:string;
+  selectedhospitallocation!:string;
   hospital_types!:string;
   hospitalstate!:string;
   hospitalcity!:string;
@@ -299,6 +300,7 @@ gethospital(){
       console.log(r.city)
       this.hospitalcity=r.city
       console.log(r.location)
+      this.selectedhospitallocation=r.location
       this.hospital_types=r.typeofhospital
       this.hospitalid=r.id
       console.log(this.hospitalid)
@@ -334,15 +336,15 @@ AddJobs(){
   if (this.jobform.valid)
     
     {
+
+  
       
       console.log("=========================")
       formData.append("category",this.jobform.value.category)
       formData.append("Speciality",this.jobform.value.depatment)
       formData.append("designation",this.jobform.value.designation)
       formData.append("hosptial_name",this.hospital_name)
-     
-      
-      formData.append("location",this.hospitallocation)
+      formData.append("location", this.selectedhospitallocation)
       formData.append("salary",this.jobform.value.salary)
       formData.append("monthly_or_anual",this.jobform.value.duration)
       formData.append("vacancy",this.jobform.value.vacancy)

@@ -35,7 +35,7 @@
 
               </div>
               <div class="col-lg-6">
-              <p (click)="viewHospital()" class="btn btn-success float-right">View Hospital</p>
+              <a  routerLink="/admin/jobs/view-hospital/{{hospitalinfo.id}}" class="btn btn-success float-right">View Hospital</a>
 
               </div>
             </div>
@@ -51,7 +51,7 @@
                 <tr>
                   <th width="30%">Hospital Type</th>
                   <td width="2%">:</td>
-                  <td>{{job.hospital_type}}</td>
+                  <td>{{hospitalinfo.typeofhospital}}</td>
                 </tr>
                 <tr>
                   <th width="40%" class="text-primary">Category</th>
@@ -71,18 +71,22 @@
                 </tr>
 
                 <tr>
-                    <th width="30%">District/City</th>
-                    <td width="2%">:</td>
-                    <td>{{job.location}}</td>
-                </tr>
-
-
-                <tr>
                     <th width="30%">State</th>
                     <td width="2%">:</td>
-                    <td>{{job.state}}</td>
+                    <td>{{hospitalinfo.state}}</td>
                 </tr>
 
+                <tr>
+                  <th width="30%">District/City</th>
+                  <td width="2%">:</td>
+                  <td>{{hospitalinfo.city}}</td>
+              </tr>
+
+              <tr>
+                <th width="30%">Location</th>
+                <td width="2%">:</td>
+                <td>{{hospitalinfo.location}}</td>
+            </tr>
               </table>
             </div>
           </div>
