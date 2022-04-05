@@ -127,6 +127,11 @@
                 <label for="city">Location</label>
                
                 <input type="text" class="form-control" formControlName="location" placeholder="Enter Hospital location"/>
+                <div *ngIf=" status && hospitalinfoform.get('location').hasError('required')">
+                    <span style="color :red">* location can't empty field </span>
+
+                </div>
+            
             </div>
            
           </div>
@@ -163,7 +168,7 @@
                     </div>
        <!--this is for hospital highlight-->
      </form>
-    <!--*****-----*****-->
+    
 
 
     <!--Hospital Highlight-->

@@ -47,7 +47,7 @@ export class EditHospitalComponent implements OnInit {
       (r)=>{
         
         this.hospitaltypes=r
-        // console.log(r)
+        console.log(r)
 
       }
 
