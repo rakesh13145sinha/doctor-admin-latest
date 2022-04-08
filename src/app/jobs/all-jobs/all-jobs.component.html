@@ -126,12 +126,12 @@
                             itemsPerPage: pageSize,
                             currentPage: currentPage,
                             totalItems: jobs.length};let i=index">
-
-                                <td>{{job.id}}</td>
-                                <td>{{job.Speciality}}</td>
-                                <td>{{job.designation}}</td>
-                                <td>{{job.location}}</td>
-                                <td>{{job.hosptial_name}}</td>
+                           
+                                <td> <a routerLink="/admin/jobs/view-job/{{job.id}}" >{{job.id}}</a></td>
+                                <td><a routerLink="/admin/jobs/view-job/{{job.id}}" >{{job.Speciality}}</a></td>
+                                <td><a routerLink="/admin/jobs/view-job/{{job.id}}" >{{job.designation}}</a></td>
+                                <td><a routerLink="/admin/jobs/view-job/{{job.id}}" >{{job.location}}</a></td>
+                                <td><a routerLink="/admin/jobs/view-job/{{job.id}}" >{{job.hosptial_name}}</a></td>
                                 <td *ngIf="job.hospital === null;else elseNone">Need to delete(old job)</td>
                                 <ng-template #elseNone>
                                   <td >{{job.hospital.typeofhospital}}</td>
@@ -141,12 +141,13 @@
                                 <ng-template #elsBlock>
                                   <td><span class="badge badge-danger">InActive</span></td>
                                 </ng-template>
+                             
                                 <td style="display: flex;">
 
                                     <a routerLink="/admin/jobs/view-job/{{job.id}}" class="action-btn" >
                                         <i class='bx bx-show'></i>
                                        </a>
-                                   <a  routerLink="/admin/jobs/edit-job/{{job.id}}/{{job.hospital.id}}" class="action-btn" >
+                                   <a  routerLink="/admin/jobs/edit-job/{{job.id}}" class="action-btn" >
                                     <i class='bx bx-edit'></i>
                                    </a>
 

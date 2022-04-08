@@ -13,11 +13,11 @@
                     <li><i class='bx bx-chevron-right'></i></li>
 
                     <li class="breadcrumb-item">
-                       Job Details</li>
+                        Job Details</li>
                 </ol>
             </div>
         </div>
-        </div>
+    </div>
 </div>
 
 <div class="user-profile py-4">
@@ -25,241 +25,262 @@
 
 
     <div class="container">
-      <div class="row">
-
-        <div class="col-lg-6">
-          <div class="card shadow-sm">
-            <div class="card-header bg-transparent border-0 row">
-              <div class="col-lg-6">
-                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Hospital Details</h3>
-
-              </div>
-              <div class="col-lg-6">
-              <a  routerLink="/admin/jobs/view-hospital/{{hospitalinfo.id}}" class="btn btn-success float-right">View Hospital</a>
-
-              </div>
-            </div>
-            <div class="card-body pt-0">
-              <table class="table table-bordered">
-                
-                <tr>
-                  <th width="40%">Hospital Name</th>
-                  <td width="2%">:</td>
-                  <td>{{job.hosptial_name}}</td>
-                </tr>
-
-                <tr>
-                  <th width="30%">Hospital Type</th>
-                  <td width="2%">:</td>
-                  <td>{{hospitalinfo.typeofhospital}}</td>
-                </tr>
-                <tr>
-                  <th width="40%" class="text-primary">Category</th>
-                  <td width="2%">:</td>
-                  <td>{{job.category}}</td>
-                </tr>
-                <tr>
-                  <th width="30%" class="text-primary">Designation</th>
-                  <td width="2%">:</td>
-                  <td>{{job.designation}}</td>
-                </tr>
-                
-                <tr>
-                  <th width="30%"class="text-primary">Department/Speciality</th>
-                  <td width="2%">:</td>
-                  <td>{{job.Speciality}}</td>
-                </tr>
-
-                <tr>
-                    <th width="30%">State</th>
-                    <td width="2%">:</td>
-                    <td>{{hospitalinfo.state}}</td>
-                </tr>
-
-                <tr>
-                  <th width="30%">District/City</th>
-                  <td width="2%">:</td>
-                  <td>{{hospitalinfo.city}}</td>
-              </tr>
-
-              <tr>
-                <th width="30%">Location</th>
-                <td width="2%">:</td>
-                <td>{{hospitalinfo.location}}</td>
-            </tr>
-              </table>
-            </div>
-          </div>
-          <div class="card shadow-sm">
-            <div class="card-header bg-transparent border-0">
-              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>User Response</h3>
-            </div>
-            <div class="card-body pt-0">
-              <table class="table table-bordered">
-                <tr>
-                  <th width="40%">Like</th>
-                  <td width="2%">:</td>
-                  <td>{{job.likes}}</td>
-                </tr>
-
-                <tr>
-                  <th width="30%">Save </th>
-                  <td width="2%">:</td>
-                  <td>{{job.bookmark}}</td>
-                </tr>
-                <tr>
-                  <th width="30%">application</th>
-                  <td width="2%">:</td>
-                  <td>{{job.applicant}}</td>
-                </tr>
-
-              </table>
-            </div>
-          </div>
-          
-         
-          </div>
-          <div class="col-lg-6">
-            <div class="card shadow-sm">
-              <div class="card-header bg-transparent border-0">
-                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Job Description
-                </h3>
-              </div>
-              <div class="card-body pt-0">
-                <table class="table table-bordered">
-                  <tr>
-                    <th width="30%">Gender</th>
-                    <td width="2%">:</td>
-                    <td>{{job.gender}}</td>
-                  </tr>
-  
-                  <tr>
-                    <th width="30%">Working Days</th>
-                    <td width="2%">:</td>
-                    <td>{{job.working_day}}</td>
-                  </tr>
-  
-                  <tr>
-                    <th width="30%">Working Hours</th>
-                    <td width="2%">:</td>
-                    <td>{{job.working_hours}}</td>
-                  </tr>
-                  <tr>
-                    <th width="30%">Job Type</th>
-                    <td width="2%">:</td>
-                    <td>{{job.job_type}}</td>
-                  </tr>
-                  <tr>
-                      <th width="30%">Accomodation</th>
-                      <td width="2%">:</td>
-                      <td>{{job.accommodation}}</td>
-                    </tr>
-                    <tr>
-                      <th width="30%">Salary</th>
-                      <td width="2%">:</td>
-                      <td>{{job.salary}}</td>
-                    </tr>
-                    <tr>
-                      <th width="30%">Salary Duration</th>
-                      <td width="2%">:</td>
-                      <td>{{job.monthly_or_anual}}</td>
-                    </tr>
-                    <tr>
-                      <th width="30%">Vacancy</th>
-                      <td width="2%">:</td>
-                      <td>{{job.vacancy}}</td>
-                    </tr>
-                    <tr>
-                      <th width="40%">Roles and Responsibilities</th>
-                      <td width="2%">:</td>
-                      <td>{{job.discription}}</td>
-                    </tr>
-                    <tr>
-                      <th width="40%">Qualification</th>
-                      <td width="2%">:</td>
-                      <td>{{job.qualification}}</td>
-                    </tr>
-                    <tr>
-                      <th width="40%">Experience</th>
-                      <td width="2%">:</td>
-                      <td>{{job.experince}}</td>
-                    </tr>
-                    <tr>
-                      <th width="40%">Status</th>
-                      <td width="2%">:</td>
-                      <td>{{job.job_status}}</td>
-                    </tr>
-                    <tr>
-                      <th width="40%">Level</th>
-                      <td width="2%">:</td>
-                      <td>{{job.level}}</td>
-                    </tr>
-
-                    <tr>
-                      <th width="40%">Delete Resion</th>
-                      <td width="2%">:</td>
-                      <td>{{job.resion}}</td>
-                    </tr>
-  
-                </table>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div class="row">
-            
-            <div class="col-lg-6">
-              <div class="card shadow-sm">
-                <div class="card-header bg-transparent border-0">
-                  <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
-                </div>
-                <div class="card-body pt-0">
-                  <table class="table">
-                  <tr>
-                    <th width="40%">HR Contact</th>
-                    <td width="2%">:</td>
-                    <td>{{job.hr_contact}}</td>
-                  </tr>
-                  <tr>
-                    <th width="40%">Social Contact</th>
-                    <td width="2%">:</td>
-                    <td>{{job.social_contact}}</td>
-                  </tr>
-                  </table>
-      
-                </div>
-      
-      
-            </div>
-            </div>
+        <div class="row">
 
             <div class="col-lg-6">
-              <div class="card shadow-sm">
-                <div class="card-body">
-                  <table class="table">
-                <tr>
-                  <th width="40%">Date of Post</th>
-                  <td width="2%">:</td>
-                  <td>{{job.created_date | date: 'd-MMM-y'}}</td>
-                </tr>
-                
-                </table>
+                <div class="card shadow-sm">
+                    <div class="card-header bg-transparent border-0 row">
+                        <div class="col-lg-6">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>{{job.hosptial_name}} Details</h3>
+
+                        </div>
+                        <div class="col-lg-6" *ngIf="job.hospital !=null; else elseHospitalid">
+                            <a routerLink="/admin/jobs/view-hospital/{{hospitalinfo.id}}" class="btn btn-success float-right">View Hospital</a>
+
+                        </div>
+                        <ng-template #elseHospitalid>
+                            <div class="col-lg-6">
+                                <a class="btn btn-danger float-right">View Hospital</a>
+
+                            </div>
+                        </ng-template>
+
+                    </div>
+                    <div class="card-body pt-0">
+                        <table class="table table-bordered">
+
+                            <tr>
+                                <th width="40%">Hospital Name</th>
+                                <td width="2%">:</td>
+                                <td>{{job.hosptial_name}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%">Hospital Type</th>
+                                <td width="2%">:</td>
+                                <td *ngIf="job.hospital !=null; else elseHospitaltype">{{hospitalinfo.typeofhospital}}</td>
+                                <ng-template #elseHospitaltype> notupdated
+                                </ng-template>
+
+                            </tr>
+                            <tr>
+                                <th width="40%" class="text-primary">Category</th>
+                                <td width="2%">:</td>
+                                <td>{{job.category}}</td>
+                            </tr>
+
+
+                            <tr>
+                                <th width="30%" class="text-primary">Designation</th>
+                                <td width="2%">:</td>
+                                <td>{{job.designation}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%" class="text-primary">Department/Speciality</th>
+                                <td width="2%">:</td>
+                                <td>{{job.Speciality}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%">State</th>
+                                <td width="2%">:</td>
+                                <td *ngIf="job.hospital !=null; else elseState">{{hospitalinfo.state}}</td>
+                                <ng-template #elseState>
+                                    <td> hospital not connected</td>
+
+                                </ng-template>
+
+                            </tr>
+
+                            <tr>
+                                <th width="30%">District/City</th>
+                                <td width="2%">:</td>
+                                <td *ngIf="job.hospital !=null; else elseCity">{{hospitalinfo.city}}</td>
+                                <ng-template #elseCity>
+                                    <td> hospital not connected</td>
+
+                                </ng-template>
+
+                            </tr>
+
+                            <tr>
+                                <th width="30%">Location</th>
+                                <td width="2%">:</td>
+                                <td *ngIf="job.hospital !=null; else elseLocation">{{hospitalinfo.location}}</td>
+                                <ng-template #elseLocation>
+                                    <td> hospital not connected</td>
+                                </ng-template>
+
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-              </div>
+                <div class="card shadow-sm">
+                    <div class="card-header bg-transparent border-0">
+                        <h3 class="mb-0"><i class="far fa-clone pr-1"></i>User Response</h3>
+                    </div>
+                    <div class="card-body pt-0">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="40%">Like</th>
+                                <td width="2%">:</td>
+                                <td>{{job.likes}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%">Save </th>
+                                <td width="2%">:</td>
+                                <td>{{job.bookmark}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">application</th>
+                                <td width="2%">:</td>
+                                <td>{{job.applicant}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-transparent border-0">
+                        <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Job Description
+                        </h3>
+                    </div>
+                    <div class="card-body pt-0">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="30%">Gender</th>
+                                <td width="2%">:</td>
+                                <td>{{job.gender}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%">Working Days</th>
+                                <td width="2%">:</td>
+                                <td>{{job.working_day}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="30%">Working Hours</th>
+                                <td width="2%">:</td>
+                                <td>{{job.working_hours}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Job Type</th>
+                                <td width="2%">:</td>
+                                <td>{{job.job_type}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Accomodation</th>
+                                <td width="2%">:</td>
+                                <td>{{job.accommodation}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Salary</th>
+                                <td width="2%">:</td>
+                                <td>{{job.salary}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Salary Duration</th>
+                                <td width="2%">:</td>
+                                <td>{{job.monthly_or_anual}}</td>
+                            </tr>
+                            <tr>
+                                <th width="30%">Vacancy</th>
+                                <td width="2%">:</td>
+                                <td>{{job.vacancy}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Roles and Responsibilities</th>
+                                <td width="2%">:</td>
+                                <td>{{job.discription}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Qualification</th>
+                                <td width="2%">:</td>
+                                <td>{{job.qualification}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Experience</th>
+                                <td width="2%">:</td>
+                                <td>{{job.experince}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Status</th>
+                                <td width="2%">:</td>
+                                <td>{{job.job_status}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Level</th>
+                                <td width="2%">:</td>
+                                <td>{{job.level}}</td>
+                            </tr>
+
+                            <tr>
+                                <th width="40%">Delete Resion</th>
+                                <td width="2%">:</td>
+                                <td>{{job.resion}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-transparent border-0">
+                        <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Contact</h3>
+                    </div>
+                    <div class="card-body pt-0">
+                        <table class="table">
+                            <tr>
+                                <th width="40%">HR Contact</th>
+                                <td width="2%">:</td>
+                                <td>{{job.hr_contact}}</td>
+                            </tr>
+                            <tr>
+                                <th width="40%">Social Contact</th>
+                                <td width="2%">:</td>
+                                <td>{{job.social_contact}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+
+                </div>
             </div>
 
-          </div>
-         
-        
-     
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th width="40%">Date of Post</th>
+                                <td width="2%">:</td>
+                                <td>{{job.created_date | date: 'd-MMM-y'}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
-      
+
+
+
+
     </div>
 
-  </div>
-
-
-
-
-
+</div>

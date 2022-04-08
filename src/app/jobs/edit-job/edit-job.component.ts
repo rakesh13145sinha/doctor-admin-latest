@@ -16,6 +16,7 @@ export class EditJobComponent implements OnInit {
   qualificationList: string[] = [ ]; 
   selected="MBBS"
   id:any;
+  hospitalinfo:any;
   job:any;
   image!:File
   qua =new Set();
@@ -24,7 +25,7 @@ export class EditJobComponent implements OnInit {
   designations:any[]=[];
   categories:any[]=[];
   allstate:any[]=[];
-  
+  allhospitalinof:any[]=[];
   statecities:any[]=[];
   cities:any[]=[];
   edu:any[]=[];
@@ -35,10 +36,13 @@ export class EditJobComponent implements OnInit {
              
                 ) {
                   this.activeroute.paramMap.subscribe(
-                  (r)=>this.id=r.get("id")
+                  (r)=>{
+                    this.id=r.get("id")
+                    console.log(this.id)
+                  }
                   
                   )
-
+                  
                   
                  }
 
@@ -49,6 +53,44 @@ export class EditJobComponent implements OnInit {
     this.states()
     this.city()
     this.education()
+    this.hospitalinformation()
+    
+  }
+
+  hospitals(event:any){
+    console.log("============================================")
+    console.log(event.target.value)
+
+  }  
+  hospitalinformation(){
+    this.admin.HospitalINFOGET().subscribe(
+      (r)=>{
+        this.allhospitalinof=r
+        console.log(r)
+      }
+    )
+  }
+
+  selecthospital(name:any){
+    console.log(name.target.value)
+    var name_and_location=name.target.value.split("/")
+    console.log(name_and_location[0])
+    console.log(name_and_location[1])
+    if (name.target.value){
+      this.admin.HospitalNamenandLocation(name_and_location[0],name_and_location[1]).subscribe(
+        (r)=>{
+          
+          
+         
+        }
+      )
+  
+    }
+  else{
+    console.log("thinking")
+  }
+   
+     
     
   }
 //SINGLE JOB
@@ -57,6 +99,7 @@ SingleJob(){
     (r)=>{
       this.job=r
       console.log(this.job)
+      this.hospitalinfo=this.job["hospital"]
       this.categorydesignation(this.job.category)
       this.Depart_Speciality(this.job.category)
       
@@ -234,14 +277,13 @@ select(data:any){
     console.log(this.job.Speciality)
   
   var formData = new FormData();
-  //formData.append("category",event.title.value)
+  // formData.append("category",this.job.category)
   formData.append("Speciality",this.job.Speciality)
   formData.append("designation",this.job.designation)
   formData.append("hosptial_name",this.job.hosptial_name)
-  formData.append("hospitail_image",this.image,this.image.name)
-  formData.append("state",this.job.state)
+  // formData.append("hospitail_image",this.image,this.image.name)
+  //formData.append("state",this.job.state)
   formData.append("location",this.job.location)
-  
   formData.append("salary",this.job.salary)
   formData.append("monthly_or_anual",this.job.monthly_or_anual)
   formData.append("vacancy",this.job.vacancy)

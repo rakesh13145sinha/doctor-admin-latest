@@ -22,76 +22,53 @@
 </div>
 
 <div class="container card" >
-    <!--<h6>Hospital Details</h6>
+    <h6>Hospital Dtails</h6>
     <div class="row">
         <div class="col-md-3">
         <label for="Name">Hospital Name</label>
-        <input type="text"  class="form-control" (keyup)="hospitals($event)"  [(ngModel)]="hospital_name" placeholder="Hospital Name">
+        <input type="text"  class="form-control" list="programmingLanguages" (click)="hospitals($event)" value="{{hospitalinfo.name}}"  placeholder="Hospital Name">
+
         
-        <select   (click)="selecthospital($event)">
-            <option value="{{h.name}}/{{h.location}}" *ngFor="let h of hospital">{{h.name}}/{{h.location}}</option>
-            
-        </select>
-           
+                <datalist id="programmingLanguages">
+                    <option value="{{hospital.name}} / {{hospital.location}} " *ngFor="let hospital of allhospitalinof" >{{hospital.name}}</option>
+                    
+                </datalist>
         
         </div>
       
         
         <div class="col-md-3">
             <label for="">Hospital Type</label>
-            <input type="text" class="form-control" name="hospitaltype" [(ngModel)]="hospital_types" >
+            <input type="text" class="form-control" name="hospitaltype" value="{{hospitalinfo.typeofhospital}}" >
            
         </div>
 
         <div class="col-md-2">
             <label for="">State</label>
-            <input type="text" class="form-control" name="state" [(ngModel)]="hospitalstate">
+            <input type="text" class="form-control" name="state" value="{{hospitalinfo.state}}">
             
             
         </div>
         <div class="col-md-2">
             <label for="city">City</label>
-            <input type="text" name="city" class="form-control" [(ngModel)]="hospitalcity"  placeholder="city">
+            <input type="text" name="city" class="form-control" value="{{hospitalinfo.city}}"  placeholder="city">
                 
            
         </div>
         <div class="col-md-2">
             <label for="city">Location</label>
-            <input type="text" name="location" class="form-control" [(ngModel)]="hospitallocation"  placeholder="Location">
+            <input type="text" name="location" class="form-control" value="{{hospitalinfo.location}}"  placeholder="Location">
                 
            
         </div>
         
-    </div>-->
+    </div>
 <div class="container card" >
     
    
     <form #EditJob (ngSubmit)="onSubmit(EditJob)">
-        <h6>Hospital Details</h6>
-        <div class="row">
-            <div class="col-md-4">
-            <label for="Name">Hospital Name</label>
-            <input type="text"  class="form-control" name="hospitalname" [(ngModel)]="job.hosptial_name" placeholder="Hospital Name" required>
-            </div>
-          
-          
-            
-            <div class="col-md-4">
-                <label for="">Hospital Type</label>
-                <select  class="form-control" name="hospitaltype" [(ngModel)]="job.hospital_type">
-                    <option value="{{htype.hospitaltype}}" *ngFor="let htype of hospitaltypes">{{htype.hospitaltype}}</option>
-                    
-                </select>
-            </div>
-            
-            <div class="col-md-4">
-                <label for="formFileMultiple" class="form-label">Hospital Photo</label>
-                <input class="form-control" type="file" multiple  name="photo"  (change)="imageupload($event)">
-                          
-            </div>
-
+        <h6>Job Details</h6>
         
-        </div>
         
         <div class="row">
 
@@ -276,7 +253,7 @@
         
        
         <div class="submit_form">
-            <input type="submit" name="submit" class="btn btn-primary" value="Submit"/>
+            <input type="submit" name="submit" class="btn btn-primary" value="submit"/>
         </div>
 
     </form>
