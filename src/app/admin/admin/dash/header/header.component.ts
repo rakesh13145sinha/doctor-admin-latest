@@ -8,13 +8,20 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   adminusername:any;
+  
   constructor(private admin:SuperuserService,private router:Router) {
+    
+    
+
 
    }
 
   ngOnInit(): void {
     this.adminusername=localStorage.getItem('username')
-
+    //this.adminusername=this.admin.user
+    
+    
+    
   }
 
   Loggout(){

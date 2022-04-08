@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SuperuserService {
   imageurl="http://3.132.212.116:8000"
 
   username:any;
-
+  user = new Subject<string>();
   // private _loading = new BehaviorSubject<boolean>(false);
   // public readonly loading$ = this._loading.asObservable();
 

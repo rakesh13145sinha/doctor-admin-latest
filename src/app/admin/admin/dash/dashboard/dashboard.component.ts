@@ -8,7 +8,9 @@ import { SuperuserService } from 'src/app/superuser.service';
 })
 export class DashboardComponent implements OnInit {
   count:any;
-  constructor(private admin:SuperuserService,private router:Router) { }
+  constructor(private admin:SuperuserService,private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
     this.dashboard()

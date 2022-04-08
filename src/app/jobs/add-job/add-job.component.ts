@@ -63,7 +63,7 @@ export class AddJobComponent implements OnInit {
                             vacancy:["",[Validators.required]],
                             
                             hrcontact:["",[Validators.required]],
-                            socialcontact:["",[Validators.required]],
+                            
                             experince:["",[Validators.required]],
                             gender:["",[Validators.required]],
                             status:["",[Validators.required]],
@@ -357,7 +357,7 @@ AddJobs(){
       formData.append("job_type",this.jobform.value.jobtype)
       formData.append("job_status",this.jobform.value.status)
       formData.append("hr_contact",this.jobform.value.hrcontact)
-      formData.append("social_contact",this.jobform.value.socialcontact)
+      // formData.append("social_contact",this.jobform.value.socialcontact)
       formData.append("experince",this.jobform.value.experince)
       formData.append("gender",this.jobform.value.gender)
       

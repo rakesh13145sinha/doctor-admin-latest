@@ -270,11 +270,7 @@ select(data:any){
 
 //EDIT JOB
   onSubmit(event:any){
-    // console.log(event.title.value)
-    // console.log("submit")
-    // console.log(this.job.category)
-    // console.log(this.job.location)
-    console.log(this.job.Speciality)
+    
   
   var formData = new FormData();
   // formData.append("category",this.job.category)
@@ -295,7 +291,7 @@ select(data:any){
   formData.append("hospital_type",this.job.hospital_type)
   formData.append("job_type",this.job.job_type)
   formData.append("hr_contact",this.job.hr_contact)
-  formData.append("social_contact",this.job.social_contact)
+  
   formData.append("experince",this.job.experince)
   formData.append("gender",this.job.gender)
   formData.append("job_status",this.job.job_status)

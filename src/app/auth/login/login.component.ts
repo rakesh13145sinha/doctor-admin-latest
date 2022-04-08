@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SuperuserService } from 'src/app/superuser.service';
 import { ToastrService } from 'ngx-toastr';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -40,7 +41,13 @@ export class LoginComponent implements OnInit {
   
                 this._admin.SetUsername(res.username,res.superuser_status)
                 this._admin.SetToken(res.token)
-  
+                this._admin.isLoggedIn()
+                this._admin.GetToken()
+                this._admin.GetAdmin()
+               
+                
+                this._admin.user.next(res.username)
+
                 this.router.navigate(['/admin/home'])
                 
   
